@@ -7,11 +7,16 @@ on:
       - main
     paths-ignore:
       - '.github/**'
+      - 'package.json'
   pull_request:
     branches:
       - main
     paths-ignore:
       - '.github/**'
+      - 'package.json'
+
+permissions:
+  contents: write
 
 env:
   PROJECT_ID: ${{ secrets.GCR_PROJECT }}
@@ -22,7 +27,8 @@ jobs:
   build:
     name: Build React App
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout Repo
         uses: actions/checkout@main
