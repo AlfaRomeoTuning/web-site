@@ -103,6 +103,7 @@ jobs:
       - name: Build & Push
         run: |-
           gcloud builds submit \
+            --default-buckets-behavior=REGIONAL_USER_OWNED_BUCKET \
             --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
         working-directory: .docker
 
