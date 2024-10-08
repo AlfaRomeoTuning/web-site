@@ -1,0 +1,21 @@
+#product-page .text-container {
+    padding-top: 5%;
+}
+
+#product-page .text {
+    color: black;
+    /* background-color: #00000063; */
+    text-align: right;
+}
+
+#product-page .interface-image {
+    width: 100%;
+}
+
+#product-page {
+    height: 99%;
+}
+
+#product-page p.interface-text {
+    margin: 0 20px;
+}
