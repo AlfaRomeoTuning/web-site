@@ -10,6 +10,7 @@
 
 #product-page .interface-image {
     width: 100%;
+    cursor: pointer;
 }
 
 #product-page {

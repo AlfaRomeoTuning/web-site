@@ -9,14 +9,14 @@ function Navigation() {
     return (
         <>
             <div className="App" id="navbar">
-                <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
-                    <Container>
+                <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
+                    <Container  >
                         <Navbar.Brand href="#" className='navbar-link home-link'>
                             <Link to="/">Alfa Tuning</Link>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
-                            <Nav>
+                            <Nav >
                                 <Nav.Link className='navbar-link'>
                                     <Link to="/product">
                                         OBD Tool

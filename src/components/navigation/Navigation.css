@@ -2,12 +2,23 @@
 .navbar-link a,
 .dropdown-toggle a {
     text-decoration: none !important;
-    color: black;
+    color: rgba(255, 255, 255, 0.55);
 }
 
 .navbar .navbar-link,
-.navbar .dropdown-toggle {
-    font-size: x-large;
+.navbar .dropdown-toggle,
+.navbar-toggler-icon {
+    font-size: x-large !important;
+}
+
+
+.navbar-toggler,
+.navbar-toggler .collapsed {
+    border: none !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 .navbar .home-link {

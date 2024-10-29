@@ -1,8 +1,12 @@
+import React from 'react';
 import './Product.css'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 function Product() {
+
+    const [fullView, setFullView] = React.useState(false);
+
     return (<div id="product-page">
         <div className='text-container'>
             <Row
@@ -12,7 +16,10 @@ function Product() {
             // md={2}
             // xxl={2}
             >
-                <Col sm={12} md={7} xxl={7}><img alt="guilia" className='interface-image' src={require("./../../assets/rnd/GiuliaGTAmFrontAdjustableSplitter4.png")}></img></Col>
+                <Col sm={12} md={7} xxl={7}>
+                    <img alt="guilia" onClick={() => setFullView(!fullView)} className='interface-image'
+                        src={require(fullView ? "./../../assets/AlfaFlasher00.png" : "./../../assets/AlfaFlasher01.png")} />
+                </Col>
                 <Col sm={12} md={5} xxl={5} className="text">
                     <h3>AlfaRomeoFlasher is a diagnostic software for the Alfa Romeo vehicles</h3>
                     {/* <h4>At Alfa Tuning, we’re passionate about enhancing your driving experience.
