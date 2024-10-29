@@ -103,7 +103,7 @@ jobs:
       - name: Build & Push
         run: |-
           gcloud builds submit \
-            --quiet \
+            --default-buckets-behavior=REGIONAL_USER_OWNED_BUCKET \
             --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
         working-directory: .docker
 
@@ -111,7 +111,6 @@ jobs:
       - name: Deploy GCR
         run: |-
           gcloud run deploy "$SERVICE_NAME" \
-            --quiet \
             --region "$RUN_REGION" \
             --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
             --platform "managed" \
