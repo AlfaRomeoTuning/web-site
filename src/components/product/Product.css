@@ -1,11 +1,12 @@
 #product-page .text-container {
+    padding: 5px;
     padding-top: 5%;
 }
 
 #product-page .text {
     color: black;
     /* background-color: #00000063; */
-    text-align: right;
+    /* text-align: right; */
 }
 
 #product-page .interface-image {
@@ -18,5 +19,5 @@
 }
 
 #product-page p.interface-text {
-    margin: 0 20px;
+    /* margin: 0 20px; */
 }

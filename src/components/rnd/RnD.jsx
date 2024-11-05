@@ -1,4 +1,3 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -24,7 +23,7 @@ function RnD() {
                                 <Card.Text style={{ height: "100px" }}>
                                     {model.description}
                                 </Card.Text>
-                                <Button variant="secondary">Download Model</Button>
+                                {/* <Button variant="secondary">Download Model</Button> */}
                             </Card.Body>
                         </Card>
                     </Col>

@@ -19,35 +19,35 @@ function Navigation() {
                             <Nav >
                                 <Nav.Link className='navbar-link'>
                                     <Link to="/product">
-                                        OBD Tool
+                                        Remote Flasher Device
                                     </Link>
                                 </Nav.Link>
-                                <Nav.Link className='navbar-link'>
+                                {/* <Nav.Link className='navbar-link'>
                                     <Link to="/software">
                                         Software
                                     </Link>
-                                </Nav.Link>
+                                </Nav.Link> */}
+                                <NavDropdown title="Contact Us" id="basic-nav-dropdown" >
+                                    <p className='navbar-contact-us'>Have questions about our Alfa Romeo flashing device or interested in a custom solution for your vehicle? We're here to help!<br />
+                                        Email us: <a href="mailto:artem@alfatuning.app">artem@alfatuning.app</a><br />
+                                        Please allow up to 24 hours for a response. We’ll get back to you as soon as possible!</p>
+                                </NavDropdown>
                                 <Nav.Link className='navbar-link'>
                                     <Link to="/rnd">
                                         R&D
                                     </Link>
                                 </Nav.Link>
-                                <NavDropdown title="Contact Us" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Instagram</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Telegram
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Email</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">
-                                        Alfa Romeo
-                                    </NavDropdown.Item>
-                                </NavDropdown>
-                                <Nav.Link className='navbar-link'>
+                                {/* <Nav.Link className='navbar-link'>
+                                    <Link onClick={() => window.location = ''}>
+                                        Contact Us
+                                    </Link>
+                                </Nav.Link> */}
+
+                                {/* <Nav.Link className='navbar-link'>
                                     <Link to="/manuals">
                                         Manuals
                                     </Link>
-                                </Nav.Link>
+                                </Nav.Link> */}
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

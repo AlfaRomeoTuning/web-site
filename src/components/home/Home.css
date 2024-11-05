@@ -2,7 +2,7 @@
     background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(61, 63, 70, 0.751)), url(../../assets/background2.jpg);
     background-size: cover;
     /* text-align: center; */
-    height: 99%;
+    height: 99.9%;
 }
 
 #home .text-container {

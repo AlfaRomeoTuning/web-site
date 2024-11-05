@@ -25,3 +25,8 @@
     font-weight: 600;
     font-size: xx-large;
 }
+
+.navbar .navbar-contact-us {
+    padding: 12px;
+    width: 270px;
+}
