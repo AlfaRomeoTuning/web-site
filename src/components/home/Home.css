@@ -24,6 +24,12 @@
 }
 
 @media only screen and (max-width: 600px) {
+
+    #home {
+        background-size: cover;
+        text-align: center;
+    }
+
     #home .text-container {
         width: 100%;
         position: initial;

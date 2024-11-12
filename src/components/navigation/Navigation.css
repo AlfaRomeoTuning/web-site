@@ -26,6 +26,10 @@
     font-size: xx-large;
 }
 
+.navbar-nav {
+    column-gap: 20px;
+}
+
 .navbar .navbar-contact-us {
     padding: 12px;
     width: 270px;

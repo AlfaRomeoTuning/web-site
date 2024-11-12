@@ -29,7 +29,8 @@ function Navigation() {
                                 </Nav.Link> */}
                                 <NavDropdown title="Contact Us" id="basic-nav-dropdown" >
                                     <p className='navbar-contact-us'>Have questions about our Alfa Romeo flashing device or interested in a custom solution for your vehicle? We're here to help!<br />
-                                        Email us: <a href="mailto:artem@alfatuning.app">artem@alfatuning.app</a><br />
+                                        <strong>Email us:</strong> <a href="mailto:artem@alfatuning.app">artem@alfatuning.app</a><br />
+                                        <strong>Instagram:</strong> <a href="https://www.instagram.com/alfatuning.app">alfatuning.app</a><br />
                                         Please allow up to 24 hours for a response. We’ll get back to you as soon as possible!</p>
                                 </NavDropdown>
                                 <Nav.Link className='navbar-link'>
