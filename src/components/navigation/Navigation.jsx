@@ -22,6 +22,7 @@ function Navigation() {
                                         Remote Flasher Device
                                     </Link>
                                 </Nav.Link>
+
                                 {/* <Nav.Link className='navbar-link'>
                                     <Link to="/software">
                                         Software
@@ -36,6 +37,11 @@ function Navigation() {
                                 <Nav.Link className='navbar-link'>
                                     <Link to="/rnd">
                                         R&D
+                                    </Link>
+                                </Nav.Link>
+                                <Nav.Link className='navbar-link'>
+                                    <Link onClick={() => window.location = '/partners'}>
+                                        Partners
                                     </Link>
                                 </Nav.Link>
                                 {/* <Nav.Link className='navbar-link'>
