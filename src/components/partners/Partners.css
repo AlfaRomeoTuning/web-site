@@ -24,7 +24,16 @@
     margin: 10px 0;
 }
 
+#partners-page .partners-image:hover {
+    height: 62px;
+}
+
 #partners-page .qs-store {
     height: 35px;
+    margin-top: 20px;
+}
+
+#partners-page .qs-store:hover {
+    height: 37px;
     margin-top: 20px;
 }

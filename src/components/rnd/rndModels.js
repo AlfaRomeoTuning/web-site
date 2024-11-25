@@ -34,6 +34,11 @@ const rnd = {
             car: "Giulia GTAm",
             part: "Front Fender Mudguard Front Part 1",
             description: "Alfa Romeo Giulia GTAm rear part of left front fender mudguard 3D scanning"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Side Skirt",
+            description: "Alfa Romeo Giulia GTAm side skirt"
         }
     ]
 }
