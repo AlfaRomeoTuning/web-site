@@ -33,11 +33,11 @@ function RnDCard(props) {
                 <Modal.Body>
                     <Carousel data-bs-theme="dark">
                         <Carousel.Item >
-                            <img className="rnd-modal-image w-100" text="First slide" src={require('../../assets/rnd/' + props.model?.car?.replace(/ /g, '') + props.model?.part?.replace(/ /g, '') + '.png')} />
+                            <img alt={props.model.description} className="rnd-modal-image w-100" text="First slide" src={require('../../assets/rnd/' + props.model?.car?.replace(/ /g, '') + props.model?.part?.replace(/ /g, '') + '.png')} />
                         </Carousel.Item>
                         {props.model.childs.map(child =>
                             <Carousel.Item key={child}>
-                                <img className="rnd-modal-image w-100" src={require('../../assets/rnd/' + props.model?.car?.replace(/ /g, '') + props.model?.part?.replace(/ /g, '') + child + '.png')} />
+                                <img alt={props.model.description} className="rnd-modal-image w-100" src={require('../../assets/rnd/' + props.model?.car?.replace(/ /g, '') + props.model?.part?.replace(/ /g, '') + child + '.png')} />
                             </Carousel.Item>)
                         }
                     </Carousel>
