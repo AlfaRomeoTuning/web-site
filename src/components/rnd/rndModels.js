@@ -3,14 +3,8 @@ const rnd = {
         {
             car: "Giulia GTAm",
             part: "Front Fender",
-            childs: [],
+            childs: [2],
             description: "Alfa Romeo Giulia GTAm front fender 3d scanning with all small details"
-        },
-        {
-            car: "Giulia GTAm",
-            part: "Front Fender Form",
-            childs: [],
-            description: "Alfa Romeo Giulia GTAm front fender form/mold"
         },
         {
             car: "Giulia GTAm",
@@ -50,9 +44,9 @@ const rnd = {
         },
         {
             car: "Giulia GTAm",
-            part: "Mudguard Protection",
+            part: "Front Fender Mudguard Rear Part",
             childs: [2, 3],
-            description: "Alfa Romeo Giulia GTAm mudguard protection cover"
+            description: "Alfa Romeo Giulia GTAm Front Fender Mudguard Rear Part"
         },
         {
             car: "Giulia GTAm",
@@ -65,6 +59,18 @@ const rnd = {
             part: "Front Bumper Side Insert",
             childs: [2],
             description: "Alfa Romeo Giulia GTAm front bumper side"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Side Grill",
+            childs: [2, 3],
+            description: "Alfa Romeo Giulia GTAm front bumper side grill"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Front Lower Central Grill",
+            childs: [],
+            description: "Alfa Romeo Giulia GTAm front lower centrall grill"
         }
     ]
 }

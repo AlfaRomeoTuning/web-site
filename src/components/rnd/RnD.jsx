@@ -31,7 +31,7 @@ function RnDCard(props) {
                     <Modal.Title>{props.model.description}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Carousel data-bs-theme="dark">
+                    <Carousel style={{ height: "48vh" }} data-bs-theme="dark" className='w-100'>
                         <Carousel.Item >
                             <img alt={props.model.description} className="rnd-modal-image w-100" text="First slide" src={require('../../assets/rnd/' + props.model?.car?.replace(/ /g, '') + props.model?.part?.replace(/ /g, '') + '.png')} />
                         </Carousel.Item>
