@@ -51,7 +51,7 @@ const rnd = {
         {
             car: "Giulia GTAm",
             part: "Mudguard Protection",
-            childs: [2],
+            childs: [2, 3],
             description: "Alfa Romeo Giulia GTAm mudguard protection cover"
         },
         {
@@ -59,12 +59,6 @@ const rnd = {
             part: "Radiator Air Conductor",
             childs: [2, 3],
             description: "Alfa Romeo Giulia GTAm radiator air conductor"
-        },
-        {
-            car: "Giulia GTAm",
-            part: "Mudguard Rear Part",
-            childs: [],
-            description: "Alfa Romeo Giulia GTAm mudguard rear part"
         },
         {
             car: "Giulia GTAm",
