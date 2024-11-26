@@ -37,3 +37,16 @@
     height: 37px;
     margin-top: 20px;
 }
+
+#partners-page .alfa-specialists {
+    height: 70px;
+    margin-top: 10px;
+}
+
+#partners-page .alfa-specialists:hover {
+    height: 72px;
+}
+
+#partners-page .eng-custom {
+    background-color: #555555;
+}

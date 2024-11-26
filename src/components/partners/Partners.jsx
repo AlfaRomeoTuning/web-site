@@ -1,4 +1,5 @@
 import './Partners.css'
+import { ReactComponent as AlfaSpecialists } from './../../assets/partners/alfaSpecialists.svg';
 
 export function Partners() {
     return (<div id="partners-page">
@@ -27,6 +28,13 @@ export function Partners() {
                 <a href="https://squadra-tuning.com/">
                     <img alt="squadra-tuning" className='partners-image'
                         src={require("./../../assets/partners/squadra-tuning.png")} />
+                </a>
+                <a href="https://alfa-specialists.gr/">
+                    <AlfaSpecialists className='partners-image alfa-specialists' />
+                </a>
+                <a href="https://eng-custom.com/">
+                    <img alt="eng-custom" className='partners-image eng-custom'
+                        src={require("./../../assets/partners/eng-custom.png")} />
                 </a>
             </div>
         </div>
