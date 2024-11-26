@@ -1,4 +1,8 @@
-#rnd-page{
+#rnd-page {
     width: 98%;
     padding: 5px;
+}
+
+#rnd-page .rnd-modal-image {
+    height: 200px;
 }

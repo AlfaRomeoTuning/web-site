@@ -3,6 +3,53 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import rndModels from './rndModels'
 import './RnD.css'
+import { Button, Carousel, Modal } from 'react-bootstrap';
+import React from 'react';
+
+
+
+function RnDCard(props) {
+
+    const [showModal, setShowModal] = React.useState(false);
+
+    return <>
+        <Col>
+            <Card key={props.model.car + props.model.part} onClick={() => setShowModal(true)}>
+                <Card.Img variant="top" src={require('../../assets/rnd/' + props.model.car.replace(/ /g, '') + props.model.part.replace(/ /g, '') + '.png')} />
+                <Card.Body>
+                    <Card.Title style={{ height: "50px" }}>{props.model.part}</Card.Title>
+                    <Card.Text style={{ height: "100px" }}>
+                        {props.model.description}
+                    </Card.Text>
+                    {/* <Button variant="secondary">Download Model</Button> */}
+                </Card.Body>
+            </Card>
+        </Col>
+        <Modal show={showModal} onHide={() => setShowModal(false)}>
+            <Modal.Dialog >
+                <Modal.Header closeButton>
+                    <Modal.Title>{props.model.description}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <Carousel data-bs-theme="dark">
+                        <Carousel.Item >
+                            <img className="rnd-modal-image w-100" text="First slide" src={require('../../assets/rnd/' + props.model?.car?.replace(/ /g, '') + props.model?.part?.replace(/ /g, '') + '.png')} />
+                        </Carousel.Item>
+                        {props.model.childs.map(child =>
+                            <Carousel.Item key={child}>
+                                <img className="rnd-modal-image w-100" src={require('../../assets/rnd/' + props.model?.car?.replace(/ /g, '') + props.model?.part?.replace(/ /g, '') + child + '.png')} />
+                            </Carousel.Item>)
+                        }
+                    </Carousel>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={() => setShowModal(false)} variant="secondary">Close</Button>
+                </Modal.Footer>
+            </Modal.Dialog>
+        </Modal>
+    </>
+
+}
 
 function RnD() {
     return (<div id='rnd-page'>
@@ -14,22 +61,9 @@ function RnD() {
             className="g-4"
         >
             {
-                rndModels.models.map(model =>
-                    <Col key={model.car + model.part}>
-                        <Card key={model.car + model.part}>
-                            <Card.Img variant="top" src={require('../../assets/rnd/' + model.car.replace(/ /g, '') + model.part.replace(/ /g, '') + '.png')} />
-                            <Card.Body>
-                                <Card.Title style={{ height: "50px" }}>{model.part}</Card.Title>
-                                <Card.Text style={{ height: "100px" }}>
-                                    {model.description}
-                                </Card.Text>
-                                {/* <Button variant="secondary">Download Model</Button> */}
-                            </Card.Body>
-                        </Card>
-                    </Col>
-                )
+                rndModels.models.map(model => <RnDCard key={model.car + model.part} model={model} />)
             }
-        </Row>
+        </Row >
     </div >)
 }
 
