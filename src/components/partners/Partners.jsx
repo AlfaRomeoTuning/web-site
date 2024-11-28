@@ -41,6 +41,10 @@ export function Partners() {
                     <img alt="works-by-gw" className='partners-image worksbygw  small-image'
                         src={require("./../../assets/partners/worksbygw.png")} />
                 </a>
+                <a href="https://www.paris5garage.it/" className='partner'>
+                    <img alt="works-by-gw" className='partners-image'
+                        src={require("./../../assets/partners/ParisFiveGarage.png")} />
+                </a>
             </div>
         </div>
     </div>)

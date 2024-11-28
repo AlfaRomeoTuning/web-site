@@ -9,8 +9,10 @@ function Navigation() {
     return (
         <>
             <div className="App" id="navbar">
-                <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
-                    <Container  >
+                <Navbar 
+                className='navbar-top'
+                bg="dark" data-bs-theme="dark">
+                    <Container id='conatiner-navbar'>
                         <Navbar.Brand href="#" className='navbar-link home-link'>
                             <Link to="/">Alfa Tuning</Link>
                         </Navbar.Brand>
