@@ -69,6 +69,12 @@
     background-color: #555555;
 }
 
+#partners-page .partners {
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 60px;
+}
+
 @media only screen and (max-width: 600px) {
     #partners-page .partners {
         display: grid;
@@ -95,4 +101,6 @@
     #partners-page .small-image:hover {
         height: 40px;
     }
+
+   
 }

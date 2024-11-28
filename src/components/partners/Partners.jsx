@@ -21,6 +21,10 @@ export function Partners() {
                     <img alt="eng-custom" className='partners-image eng-custom  small-image'
                         src={require("./../../assets/partners/eng-custom.png")} />
                 </a>
+                <a href="http://www.3dtechnology.pl/" className='partner'>
+                    <img alt="3d technologu" className='partners-image'
+                        src={require("./../../assets/partners/BDTechnology.png")} />
+                </a>
                 <a href="https://alfissimo.com/" className='partner'>
                     <img alt="alfissimo" className='partners-image  small-image'
                         src={require("./../../assets/partners/alfissimo.png")} />
@@ -42,8 +46,12 @@ export function Partners() {
                         src={require("./../../assets/partners/worksbygw.png")} />
                 </a>
                 <a href="https://www.paris5garage.it/" className='partner'>
-                    <img alt="works-by-gw" className='partners-image'
+                    <img alt="paris-5-garage" className='partners-image'
                         src={require("./../../assets/partners/ParisFiveGarage.png")} />
+                </a>
+                <a href="https://www.alfaobd.com/" className='partner'>
+                    <img alt="works-by-gw" className='partners-image small-image'
+                        src={require("./../../assets/partners/AlfaOBD.png")} />
                 </a>
             </div>
         </div>
