@@ -1,11 +1,20 @@
 import './Partners.css'
 import { ReactComponent as AlfaSpecialists } from './../../assets/partners/alfaSpecialists.svg';
+import { Helmet } from 'react-helmet';
 
 export function Partners() {
     return (<div id="partners-page">
+        <Helmet
+        >
+            <title>Partners Alfa Tuning</title>
+            <meta name="description" content="Alfa Tuning partners page" />
+            <meta
+                name="keywords"
+                content="partners, alfa romeo, alfa romeo shop"
+            />
+        </Helmet>
         <div className="partners-container">
             <div className="partners">
-
                 <a href="https://qvstore.pl/" className='partner'>
                     <img alt="quadrifoglioStore" className='partners-image qs-store'
                         src={require("./../../assets/partners/QS.png")} />

@@ -1,7 +1,13 @@
+import { Helmet } from 'react-helmet'
 import './Home.css'
 
 function Home() {
     return (<div id="home">
+        <Helmet
+        >
+            <title>Home Alfa Tuning</title>
+            <meta name="description" content="Alfa Tuning home page" />
+        </Helmet>
         <div className='text-container'>
             <div className='text'>
                 <h1>
@@ -12,6 +18,7 @@ function Home() {
                     we’ve got you covered. You can find here OBD2 interface, 3D models of bodyparts and manuals for it</h4>
             </div>
         </div>
+
     </div>)
 }
 

@@ -9,9 +9,9 @@ function Navigation() {
     return (
         <>
             <div className="App" id="navbar">
-                <Navbar 
-                className='navbar-top'
-                bg="dark" data-bs-theme="dark">
+                <Navbar
+                    className='navbar-top'
+                    bg="dark" data-bs-theme="dark">
                     <Container id='conatiner-navbar'>
                         <Navbar.Brand href="#" className='navbar-link home-link'>
                             <Link to="/">Alfa Tuning</Link>

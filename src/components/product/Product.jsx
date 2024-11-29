@@ -2,12 +2,21 @@ import React from 'react';
 import './Product.css'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
+import { Helmet } from 'react-helmet';
 
 function Product() {
 
     const [fullView, setFullView] = React.useState(true);
 
     return (<div id="product-page">
+        <Helmet>
+            <title>Product Alfa Tuning</title>
+            <meta name="description" content="Alfa Tuning product page for remote flashing device" />
+            <meta
+                name="keywords"
+                content="alfaobd, alfa romeo, alfa romeo shop, alfatuning, obd tool, obd, obd2.0, alfa romeo obd, remote flashing device"
+            />
+        </Helmet>
         <div className='text-container'>
             <Row
                 style={{ width: '100%' }}

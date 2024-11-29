@@ -5,6 +5,7 @@ import rndModels from './rndModels'
 import './RnD.css'
 import { Button, Carousel, Modal } from 'react-bootstrap';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -13,6 +14,15 @@ function RnDCard(props) {
     const [showModal, setShowModal] = React.useState(false);
 
     return <>
+        <Helmet
+        >
+            <title>RnD Alfa Tuning</title>
+            <meta name="description" content="Alfa Tuning research and development page" />
+            <meta
+                name="keywords"
+                content="fender, bumper, airvent, air, vent, alfatuning, 3d model, front fender, alfa romeo, alfaromeo, guilia, quadrifoglio, GTAm, gtam, stelvio"
+            />
+        </Helmet>
         <Col>
             <Card key={props.model.car + props.model.part} onClick={() => setShowModal(true)}>
                 <Card.Img variant="top" src={require('../../assets/rnd/' + props.model.car.replace(/ /g, '') + props.model.part.replace(/ /g, '') + '.png')} />
