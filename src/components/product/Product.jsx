@@ -20,10 +20,6 @@ function Product() {
         <div className='text-container'>
             <Row
                 style={{ width: '100%' }}
-            // xs={1}
-            // sm={2}
-            // md={2}
-            // xxl={2}
             >
                 <Col sm={12} md={5} xxl={5}>
                     <img alt="guilia" onClick={() => setFullView(!fullView)} className='interface-image'
