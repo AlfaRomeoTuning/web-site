@@ -87,6 +87,7 @@ jobs:
 
       - name: Pre-render application
         shell: bash
+        working-directory: build
         run: npx react-snap
 
       - name: Archive Production Artifact
