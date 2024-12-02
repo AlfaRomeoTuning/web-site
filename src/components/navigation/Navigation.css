@@ -35,6 +35,10 @@
     width: 270px;
 }
 
+.default-dom-link {
+    margin-top: 8px;
+}
+
 @media only screen and (max-width: 800px) {
     #conatiner-navbar {
         display: grid !important;

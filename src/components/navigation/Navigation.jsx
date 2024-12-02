@@ -18,12 +18,12 @@ function Navigation() {
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
-                            <Nav >
-                                <Nav.Link className='navbar-link'>
-                                    <Link to="/product">
-                                        Remote Flasher Device
-                                    </Link>
-                                </Nav.Link>
+                            <Nav>
+                                <Link to="/product" className='navbar-link default-dom-link'>
+                                    {/* <Link > */}
+                                    Remote Flasher Device
+                                    {/* </Link> */}
+                                </Link>
 
                                 {/* <Nav.Link className='navbar-link'>
                                     <Link to="/software">
@@ -36,25 +36,19 @@ function Navigation() {
                                         <strong>Instagram:</strong> <a href="https://www.instagram.com/alfatuning.app">alfatuning.app</a><br />
                                         Please allow up to 24 hours for a response. We’ll get back to you as soon as possible!</p>
                                 </NavDropdown>
-                                
 
-                                <Nav.Link className='navbar-link'>
-                                    <Link to="/rnd">
-                                        R&D
-                                    </Link>
-                                </Nav.Link>
 
-                                <Nav.Link className='navbar-link'>
-                                    <Link to="/partners">
-                                        Partners
-                                    </Link>
-                                </Nav.Link>
-                                
-                                <Nav.Link className='navbar-link'>
-                                    <Link to="/">
+                                <Link to="/rnd" className='navbar-link default-dom-link'>
+                                    {/* <Link > */}
+                                    R&D
+                                    {/* </Link> */}
+                                </Link>
 
-                                    </Link>
-                                </Nav.Link>
+                                <Link to="/partners" className='navbar-link default-dom-link'>
+                                    {/* <Link> */}
+                                    Partners
+                                    {/* </Link> */}
+                                </Link>
 
                                 {/* <Nav.Link className='navbar-link'>
                                     <Link onClick={() => window.location = ''}>
