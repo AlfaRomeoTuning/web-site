@@ -36,6 +36,14 @@ function Navigation() {
                                         <strong>Instagram:</strong> <a href="https://www.instagram.com/alfatuning.app">alfatuning.app</a><br />
                                         Please allow up to 24 hours for a response. We’ll get back to you as soon as possible!</p>
                                 </NavDropdown>
+                                
+
+                                <Nav.Link className='navbar-link'>
+                                    <Link to="/rnd">
+                                        R&D
+                                    </Link>
+                                </Nav.Link>
+
                                 <Nav.Link className='navbar-link'>
                                     <Link to="/partners">
                                         Partners
@@ -43,8 +51,8 @@ function Navigation() {
                                 </Nav.Link>
                                 
                                 <Nav.Link className='navbar-link'>
-                                    <Link to="/rnd">
-                                        R&D
+                                    <Link to="/">
+
                                     </Link>
                                 </Nav.Link>
 
