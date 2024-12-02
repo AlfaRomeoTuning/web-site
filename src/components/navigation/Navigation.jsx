@@ -37,15 +37,17 @@ function Navigation() {
                                         Please allow up to 24 hours for a response. We’ll get back to you as soon as possible!</p>
                                 </NavDropdown>
                                 <Nav.Link className='navbar-link'>
-                                    <Link to="/rnd">
-                                        R&D
-                                    </Link>
-                                </Nav.Link>
-                                <Nav.Link className='navbar-link'>
                                     <Link to="/partners">
                                         Partners
                                     </Link>
                                 </Nav.Link>
+                                
+                                <Nav.Link className='navbar-link'>
+                                    <Link to="/rnd">
+                                        R&D
+                                    </Link>
+                                </Nav.Link>
+
                                 {/* <Nav.Link className='navbar-link'>
                                     <Link onClick={() => window.location = ''}>
                                         Contact Us

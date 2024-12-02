@@ -14,8 +14,7 @@ function RnDCard(props) {
     const [showModal, setShowModal] = React.useState(false);
 
     return <>
-        <Helmet
-        >
+        <Helmet>
             <title>RnD Alfa Tuning</title>
             <meta name="description" content="Alfa Tuning research and development page" />
             <meta

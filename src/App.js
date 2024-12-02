@@ -9,7 +9,7 @@ import Software from './components/software/Software';
 import Manuals from './components/manuals/Manuals';
 import Home from './components/home/Home';
 import NoMatch from './components/nomatch/NoMatch';
-import { Partners } from './components/partners/Partners';
+import Partners from './components/partners/Partners';
 
 function App() {
 

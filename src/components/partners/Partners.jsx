@@ -2,10 +2,9 @@ import './Partners.css'
 import { ReactComponent as AlfaSpecialists } from './../../assets/partners/alfaSpecialists.svg';
 import { Helmet } from 'react-helmet';
 
-export function Partners() {
+function Partners() {
     return (<div id="partners-page">
-        <Helmet
-        >
+        <Helmet>
             <title>Partners Alfa Tuning</title>
             <meta name="description" content="Alfa Tuning partners page" />
             <meta
@@ -66,3 +65,5 @@ export function Partners() {
         </div>
     </div>)
 }
+
+export default Partners;
