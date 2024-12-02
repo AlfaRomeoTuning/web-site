@@ -57,12 +57,6 @@ jobs:
             libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release \
             xdg-utils wget
 
-      - name: Install dependencies and build 🔧
-        shell: bash
-        run: |
-          npm install react-snap
-          npm run build
-
       - name: Add react-snap configuration
         uses: jaywcjlove/github-action-package@main
         with:
@@ -70,7 +64,7 @@ jobs:
           data: |
             {
               "reactSnap": {
-                "source": "${{ inputs.output }}",
+                "source": ".",
                 "puppeteerArgs": [
                   "--no-sandbox",
                   "--disable-setuid-sandbox",
@@ -79,16 +73,11 @@ jobs:
                 ]}
             }
 
-      
-      - name: Set up environment for Puppeteer
+      - name: Install dependencies and build 🔧
         shell: bash
         run: |
-          ls -la
-
-      - name: Pre-render application
-        shell: bash
-        working-directory: build
-        run: npx react-snap
+          npm install react-snap
+          npm run build
 
       - name: Archive Production Artifact
         uses: actions/upload-artifact@main
