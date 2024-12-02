@@ -42,7 +42,7 @@ function Navigation() {
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link className='navbar-link'>
-                                    <Link onClick={() => window.location = '/partners'}>
+                                    <Link to={'/partners'}>
                                         Partners
                                     </Link>
                                 </Nav.Link>
