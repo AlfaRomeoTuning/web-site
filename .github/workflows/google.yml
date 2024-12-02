@@ -64,7 +64,7 @@ jobs:
           data: |
             {
               "reactSnap": {
-                "source": ".",
+                "source": "build",
                 "puppeteerArgs": [
                   "--no-sandbox",
                   "--disable-setuid-sandbox",
