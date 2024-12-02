@@ -45,6 +45,11 @@ jobs:
                                             # defaulting to a patch bump.
           rc-wording:     'RELEASE,alpha'
 
+      - name: Set up environment for Puppeteer
+        shell: bash
+        run: |
+          ls -la
+
       - name: Server-side render
         uses: brycedorn/react-snap-action@v1.0.2
 
