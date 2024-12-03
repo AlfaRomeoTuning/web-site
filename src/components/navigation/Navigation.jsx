@@ -14,7 +14,7 @@ function Navigation() {
                     bg="dark" data-bs-theme="dark">
                     <Container id='conatiner-navbar'>
                         <Navbar.Brand href="#" className='navbar-link home-link'>
-                            <Link to="/">Alfa Tuning</Link>
+                            <Link to="/"><img style={{ width: "30px", marginRight: "8px", paddingBottom: "4px" }} alt="logo" src={require("./../../assets/logo.png")}></img>Alfa Tuning</Link>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">

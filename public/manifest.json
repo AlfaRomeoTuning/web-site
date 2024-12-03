@@ -1,14 +1,14 @@
 {
   "short_name": "Alfa Tuning",
-  "name": "Alfa Romeo tuning web page",
+  "name": "Alfa Romeo tuning website",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/jpg"
     },
     {
-      "src": "logo.jpg",
+      "src": "logo.png",
       "type": "image/jpg",
       "sizes": "192x192"
     },

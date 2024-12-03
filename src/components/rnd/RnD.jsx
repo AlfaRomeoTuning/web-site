@@ -23,7 +23,7 @@ function RnDCard(props) {
             />
         </Helmet>
         <Col>
-            <Card key={props.model.car + props.model.part} onClick={() => setShowModal(true)}>
+            <Card key={props.model.car + props.model.part} onClick={() => setShowModal(true)} style={{ cursor: "pointer" }}>
                 <Card.Img variant="top" src={require('../../assets/rnd/' + props.model.car.replace(/ /g, '') + props.model.part.replace(/ /g, '') + '.png')} />
                 <Card.Body>
                     <Card.Title style={{ height: "50px" }}>{props.model.part}</Card.Title>
