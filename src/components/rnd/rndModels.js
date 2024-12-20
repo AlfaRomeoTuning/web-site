@@ -2,6 +2,12 @@ const rnd = {
     models: [
         {
             car: "Giulia GTAm",
+            part: "Front Bumper",
+            childs: [2, 3],
+            description: "Alfa Romeo Giulia GTAm front bumper"
+        },
+        {
+            car: "Giulia GTAm",
             part: "Front Fender",
             childs: [2],
             description: "Alfa Romeo Giulia GTAm front fender 3d scanning with all small details"
