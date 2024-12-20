@@ -79,6 +79,11 @@ jobs:
           npm install react-snap
           npm run build
 
+      - name: Check build contents
+        shell: bash
+        run: |
+          ls -la build
+
       - name: Archive Production Artifact
         uses: actions/upload-artifact@main
         with:
