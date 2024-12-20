@@ -55,7 +55,7 @@ jobs:
             libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 \
             libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 \
             libxss1 libxtst6 ca-certificates fonts-liberation libnss3 lsb-release \
-            xdg-utils wget
+            xdg-utils wget tree
 
       - name: Add react-snap configuration
         uses: jaywcjlove/github-action-package@main
@@ -82,7 +82,7 @@ jobs:
       - name: Check build contents
         shell: bash
         run: |
-          ls -la build
+          tree ./build
 
       - name: Archive Production Artifact
         uses: actions/upload-artifact@main
