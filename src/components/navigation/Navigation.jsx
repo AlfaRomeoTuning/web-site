@@ -19,7 +19,7 @@ function Navigation() {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
                             <Nav>
-                                <Link to="/product" className='navbar-link default-dom-link'>
+                                <Link to="/product/" className='navbar-link default-dom-link'>
                                     {/* <Link > */}
                                     Remote Flasher Device
                                     {/* </Link> */}
@@ -38,13 +38,13 @@ function Navigation() {
                                 </NavDropdown>
 
 
-                                <Link to="/rnd" className='navbar-link default-dom-link'>
+                                <Link to="/rnd/" className='navbar-link default-dom-link'>
                                     {/* <Link > */}
                                     R&D
                                     {/* </Link> */}
                                 </Link>
 
-                                <Link to="/partners" className='navbar-link default-dom-link'>
+                                <Link to="/partners/" className='navbar-link default-dom-link'>
                                     {/* <Link> */}
                                     Partners
                                     {/* </Link> */}
