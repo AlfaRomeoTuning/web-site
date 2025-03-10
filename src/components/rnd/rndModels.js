@@ -77,6 +77,12 @@ const rnd = {
             part: "Front Lower Central Grill",
             childs: [],
             description: "Alfa Romeo Giulia GTAm front lower centrall grill"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Front Grill",
+            childs: [],
+            description: "Alfa Romeo Giulia GTAm front grill"
         }
     ]
 }
