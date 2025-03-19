@@ -25,6 +25,15 @@
     font-weight: 200;
 }
 
+.nomatch{
+    text-align: center;
+}
+
+.nomatch img{
+    margin-top: 20px;
+    height: 40vh;
+}
+
 @media only screen and (max-width: 600px) {
 
     #home {
