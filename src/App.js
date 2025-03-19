@@ -21,6 +21,7 @@ function App() {
         <Route path='/home/' index element={<Home />} />
         <Route path="/product/" element={<Product />} />
         <Route path="/rnd/" element={<RnD />} />
+        <Route path="/" element={<Navigate to="/home/" replace />} />
         <Route path="/software/" element={<Software />} />
         <Route path="/manuals/" element={<Manuals />} />
         <Route path="/partners/" element={<Partners />} />
