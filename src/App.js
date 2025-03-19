@@ -1,7 +1,7 @@
 import './App.css';
 import Navigation from './components/navigation/Navigation';
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Product from './components/product/Product';
 import RnD from './components/rnd/RnD';
@@ -16,13 +16,14 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
-        <Route path="*" element={<NoMatch />} />
+        <Route path="*" element={<Navigate to="/404" replace />} />
         <Route index element={<Home />} />
         <Route path="/product/" element={<Product />} />
         <Route path="/rnd/" element={<RnD />} />
         <Route path="/software/" element={<Software />} />
         <Route path="/manuals/" element={<Manuals />} />
         <Route path="/partners/" element={<Partners />} />
+        <Route path="/404" element={ <NoMatch /> } />
       </Route>
     </Routes >
   );
