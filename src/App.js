@@ -22,7 +22,7 @@ function App() {
         <Route path="/software/" element={<Software />} />
         <Route path="/manuals/" element={<Manuals />} />
         <Route path="/partners/" element={<Partners />} />
-        <Route path="*" element={<NoMatch />} />
+        <Route path="/*" element={<NoMatch />} />
       </Route>
     </Routes >
   );

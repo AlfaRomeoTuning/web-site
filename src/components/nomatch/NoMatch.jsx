@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import "./NoMatch.css";
 
 function NoMatch() {
-    return (<div>
+    return (<div id="nomatch">
         <Helmet
         >
             <title>Not Found Alfa Tuning</title>
