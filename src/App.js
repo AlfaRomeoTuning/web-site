@@ -16,7 +16,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
-        <Route path="*" element={<Navigate to="/404/" replace />} />
+        <Route path="/*" element={<Navigate to="/404/" replace />} />
         <Route path="/404/" element={ <NoMatch /> } />
         <Route path='/home/' index element={<Home />} />
         <Route path="/product/" element={<Product />} />
