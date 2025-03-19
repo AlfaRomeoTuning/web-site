@@ -13,13 +13,13 @@ function Navigation() {
                     className='navbar-top'
                     bg="dark" data-bs-theme="dark">
                     <Container id='conatiner-navbar'>
-                        <Navbar.Brand href="#" className='navbar-link home-link'>
-                            <Link to="/home/"><img style={{ width: "30px", marginRight: "8px", paddingBottom: "4px" }} alt="logo" src={require("./../../assets/logo.png")}></img>Alfa Tuning</Link>
+                        <Navbar.Brand className='navbar-link home-link'>
+                            <Link to="/home"><img style={{ width: "30px", marginRight: "8px", paddingBottom: "4px" }} alt="logo" src={require("./../../assets/logo.png")}></img>Alfa Tuning</Link>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
                             <Nav>
-                                <Link to="/product/" className='navbar-link default-dom-link'>
+                                <Link to="/product" className='navbar-link default-dom-link'>
                                     {/* <Link > */}
                                     Remote Flasher Device
                                     {/* </Link> */}
@@ -38,13 +38,13 @@ function Navigation() {
                                 </NavDropdown>
 
 
-                                <Link to="/rnd/" className='navbar-link default-dom-link'>
+                                <Link to="/rnd" className='navbar-link default-dom-link'>
                                     {/* <Link > */}
                                     R&D
                                     {/* </Link> */}
                                 </Link>
 
-                                <Link to="/partners/" className='navbar-link default-dom-link'>
+                                <Link to="/partners" className='navbar-link default-dom-link'>
                                     {/* <Link> */}
                                     Partners
                                     {/* </Link> */}
