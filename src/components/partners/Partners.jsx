@@ -53,9 +53,9 @@ function Partners() {
                     <img alt="works-by-gw" className='partners-image worksbygw  small-image'
                         src={require("./../../assets/partners/worksbygw.png")} />
                 </a>
-                <a href="https://www.paris5garage.it/" className='partner'>
-                    <img alt="paris-5-garage" className='partners-image'
-                        src={require("./../../assets/partners/ParisFiveGarage.png")} />
+                <a href="https://www.instagram.com/aerodynamic_carbon/" className='partner'>
+                    <img alt="aero-carbon" className='partners-image aerocarbon'
+                        src={require("./../../assets/partners/aerocarbon.png")} />
                 </a>
                 <a href="https://www.alfaobd.com/" className='partner'>
                     <img alt="works-by-gw" className='partners-image small-image'

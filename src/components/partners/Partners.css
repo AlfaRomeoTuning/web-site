@@ -71,6 +71,14 @@
     margin-top: 60px;
 }
 
+#partners-page .aerocarbon{
+    height: 80px;
+}
+
+#partners-page .aerocarbon:hover{
+    height: 82px;
+}
+
 @media only screen and (max-width: 600px) {
     #partners-page .partners {
         display: grid;
