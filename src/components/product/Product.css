@@ -21,3 +21,7 @@
 #product-page p.interface-text {
     /* margin: 0 20px; */
 }
+
+#product-page .product-guide {
+    text-align: center;
+}
