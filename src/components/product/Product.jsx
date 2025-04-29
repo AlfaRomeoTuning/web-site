@@ -42,7 +42,96 @@ function Product() {
                 </Col>
             </Row>
         </div>
-
+        <div className='product-guide'>
+            <h2>How to setup:</h2>
+            <Row style={{ width: '100%', padding: '0 50px', }}>
+                <p style={{ fontWeight: '500' }}>It’s recommended to connect to your HOME Wifi if your car is close to your wifi router. Cell phone Wifi could be
+                    too slow and cause issues during writing the software.
+                    Always run a WiFi speedtest near your car to check the strength of the WiFi signal.
+                    Don’t forget to activate compatibility mode (for 2.4ghz wifi)</p>
+                <Col sm={12} md={6} xxl={6}>
+                    <h3>Android users</h3>
+                    <div style={{ textAlign: "left" }}>
+                        <b>Open Settings:</b><br />
+                        Find and tap the "Settings" app on your Windows/Android device.<br />
+                        <img src={require("./../../assets/setup/android/settings.jpg")} alt="" style={{ height: "500px" }} />
+                        <br />
+                        <b>Network & Internet:</b><br />
+                        Tap on "Network & Internet" (this option might be named differently depending on your device, such as
+                        "Connections" or "Wireless & networks"). <br />
+                        <img src={require("./../../assets/setup/android/connections.jpg")} alt="" style={{ height: "500px" }} />
+                        <br />
+                        <b>Hotspot & Tethering:</b> <br />
+                        Tap on "Hotspot & tethering" or "Mobile Hotspot."<br />
+                        <img src={require("./../../assets/setup/android/mobileHotspot.jpg")} alt="" style={{ height: "500px" }} />
+                        <br />
+                        <b>Wi-Fi Hotspot:</b> <br />
+                        Tap on "Wi-Fi Hotspot" or "Portable Wi-Fi hotspot." <br />
+                        <b>Configure Hotspot:</b>
+                        Tap on "Set up Wi-Fi hotspot" or "Configure." <br />
+                        <img src={require("./../../assets/setup/android/configureMobileHotspot.jpg")} alt="" style={{ height: "500px" }} />
+                        <br />
+                        <b>Set Network Name:</b> <br />
+                        Enter "AlfaRomeoFlasher" in the Network name field. <br />
+                        <b>Set Password:</b> <br />
+                        Enter "password" in the Password field. <br />
+                        <b>Save Settings:</b> <br />
+                        Tap "Save" or "Apply" to save your settings. <br />
+                        <b>Enable Hotspot:</b> <br />
+                        Toggle the switch to turn on the Wi-Fi hotspot. <br />
+                        <img src={require("./../../assets/setup/android/curtain.jpg")} alt="" style={{ height: "500px" }} />
+                        <br />
+                        <b>Connect Devices:</b> <br />
+                        Your hotspot is now ready. Look for "AlfaRomeoFlasher" on your portable device and connect using the password
+                        "password."
+                        <br />
+                        <br />
+                        <b>Remarks:</b> <br />
+                        Keep in mind, each cellphone has own version of android/iOS. Settings can be labeled a bit different <br />
+                        <b>DO NOT PLUG IN AND REMOVE THE DEVICE MANY TIMES.</b> <br /> connect device only after hotspot is ready and
+                        wait few minutes after plugged in to the ca
+                        Internet connection and signal should be strong and stable. Otherwise, it can cause connection loss.
+                        After connecting it’s better to not remove the device just because something seems to be wrong
+                        Connect the device and leave it. Even if it does not connect
+                        If a hotspot is created properly. it will connect automatically
+                        <br />
+                        <br />
+                    </div>
+                </Col>
+                <Col sm={12} md={6} xxl={6}>
+                    <h3>IOS users</h3>
+                    <div style={{ textAlign: "left" }}>
+                        <b>Open Settings:</b><br />
+                        Find and tap the "Settings" app on your iPhone. <br />
+                        <b>Personal Hotspot:</b> <br />
+                        Tap on "Personal Hotspot." If you don't see this option, tap on "Cellular" first, and then you'll find "Personal
+                        Hotspot." <br />
+                        <b>Enable Hotspot:</b> <br />
+                        Toggle the "Allow Others to Join" switch to turn on the hotspot. <br />
+                        <b>Set Wi-Fi Name:</b> <br />
+                        Tap on "Wi-Fi Password." (Note: iPhone doesn't allow changing the Wi-Fi name directly from the settings as it uses
+                        the device's name. To change the Wi-Fi name, you need to change your iPhone's name.)
+                        Go back to "Settings" <span>&#8594;</span> "General" <span>&#8594;</span> "About" <span>&#8594;</span> "Name." <br />
+                        Change the device name to "AlfaRomeoFlasher." <br />
+                        <b>Set Password:</b> <br />
+                        Enter "password" as the Wi-Fi password and tap "Done." <br />
+                        <b>Connect Devices:</b> <br />
+                        Your hotspot is now ready. Look for "AlfaRomeoFlasher" on your portable device and connect using the password
+                        "password."
+                        <br />
+                        <br />
+                        <b>Remarks:</b> <br />
+                        Keep in mind, each cellphone has its own version of android/IOS. Settings can be labeled a bit different <br />
+                        <b>DO NOT PLUG IN AND REMOVE THE DEVICE MANY TIMES.</b> <br /> connect device only after hotspot is ready and
+                        wait few minutes after plugged in to the car
+                        Internet connection and signal should be strong and stable. If not, it can cause connection loss.
+                        After connecting it’s better to not remove the device just because something seems to be wrong
+                        Connect the device and leave it. Even if it does not connect
+                        If the hotspot is created properly. it will connect automatically
+                    </div>
+                </Col>
+            </Row>
+        </div>
     </div >)
 }
 
