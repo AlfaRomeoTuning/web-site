@@ -5,9 +5,9 @@ import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet';
 
 function Product() {
-
     const [fullView, setFullView] = React.useState(true);
-
+    const uA = navigator.userAgent || navigator.vendor || window.opera;
+    console.log((/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document));
     return (<div id="product-page">
         <Helmet>
             <title>Product Alfa Tuning</title>
@@ -43,14 +43,14 @@ function Product() {
             </Row>
         </div>
         <div className='product-guide'>
-            <h2>How to setup:</h2>
+            <h2><a href={(/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document) ? "#ios" : "#android"}>How to setup:</a></h2>
             <Row style={{ width: '100%', padding: '0 50px', }}>
                 <p style={{ fontWeight: '500' }}>It’s recommended to connect to your HOME Wifi if your car is close to your wifi router. Cell phone Wifi could be
                     too slow and cause issues during writing the software.
                     Always run a WiFi speedtest near your car to check the strength of the WiFi signal.
                     Don’t forget to activate compatibility mode (for 2.4ghz wifi)</p>
                 <Col sm={12} md={6} xxl={6}>
-                    <h3>Android users</h3>
+                    <h3 id='android'>Android users</h3>
                     <div style={{ textAlign: "left" }}>
                         <b>Open Settings:</b><br />
                         Find and tap the "Settings" app on your Windows/Android device.<br />
@@ -99,22 +99,35 @@ function Product() {
                     </div>
                 </Col>
                 <Col sm={12} md={6} xxl={6}>
-                    <h3>IOS users</h3>
+                    <h3 id="ios">IOS users</h3>
                     <div style={{ textAlign: "left" }}>
                         <b>Open Settings:</b><br />
                         Find and tap the "Settings" app on your iPhone. <br />
+                        <img src={require("./../../assets/setup/ios/settings.PNG")} alt="" style={{ height: "500px" }} />
+                        <br />
                         <b>Personal Hotspot:</b> <br />
                         Tap on "Personal Hotspot." If you don't see this option, tap on "Cellular" first, and then you'll find "Personal
                         Hotspot." <br />
+                        <img src={require("./../../assets/setup/ios/personalHotspot.PNG")} alt="" style={{ height: "500px" }} />
+                        <br />
                         <b>Enable Hotspot:</b> <br />
                         Toggle the "Allow Others to Join" switch to turn on the hotspot. <br />
+                        <img src={require("./../../assets/setup/ios/personalHotspotConfigure1.PNG")} alt="" style={{ height: "500px" }} />
+                        <br />
                         <b>Set Wi-Fi Name:</b> <br />
                         Tap on "Wi-Fi Password." (Note: iPhone doesn't allow changing the Wi-Fi name directly from the settings as it uses
                         the device's name. To change the Wi-Fi name, you need to change your iPhone's name.)
                         Go back to "Settings" <span>&#8594;</span> "General" <span>&#8594;</span> "About" <span>&#8594;</span> "Name." <br />
                         Change the device name to "AlfaRomeoFlasher." <br />
+                        <div style={{ display: "flex", flexWrap: "wrap", columnGap: "10px" }}>
+                            <img src={require("./../../assets/setup/ios/rename1.PNG")} alt="" style={{ height: "500px", marginBottom: "10px" }} />
+                            <img src={require("./../../assets/setup/ios/rename2.PNG")} alt="" style={{ height: "500px", marginBottom: "10px" }} />
+                            <img src={require("./../../assets/setup/ios/rename4.PNG")} alt="" style={{ height: "500px", marginBottom: "10px" }} />
+                        </div><br />
                         <b>Set Password:</b> <br />
                         Enter "password" as the Wi-Fi password and tap "Done." <br />
+                        <img src={require("./../../assets/setup/ios/personalHotspotConfigure2.PNG")} alt="" style={{ height: "500px" }} />
+                        <br />
                         <b>Connect Devices:</b> <br />
                         Your hotspot is now ready. Look for "AlfaRomeoFlasher" on your portable device and connect using the password
                         "password."
@@ -128,6 +141,8 @@ function Product() {
                         After connecting it’s better to not remove the device just because something seems to be wrong
                         Connect the device and leave it. Even if it does not connect
                         If the hotspot is created properly. it will connect automatically
+                        <br />
+                        <br />
                     </div>
                 </Col>
             </Row>
