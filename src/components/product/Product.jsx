@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet';
 function Product() {
     const [fullView, setFullView] = React.useState(true);
     const uA = navigator.userAgent || navigator.vendor || window.opera;
-    console.log((/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document));
+
     return (<div id="product-page">
         <Helmet>
             <title>Product Alfa Tuning</title>
