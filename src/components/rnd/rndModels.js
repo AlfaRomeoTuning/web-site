@@ -83,6 +83,18 @@ const rnd = {
             part: "Front Grill",
             childs: [],
             description: "Alfa Romeo Giulia GTAm front grill"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Seat Bracket",
+            childs: [2,3],
+            description: "Alfa Romeo Giulia GTAm seat brackets"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Rear Fender Arch",
+            childs: [2],
+            description: "Alfa Romeo Giulia GTAm rear fender arch"
         }
     ]
 }
