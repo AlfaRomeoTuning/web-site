@@ -87,7 +87,7 @@ const rnd = {
         {
             car: "Giulia GTAm",
             part: "Seat Bracket",
-            childs: [2,3],
+            childs: [2, 3],
             description: "Alfa Romeo Giulia GTAm seat brackets"
         },
         {
@@ -95,6 +95,18 @@ const rnd = {
             part: "Rear Fender Arch",
             childs: [2],
             description: "Alfa Romeo Giulia GTAm rear fender arch"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Washer Cap",
+            childs: [2],
+            description: "Alfa Romeo Giulia GTAm washer cap"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Rollbar Mount",
+            childs: [2],
+            description: "Alfa Romeo Giulia GTAm rollbar mount"
         }
     ]
 }

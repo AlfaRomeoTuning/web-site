@@ -61,6 +61,10 @@ function Partners() {
                     <img alt="works-by-gw" className='partners-image small-image'
                         src={require("./../../assets/partners/AlfaOBD.png")} />
                 </a>
+                <a href="https://www.multiair-tuning-dev.com/" className='partner'>
+                    <img alt="works-by-gw" className='partners-image small-image'
+                        src={require("./../../assets/partners/MtD.png")} />
+                </a>
             </div>
         </div>
     </div>)
