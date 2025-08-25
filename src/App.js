@@ -17,6 +17,7 @@ let router = createBrowserRouter(
     <Route path="/404" element={<NoMatch />} />
     <Route index element={<Home />} />
     <Route path="/product" element={<Product />} />
+    <Route path="/device" element={<Product />} />
     <Route path="/rnd" element={<RnD />} />
     <Route path="/software" element={<Software />} />
     <Route path="/manuals" element={<Manuals />} />

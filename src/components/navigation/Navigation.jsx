@@ -19,17 +19,9 @@ function Navigation() {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
                             <Nav>
-                                <Link to="/product" className='navbar-link default-dom-link'>
-                                    {/* <Link > */}
+                                <Link to="/device" className='navbar-link default-dom-link'>
                                     Remote Flasher Device
-                                    {/* </Link> */}
                                 </Link>
-
-                                {/* <Nav.Link className='navbar-link'>
-                                    <Link to="/software">
-                                        Software
-                                    </Link>
-                                </Nav.Link> */}
                                 <NavDropdown title="Contact Us" id="basic-nav-dropdown" >
                                     <p className='navbar-contact-us'>Have questions about our Alfa Romeo flashing device or interested in a custom solution for your vehicle? We're here to help!<br />
                                         <strong>Email us:</strong> <a href="mailto:artem@alfatuning.app">artem@alfatuning.app</a><br />
@@ -39,28 +31,13 @@ function Navigation() {
 
 
                                 <Link to="/rnd" className='navbar-link default-dom-link'>
-                                    {/* <Link > */}
                                     R&D
-                                    {/* </Link> */}
                                 </Link>
 
                                 <Link to="/partners" className='navbar-link default-dom-link'>
-                                    {/* <Link> */}
                                     Partners
-                                    {/* </Link> */}
                                 </Link>
 
-                                {/* <Nav.Link className='navbar-link'>
-                                    <Link onClick={() => window.location = ''}>
-                                        Contact Us
-                                    </Link>
-                                </Nav.Link> */}
-
-                                {/* <Nav.Link className='navbar-link'>
-                                    <Link to="/manuals">
-                                        Manuals
-                                    </Link>
-                                </Nav.Link> */}
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
