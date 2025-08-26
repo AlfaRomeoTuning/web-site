@@ -76,7 +76,6 @@ jobs:
       - name: Install dependencies and build 🔧
         shell: bash
         run: |
-          npm install react-router-sitemap --legacy-peer-deps
           npm install react-snap
           npm run build
 
