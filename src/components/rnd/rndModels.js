@@ -107,6 +107,12 @@ const rnd = {
             part: "Rollbar Mount",
             childs: [2],
             description: "Alfa Romeo Giulia GTAm rollbar mount"
+        },
+        {
+            car: "Giulia GTAm",
+            part: "Wing",
+            childs: [2, 3, 4, 5],
+            description: "Alfa Romeo Giulia GTAm rear adjustable wing"
         }
     ]
 }
