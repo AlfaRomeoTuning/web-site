@@ -114,6 +114,13 @@ const rnd = {
             childs: [2, 3, 4, 5],
             description: "Alfa Romeo Giulia GTAm rear adjustable wing"
         }
+        ,
+        {
+            car: "Giulia GTAm",
+            part: "Hub Bearing",
+            childs: [2, 3, 4, 5, 6],
+            description: "Alfa Romeo Giulia GTAm Hub Bearing with Toolhead"
+        }
     ]
 }
 
