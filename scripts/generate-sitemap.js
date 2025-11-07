@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Импортируем данные моделей
-const rndModelsPath = path.join(__dirname, '../src/components/RnD/rndModels.js');
+const rndModelsPath = path.join(__dirname, '../src/components/rnd/rndModels.js');
 let rndModels;
 
 try {
