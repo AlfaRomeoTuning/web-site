@@ -77,6 +77,7 @@ jobs:
         shell: bash
         run: |
           npm install react-snap
+          npm run generate-sitemap
           npm run build
 
       - name: Check build contents

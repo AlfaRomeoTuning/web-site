@@ -1,4 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
-sitemap: https://alfatuning.com/sitemap.xml/
+Allow: /
+
+Sitemap: https://alfatuning.com/sitemap.xml
