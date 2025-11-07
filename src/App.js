@@ -5,6 +5,7 @@ import { Route, Navigate, createBrowserRouter, createRoutesFromElements, RouterP
 
 import Product from './components/product/Product';
 import RnD from './components/rnd/RnD';
+import RnDDetail from './components/rnd/RnDDetail';
 import Software from './components/software/Software';
 import Manuals from './components/manuals/Manuals';
 import Home from './components/home/Home';
@@ -19,6 +20,7 @@ let router = createBrowserRouter(
     <Route path="/product" element={<Product />} />
     <Route path="/device" element={<Product />} />
     <Route path="/rnd" element={<RnD />} />
+    <Route path="/rnd/:slug" element={<RnDDetail />} />
     <Route path="/software" element={<Software />} />
     <Route path="/manuals" element={<Manuals />} />
     <Route path="/partners" element={<Partners />} />

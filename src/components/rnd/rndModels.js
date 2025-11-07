@@ -110,9 +110,16 @@ const rnd = {
         },
         {
             car: "Giulia GTAm",
-            part: "Wing",
+            part: "Rear Wing",
             childs: [2, 3, 4, 5],
             description: "Alfa Romeo Giulia GTAm rear adjustable wing"
+        }
+        ,
+        {
+            car: "Giulia GTA",
+            part: "Rear Spoiler",
+            childs: [2, 3],
+            description: "Alfa Romeo Giulia GTA rear spoiler"
         }
         ,
         {
