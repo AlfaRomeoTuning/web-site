@@ -19,7 +19,7 @@ try {
     rndModels = { models: [] };
 }
 
-const baseUrl = 'https://alfatuning.com';
+const baseUrl = 'https://alfatuning.app';
 const today = new Date().toISOString().split('T')[0];
 
 const urls = [
