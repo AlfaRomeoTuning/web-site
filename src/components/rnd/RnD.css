@@ -9,6 +9,7 @@
 
 .hover-shadow {
     transition: box-shadow 0.3s ease;
+    box-shadow: 1px 9px 9px rgba(0, 0, 0, 0.15);
 }
 
 .hover-shadow:hover {
