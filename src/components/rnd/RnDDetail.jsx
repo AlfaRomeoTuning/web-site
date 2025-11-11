@@ -5,6 +5,8 @@ import { Container, Button, Carousel, Row, Col, Breadcrumb } from 'react-bootstr
 import { Helmet } from 'react-helmet';
 import rndModels from './rndModels';
 import './RnD.css';
+import parse from 'html-react-parser';
+import DOMPurify from 'dompurify';
 
 function RnDDetail() {
     const { slug } = useParams();
@@ -32,12 +34,18 @@ function RnDDetail() {
     const pageUrl = window.location.origin + `/rnd/${slug}`;
     const mainImage = require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png');
 
+    // Очищаем HTML для использования в мета-тегах (только текст)
+    const plainTextDescription = model.description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    
+    // Очищаем и санитизируем HTML для отображения
+    const sanitizedDescription = DOMPurify.sanitize(model.description);
+
     // Structured Data для конкретного продукта
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "Product",
         "name": `${model.part} for ${model.car.map(m => m).join(', ')}`,
-        "description": model.description,
+        "description": plainTextDescription,
         "brand": {
             "@type": "Brand",
             "name": "Alfa Tuning"
@@ -54,7 +62,7 @@ function RnDDetail() {
                 <title>{`${model.part} for ${model.car.map(m => m).join(', ')} | Alfa Tuning R&D`}</title>
                 <meta
                     name="description"
-                    content={`${model.description} - Custom ${model.part} designed for ${model.car}. Premium 3D model and tuning part by Alfa Tuning.`}
+                    content={`${plainTextDescription} - Custom ${model.part} designed for ${model.car.join(', ')}. Premium 3D model and tuning part by Alfa Tuning.`}
                 />
                 <meta
                     name="keywords"
@@ -67,7 +75,7 @@ function RnDDetail() {
                 {/* Open Graph */}
                 <meta property="og:type" content="product" />
                 <meta property="og:title" content={`${model.part} for ${model.car.map(m => m).join(', ')}`} />
-                <meta property="og:description" content={model.description} />
+                <meta property="og:description" content={plainTextDescription} />
                 <meta property="og:url" content={pageUrl} />
                 <meta property="og:image" content={mainImage} />
                 <meta property="og:site_name" content="Alfa Tuning" />
@@ -75,7 +83,7 @@ function RnDDetail() {
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${model.part} for ${model.car.map(m => m).join(', ')}`} />
-                <meta name="twitter:description" content={model.description} />
+                <meta name="twitter:description" content={plainTextDescription} />
                 <meta name="twitter:image" content={mainImage} />
 
                 {/* Structured Data */}
@@ -121,7 +129,9 @@ function RnDDetail() {
 
                             <div className="mb-4">
                                 <h3 className="h5">Description</h3>
-                                <p>{model.description}</p>
+                                <div className="model-description">
+                                    {parse(sanitizedDescription)}
+                                </div>
                             </div>
 
                             <div className="d-grid gap-2">
@@ -130,7 +140,7 @@ function RnDDetail() {
                                     size="lg"
                                     onClick={() => {
                                         // Здесь можно добавить функционал скачивания
-                                        alert('Download functionality coming soon!');
+                                        alert('Contact with us about that!');
                                     }}
                                 >
                                     Download 3D Model

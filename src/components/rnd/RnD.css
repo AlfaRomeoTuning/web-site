@@ -34,3 +34,34 @@
     white-space: nowrap;
     border: 0;
 }
+
+.model-description {
+    line-height: 1.6;
+}
+
+.model-description strong,
+.model-description b {
+    font-weight: 600;
+    color: #212529;
+}
+
+.model-description em,
+.model-description i {
+    font-style: italic;
+}
+
+.model-description ul,
+.model-description ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.model-description a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.model-description a:hover {
+    text-decoration: underline;
+}

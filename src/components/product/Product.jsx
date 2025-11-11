@@ -33,9 +33,9 @@ function Product() {
                     <p className='interface-text'>
                         <b>Boost Performance:</b> Upgrade your Quadrifoglio engine to GTAm specifications for an impressive 540 HP or increase horsepower for 2.0 engine models.<br />
                         <b> Transmission Customization: </b>Enjoy custom flashing options for 8HP50 and 8HP75 gearboxes, including adding Launch Control and adjusting to GTAm standards.<br />
-                        <b> Race Mode DTCM:</b> Activate race mode for enhanced dynamics and responsiveness.<br />
+                        <b> Race Mode fix:</b> Software upgrade of Drivetrain Control Module (DTCM) to activate race mode.<br />
                         <b> Compatibility with Upgraded Components:</b> Configure modules to work seamlessly with retrofitted ETM and other enhancements.<br />
-                        <b> Module Reset and Clean-Up: </b>Clear VIN codes and refresh BCM to a like-new condition.<br />
+                        <b> Module Reset and Clean-Up: </b>Clear VIN codes in all modules.<br />
                         <b>Flexible Customization:</b> Any additional updates and software upgrades for your unique driving style.<br />
                         <br />Our service also offers special solutions for tuning companies, allowing them to perform remote flashing for their clients' Alfa Romeo vehicles. Leverage our technology to expand your service offerings and provide high-quality upgrades right from your workshop.
                         <br />Trust in technology that doesn’t just enhance but transforms your Alfa Romeo. Build a car ready for the track and enjoy every moment behind the wheel!</p>
@@ -83,7 +83,7 @@ function Product() {
                         <br />
                         <b>Connect Devices:</b> <br />
                         Your hotspot is now ready. Look for "AlfaRomeoFlasher" on your portable device and connect using the password
-                        "password."
+                        "password".
                         <br />
                         <br />
                         <b>Remarks:</b> <br />
@@ -115,7 +115,7 @@ function Product() {
                         <img src={require("./../../assets/setup/ios/personalHotspotConfigure1.PNG")} alt="" style={{ height: "500px" }} />
                         <br />
                         <b>Set Wi-Fi Name:</b> <br />
-                        Tap on "Wi-Fi Password." (Note: iPhone doesn't allow changing the Wi-Fi name directly from the settings as it uses
+                        Tap on "Wi-Fi Password" (Note: iPhone doesn't allow changing the Wi-Fi name directly from the settings as it uses
                         the device's name. To change the Wi-Fi name, you need to change your iPhone's name.)
                         Go back to "Settings" <span>&#8594;</span> "General" <span>&#8594;</span> "About" <span>&#8594;</span> "Name." <br />
                         Change the device name to "AlfaRomeoFlasher." <br />
@@ -130,7 +130,7 @@ function Product() {
                         <br />
                         <b>Connect Devices:</b> <br />
                         Your hotspot is now ready. Look for "AlfaRomeoFlasher" on your portable device and connect using the password
-                        "password."
+                        "password".
                         <br />
                         <br />
                         <b>Remarks:</b> <br />
