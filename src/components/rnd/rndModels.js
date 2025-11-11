@@ -2,88 +2,88 @@ const rnd = {
     models: [
         {
             // can be multiple cars in the future ["Giulia GTAm", "Giulia GTA", ...]
-            car: ["Giulia GTAm",],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Front Bumper",
             childs: [2, 3],
-            description: "Alfa Romeo Giulia GTAm front bumper"
+            description: "Alfa Romeo Giulia GTA / GTAm front bumper"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Front Fender",
             childs: [2],
-            description: "Alfa Romeo Giulia GTAm front fender 3d scanning with all small details"
+            description: "Alfa Romeo Giulia GTA / GTAm front fender 3d scanning with all small details"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Rear Bumper Diffuser",
             childs: [2, 3, 4],
-            description: "Alfa Romeo Giulia GTAm rear diffuser 3D scanning"
+            description: "Alfa Romeo Giulia GTA / GTAm rear diffuser 3D scanning"
         },
         {
             car: ["Giulia GTAm"],
             part: "Front Adjustable Splitter",
             childs: [2, 3, 4, 5, 6],
-            description: "Alfa Romeo Giulia GTAm front adjustable splitter body 3D scanning"
+            description: "Alfa Romeo Giulia GTA / GTAm front adjustable splitter body 3D scanning"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Fender Air Vent",
             childs: [2],
-            description: "Alfa Romeo Giulia GTAm front bumper internal mounts 3D scanning"
+            description: "Alfa Romeo Giulia GTA / GTAm front bumper internal mounts 3D scanning"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Bumper Cooler Air Conductor",
             childs: [2],
-            description: "Alfa Romeo Giulia GTAm front adjustable splitter cover"
+            description: "Alfa Romeo Giulia GTA / GTAm front adjustable splitter cover"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Front Fender Mudguard Front Part",
             childs: [2],
-            description: "Alfa Romeo Giulia GTAm rear part of left front fender mudguard 3D scanning"
+            description: "Alfa Romeo Giulia GTA / GTAm rear part of left front fender mudguard 3D scanning"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Side Skirt",
             childs: [2, 3],
-            description: "Alfa Romeo Giulia GTAm side skirt"
+            description: "Alfa Romeo Giulia GTA / GTAm side skirt"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Front Fender Mudguard Rear Part",
             childs: [2, 3],
-            description: "Alfa Romeo Giulia GTAm Front Fender Mudguard Rear Part"
+            description: "Alfa Romeo Giulia GTA / GTAm Front Fender Mudguard Rear Part"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Radiator Air Conductor",
             childs: [2, 3],
-            description: "Alfa Romeo Giulia GTAm radiator air conductor"
+            description: "Alfa Romeo Giulia GTA / GTAm radiator air conductor"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Front Bumper Side Insert",
             childs: [2],
-            description: "Alfa Romeo Giulia GTAm front bumper side"
+            description: "Alfa Romeo Giulia GTA / GTAm front bumper side"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Side Grill",
             childs: [2, 3],
-            description: "Alfa Romeo Giulia GTAm front bumper side grill"
+            description: "Alfa Romeo Giulia GTA / GTAm front bumper side grill"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Front Lower Central Grill",
             childs: [],
-            description: "Alfa Romeo Giulia GTAm front lower centrall grill"
+            description: "Alfa Romeo Giulia GTA / GTAm front lower centrall grill"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Front Grill",
             childs: [],
-            description: "Alfa Romeo Giulia GTAm front grill"
+            description: "Alfa Romeo Giulia GTA / GTAm front grill"
         },
         {
             car: ["Giulia GTAm"],
@@ -92,16 +92,16 @@ const rnd = {
             description: "Alfa Romeo Giulia GTAm seat brackets"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Rear Fender Arch",
             childs: [2],
-            description: "Alfa Romeo Giulia GTAm rear fender arch"
+            description: "Alfa Romeo Giulia GTA / GTAm rear fender arch"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Washer Cap",
             childs: [2],
-            description: "Alfa Romeo Giulia GTAm washer cap"
+            description: "Alfa Romeo Giulia GTA / GTAm washer cap"
         },
         {
             car: ["Giulia GTAm"],
@@ -122,10 +122,10 @@ const rnd = {
             description: "Alfa Romeo Giulia GTA rear spoiler"
         },
         {
-            car: ["Giulia GTAm"],
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Hub Bearing",
-            childs: [2, 3, 4, 5, 6],
-            description: "Alfa Romeo Giulia GTAm Hub Bearing with Toolhead"
+            childs: [2, 3, 4, 5, 6, 7],
+            description: "Alfa Romeo Giulia GTA / GTAm Hub Bearing with Toolhead"
         }
     ]
 }
