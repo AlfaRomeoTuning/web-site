@@ -46,7 +46,7 @@ function RnDDetail() {
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": `${model.part} for ${model.car.map(m => m).join(', ')}`,
+        "name": `${model.part} for Alfa Romeo ${model.car.map(m => m).join(', ')}`,
         "description": plainTextDescription,
         "brand": {
             "@type": "Brand",
@@ -61,7 +61,7 @@ function RnDDetail() {
         <>
             <Helmet>
                 <html lang="en" />
-                <title>{`${model.part} for ${model.car.map(m => m).join(', ')} | Alfa Tuning R&D`}</title>
+                <title>{`${model.part} for Alfa Romeo ${model.car.map(m => m).join(', ')} | Alfa Tuning Research and Development`}</title>
                 <meta
                     name="description"
                     content={`${plainTextDescription} - Custom ${model.part} designed for ${model.car.join(', ')}. Premium 3D model and tuning part by Alfa Tuning.`}
@@ -109,8 +109,8 @@ function RnDDetail() {
                                 <img
                                     className="d-block w-100 rnd-detail-image"
                                     src={mainImage}
-                                    alt={`${model.part} 3D model for ${model.car.join(', ')} - Main View`}
-                                    title={`${model.part} for ${model.car.join(', ')} - Main View`}
+                                    alt={`${model.part} 3D model for Alfa Romeo ${model.car.join(', ')} - Main View`}
+                                    title={`${model.part} for Alfa Romeo ${model.car.join(', ')} - Main View`}
                                 />
                             </Carousel.Item>
                             {model.childs && model.childs.map((child, index) => (
@@ -118,8 +118,8 @@ function RnDDetail() {
                                     <img
                                         className="d-block w-100 rnd-detail-image"
                                         src={require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + child + '.png')}
-                                        alt={`${model.part} for ${model.car[0]} - View ${index + 2}`}
-                                        title={`${model.part} for ${model.car.join(', ')} - View ${index + 2}`}
+                                        alt={`${model.part} for Alfa Romeo ${model.car[0]} - View ${index + 2}`}
+                                        title={`${model.part} for Alfa Romeo ${model.car.join(', ')} - View ${index + 2}`}
                                     />
                                 </Carousel.Item>
                             ))}
