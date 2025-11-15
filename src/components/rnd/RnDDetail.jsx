@@ -32,7 +32,9 @@ function RnDDetail() {
     }
 
     const pageUrl = window.location.origin + `/rnd/${slug}`;
-    const mainImage = require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png');
+    const imageFileName = model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png';
+    const mainImage = require('../../assets/rnd/' + imageFileName); // For <img> tag
+    const mainImageAbsolute = `${window.location.origin}/assets/rnd/${imageFileName}`; // For meta tags
 
     // Очищаем HTML для использования в мета-тегах (только текст)
     const plainTextDescription = model.description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
@@ -50,7 +52,7 @@ function RnDDetail() {
             "@type": "Brand",
             "name": "Alfa Tuning"
         },
-        "image": mainImage,
+        "image": mainImageAbsolute,
         "url": pageUrl,
         "category": "Automotive Parts"
     };
@@ -77,14 +79,14 @@ function RnDDetail() {
                 <meta property="og:title" content={`${model.part} for ${model.car.map(m => m).join(', ')}`} />
                 <meta property="og:description" content={plainTextDescription} />
                 <meta property="og:url" content={pageUrl} />
-                <meta property="og:image" content={mainImage} />
+                <meta property="og:image" content={mainImageAbsolute} />
                 <meta property="og:site_name" content="Alfa Tuning" />
 
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${model.part} for ${model.car.map(m => m).join(', ')}`} />
                 <meta name="twitter:description" content={plainTextDescription} />
-                <meta name="twitter:image" content={mainImage} />
+                <meta name="twitter:image" content={mainImageAbsolute} />
 
                 {/* Structured Data */}
                 <script type="application/ld+json">
@@ -107,7 +109,8 @@ function RnDDetail() {
                                 <img
                                     className="d-block w-100 rnd-detail-image"
                                     src={mainImage}
-                                    alt={`${model.part} for ${model.car[0]} - main view`}
+                                    alt={`${model.part} 3D model for ${model.car.join(', ')} - Main View`}
+                                    title={`${model.part} for ${model.car.join(', ')} - Main View`}
                                 />
                             </Carousel.Item>
                             {model.childs && model.childs.map((child, index) => (
@@ -115,7 +118,8 @@ function RnDDetail() {
                                     <img
                                         className="d-block w-100 rnd-detail-image"
                                         src={require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + child + '.png')}
-                                        alt={`${model.part} for ${model.car[0]} - view ${index + 2}`}
+                                        alt={`${model.part} for ${model.car[0]} - View ${index + 2}`}
+                                        title={`${model.part} for ${model.car.join(', ')} - View ${index + 2}`}
                                     />
                                 </Carousel.Item>
                             ))}
