@@ -1,11 +1,6 @@
 {
   "name": "alfa-tuning-site",
-<<<<<<< HEAD
   "version": "0.6.10",
-=======
-  "homepage": "https://alfatuning.app",
-  "version": "0.6.9",
->>>>>>> d75d36b (fixes)
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
