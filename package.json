@@ -1,6 +1,11 @@
 {
   "name": "alfa-tuning-site",
+<<<<<<< HEAD
   "version": "0.6.10",
+=======
+  "homepage": "https://alfatuning.app",
+  "version": "0.6.9",
+>>>>>>> d75d36b (fixes)
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -49,10 +54,14 @@
     "ajv": "^8.17.1"
   },
   "reactSnap": {
-    "sitemap": {
-      "hostname": "https://alfatuning.app"
-    },
+    "inlineCss": true,
+    "puppeteerArgs": ["--no-sandbox"],
     "source": "build",
+    "minifyHtml": {
+      "removeComments": false
+    },
+    "fixWebpackChunksIssue": false,
+    "crawl": true,
     "destination": "build"
   }
 }
