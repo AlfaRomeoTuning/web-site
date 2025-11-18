@@ -31,8 +31,9 @@ function RnDDetail() {
         );
     }
 
+    const isBrowser = typeof navigator !== "undefined";
     const BASE_URL =
-        process.env.NODE_ENV == "production" && navigator.userAgent != "ReactSnap"
+        process.env.NODE_ENV === "production" && isBrowser && navigator.userAgent !== "ReactSnap"
             ? "/"
             : "https://alfatuing.app";
 
