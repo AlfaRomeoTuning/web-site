@@ -1,6 +1,6 @@
 {
   "name": "alfa-tuning-site",
-  "version": "0.6.10",
+  "version": "0.6.11",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -50,7 +50,9 @@
   },
   "reactSnap": {
     "inlineCss": true,
-    "puppeteerArgs": ["--no-sandbox"],
+    "puppeteerArgs": [
+      "--no-sandbox"
+    ],
     "source": "build",
     "minifyHtml": {
       "removeComments": false
