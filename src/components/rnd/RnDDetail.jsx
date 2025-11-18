@@ -32,9 +32,13 @@ function RnDDetail() {
     }
 
     const pageUrl = window.location.origin + `/rnd/${slug}`;
-    const imageFileName = model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png';
-    const mainImage = require('../../assets/rnd/' + imageFileName); // For <img> tag
-    const mainImageAbsolute = `${window.location.origin}/assets/rnd/${imageFileName}`; // For meta tags
+    const mainImageModule = require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png');
+    const mainImage = typeof mainImageModule === 'string' ? mainImageModule : (mainImageModule && mainImageModule.default) ? mainImageModule.default : '';
+    
+    // Prefer absolute URL for social/meta/structured-data
+    const absoluteMainImage = mainImage
+        ? (/^https?:\/\//i.test(mainImage) ? mainImage : window.location.origin + (mainImage.startsWith('/') ? '' : '/') + mainImage)
+        : '';
 
     // Очищаем HTML для использования в мета-тегах (только текст)
     const plainTextDescription = model.description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
@@ -52,7 +56,7 @@ function RnDDetail() {
             "@type": "Brand",
             "name": "Alfa Tuning"
         },
-        "image": mainImageAbsolute,
+        "image": absoluteMainImage,
         "url": pageUrl,
         "category": "Automotive Parts"
     };
@@ -79,14 +83,14 @@ function RnDDetail() {
                 <meta property="og:title" content={`${model.part} for ${model.car.map(m => m).join(', ')}`} />
                 <meta property="og:description" content={plainTextDescription} />
                 <meta property="og:url" content={pageUrl} />
-                <meta property="og:image" content={mainImageAbsolute} />
+                <meta property="og:image" content={absoluteMainImage} />
                 <meta property="og:site_name" content="Alfa Tuning" />
 
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={`${model.part} for ${model.car.map(m => m).join(', ')}`} />
                 <meta name="twitter:description" content={plainTextDescription} />
-                <meta name="twitter:image" content={mainImageAbsolute} />
+                <meta name="twitter:image" content={absoluteMainImage} />
 
                 {/* Structured Data */}
                 <script type="application/ld+json">
