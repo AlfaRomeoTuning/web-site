@@ -25,7 +25,8 @@ function RnDCard(props) {
                     <Card.Img
                         variant="top"
                         src={require('../../assets/rnd/' + props.model.car[0].replace(/ /g, '') + props.model.part.replace(/ /g, '') + '.png')}
-                        alt={`${props.model.part} for ${props.model.car[0]} - Alfa Tuning 3D model`}
+                        alt={`${props.model.part} for ${props.model.car.join(', ')} - Alfa Tuning 3D model`}
+                        title={`${props.model.part} for Alfa Romeo ${props.model.car.join(', ')} - Alfa Tuning 3D model`}
                         loading="lazy"
                     />
                     <Card.Body>

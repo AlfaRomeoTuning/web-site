@@ -33,7 +33,9 @@ function Product() {
                     <p className='interface-text'>
                         <b>Boost Performance:</b> Upgrade your Quadrifoglio engine to GTAm specifications for an impressive 540 HP or increase horsepower for 2.0 engine models.<br />
                         <b> Transmission Customization: </b>Enjoy custom flashing options for 8HP50 and 8HP75 gearboxes, including adding Launch Control and adjusting to GTAm standards.<br />
+                        <b> Shift Paddles fix:</b> Software upgrade of Transmission Control Module (TCM) to fix not working shifrint paddles in Race mode.<br />
                         <b> Race Mode fix:</b> Software upgrade of Drivetrain Control Module (DTCM) to activate race mode.<br />
+                        <b> EVAP fix:</b> Software upgrade of Engine Control Module (ECM) to disable faulty EVAP system.<br />
                         <b> Compatibility with Upgraded Components:</b> Configure modules to work seamlessly with retrofitted ETM and other enhancements.<br />
                         <b> Module Reset and Clean-Up: </b>Clear VIN codes in all modules.<br />
                         <b>Flexible Customization:</b> Any additional updates and software upgrades for your unique driving style.<br />
