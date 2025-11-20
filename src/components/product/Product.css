@@ -1,27 +1,565 @@
-#product-page .text-container {
-    padding: 5px;
-    padding-top: 5%;
-}
+/* Product Page Styles */
 
-#product-page .text {
-    color: black;
-    /* background-color: #00000063; */
-    /* text-align: right; */
-}
-
-#product-page .interface-image {
-    width: 100%;
-    cursor: pointer;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #product-page {
-    height: 99%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
 }
 
-#product-page p.interface-text {
-    /* margin: 0 20px; */
+.text-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-#product-page .product-guide {
+/* ============ HERO SECTION ============ */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+}
+
+.hero-section .text-container {
+    position: relative;
+    z-index: 1;
+}
+
+.image-column {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.image-wrapper {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.image-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.image-wrapper .interface-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.image-wrapper:hover .interface-image {
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.image-hint {
     text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.text-column h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.note {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px 20px;
+    border-left: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cta-buttons button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: white;
+    color: #667eea;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: white;
+}
+
+.btn-outline-primary {
+    background: transparent;
+    color: white;
+}
+
+.btn-outline-primary:hover {
+    background: white;
+    color: #667eea;
+}
+
+.btn-lg {
+    font-size: 1.1rem;
+    padding: 14px 40px;
+}
+
+/* ============ FEATURES SECTION ============ */
+.features-section {
+    background: white;
+    padding: 80px 0;
+}
+
+.features-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.features-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.feature-card {
+    margin-bottom: 30px;
+}
+
+.feature-content {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 5px solid transparent;
+    height: 100%;
+}
+
+.feature-content:hover {
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+    border-left-color: #667eea;
+    transform: translateY(-5px);
+}
+
+.feature-content h4 {
+    color: #667eea;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.feature-content p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.service-highlight {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    padding: 40px;
+    border-radius: 15px;
+    margin-top: 50px;
+    border: 1px solid #667eea30;
+}
+
+.service-highlight h3 {
+    color: #667eea;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.service-highlight p {
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.service-highlight p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============ SETUP GUIDE SECTION ============ */
+.product-guide {
+    background: #f8f9fa;
+    padding: 80px 0;
+}
+
+.product-guide h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.product-guide h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.prerequisites {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.prerequisites h3 {
+    color: #667eea;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.prerequisites ul {
+    list-style: none;
+}
+
+.prerequisites li {
+    padding: 10px 0;
+    color: #555;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.prerequisites li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* ============ TAB NAVIGATION ============ */
+.tab-navigation {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-button {
+    background: transparent;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab-button:hover {
+    color: #667eea;
+}
+
+.tab-button.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
+}
+
+/* ============ SETUP CONTENT ============ */
+.setup-content {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.setup-content h3 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+.instruction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.instruction-step {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.instruction-step:hover {
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.step-number {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.step-header h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.step-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.step-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    max-height: 400px;
+    display: block;
+}
+
+.setup-notes {
+    background: #fef3cd;
+    border: 1px solid #ffc107;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+.setup-notes h4 {
+    color: #856404;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.setup-notes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.setup-notes li {
+    color: #856404;
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.setup-notes li::before {
+    content: '⚠';
+    position: absolute;
+    left: 0;
+    margin-right: 10px;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .text-column h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .cta-buttons button {
+        width: 100%;
+    }
+
+    .features-section {
+        padding: 60px 0;
+    }
+
+    .features-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-guide h2 {
+        font-size: 1.8rem;
+    }
+
+    .tab-navigation {
+        flex-wrap: wrap;
+    }
+
+    .tab-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .step-header {
+        flex-wrap: wrap;
+    }
+
+    .instruction-step {
+        padding: 20px;
+    }
+
+    .step-number {
+        min-width: 35px;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .setup-notes {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-container {
+        padding: 0 15px;
+    }
+
+    .text-column h1 {
+        font-size: 1.6rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .features-section h2,
+    .product-guide h2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-content {
+        padding: 20px;
+    }
+
+    .feature-content h4 {
+        font-size: 1.1rem;
+    }
+
+    .tab-navigation {
+        gap: 5px;
+    }
+
+    .tab-button {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    .instruction-step {
+        padding: 15px;
+    }
+
+    .step-image {
+        max-height: 300px;
+    }
+}
+
+/* ============ UTILITY CLASSES ============ */
+.text {
+    text-align: left;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
 }

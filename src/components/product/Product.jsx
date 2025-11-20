@@ -6,150 +6,298 @@ import { Helmet } from 'react-helmet';
 
 function Product() {
     const [fullView, setFullView] = React.useState(true);
+    const [activeTab, setActiveTab] = React.useState('features');
     const uA = navigator.userAgent || navigator.vendor || window.opera;
+    const isIOS = (/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document);
 
-    return (<div id="product-page">
-        <Helmet>
-            <title>Product Alfa Tuning</title>
-            <meta name="description" content="Alfa Tuning product page for remote flashing device" />
-            <meta
-                name="keywords"
-                content="alfaobd, alfa romeo, alfa romeo shop, alfatuning, obd tool, obd, obd2.0, alfa romeo obd, remote flashing device"
-            />
-        </Helmet>
-        <div className='text-container'>
-            <Row
-                style={{ width: '100%' }}
-            >
-                <Col sm={12} md={5} xxl={5}>
-                    <img alt="guilia" onClick={() => setFullView(!fullView)} className='interface-image'
-                        src={require(fullView ? "./../../assets/AlfaFlasher00.png" : "./../../assets/AlfaFlasher01.png")} />
-                </Col>
-                <Col sm={12} md={7} xxl={7} className="text">
-                    <h3>Unleash the Full Potential of Your Alfa Romeo with Our Advanced Remote Flashing Device!</h3>
-                    <p>
-                        Take your Alfa Romeo Giulia or Stelvio to the next level with cutting-edge upgrades and enhancements tailored for car enthusiasts and professionals alike.<span className='font-weight-light'> (GTAm upgrades are available exclusively for Quadrifoglio owners.)</span>
-                    </p>
-                    <p className='interface-text'>
-                        <b>Boost Performance:</b> Upgrade your Quadrifoglio engine to GTAm specifications for an impressive 540 HP or increase horsepower for 2.0 engine models.<br />
-                        <b> Transmission Customization: </b>Enjoy custom flashing options for 8HP50 and 8HP75 gearboxes, including adding Launch Control and adjusting to GTAm standards.<br />
-                        <b> Shift Paddles fix:</b> Software upgrade of Transmission Control Module (TCM) to fix not working shifrint paddles in Race mode.<br />
-                        <b> Race Mode fix:</b> Software upgrade of Drivetrain Control Module (DTCM) to activate race mode.<br />
-                        <b> EVAP fix:</b> Software upgrade of Engine Control Module (ECM) to disable faulty EVAP system.<br />
-                        <b> Compatibility with Upgraded Components:</b> Configure modules to work seamlessly with retrofitted ETM and other enhancements.<br />
-                        <b> Module Reset and Clean-Up: </b>Clear VIN codes in all modules.<br />
-                        <b>Flexible Customization:</b> Any additional updates and software upgrades for your unique driving style.<br />
-                        <br />Our service also offers special solutions for tuning companies, allowing them to perform remote flashing for their clients' Alfa Romeo vehicles. Leverage our technology to expand your service offerings and provide high-quality upgrades right from your workshop.
-                        <br />Trust in technology that doesn’t just enhance but transforms your Alfa Romeo. Build a car ready for the track and enjoy every moment behind the wheel!</p>
-                </Col>
-            </Row>
-        </div>
-        <div className='product-guide'>
-            <h2><a href={(/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document) ? "#ios" : "#android"}>How to setup:</a></h2>
-            <Row style={{ width: '100%', padding: '0 50px', }}>
-                <p style={{ fontWeight: '500' }}>It’s recommended to connect to your HOME Wifi if your car is close to your wifi router. Cell phone Wifi could be
-                    too slow and cause issues during writing the software.
-                    Always run a WiFi speedtest near your car to check the strength of the WiFi signal.
-                    Don’t forget to activate compatibility mode (for 2.4ghz wifi)</p>
-                <Col sm={12} md={6} xxl={6}>
-                    <h3 id='android'>Android users</h3>
-                    <div style={{ textAlign: "left" }}>
-                        <b>Open Settings:</b><br />
-                        Find and tap the "Settings" app on your Windows/Android device.<br />
-                        <img src={require("./../../assets/setup/android/settings.jpg")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Network & Internet:</b><br />
-                        Tap on "Network & Internet" (this option might be named differently depending on your device, such as
-                        "Connections" or "Wireless & networks"). <br />
-                        <img src={require("./../../assets/setup/android/connections.jpg")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Hotspot & Tethering:</b> <br />
-                        Tap on "Hotspot & tethering" or "Mobile Hotspot."<br />
-                        <img src={require("./../../assets/setup/android/mobileHotspot.jpg")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Wi-Fi Hotspot:</b> <br />
-                        Tap on "Wi-Fi Hotspot" or "Portable Wi-Fi hotspot." <br />
-                        <b>Configure Hotspot:</b>
-                        Tap on "Set up Wi-Fi hotspot" or "Configure." <br />
-                        <img src={require("./../../assets/setup/android/configureMobileHotspot.jpg")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Set Network Name:</b> <br />
-                        Enter "AlfaRomeoFlasher" in the Network name field. <br />
-                        <b>Set Password:</b> <br />
-                        Enter "password" in the Password field. <br />
-                        <b>Save Settings:</b> <br />
-                        Tap "Save" or "Apply" to save your settings. <br />
-                        <b>Enable Hotspot:</b> <br />
-                        Toggle the switch to turn on the Wi-Fi hotspot. <br />
-                        <img src={require("./../../assets/setup/android/curtain.jpg")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Connect Devices:</b> <br />
-                        Your hotspot is now ready. Look for "AlfaRomeoFlasher" on your portable device and connect using the password
-                        "password".
-                        <br />
-                        <br />
-                        <b>Remarks:</b> <br />
-                        Keep in mind, each cellphone has own version of android/iOS. Settings can be labeled a bit different <br />
-                        <b>DO NOT PLUG IN AND REMOVE THE DEVICE MANY TIMES.</b> <br /> connect device only after hotspot is ready and
-                        wait few minutes after plugged in to the ca
-                        Internet connection and signal should be strong and stable. Otherwise, it can cause connection loss.
-                        After connecting it’s better to not remove the device just because something seems to be wrong
-                        Connect the device and leave it. Even if it does not connect
-                        If a hotspot is created properly. it will connect automatically
-                        <br />
-                        <br />
+    const features = [
+        {
+            title: "Boost Performance",
+            description: "Upgrade your Quadrifoglio engine to GTAm specifications for an impressive 540 HP or increase horsepower for 2.0 engine models."
+        },
+        {
+            title: "Transmission Customization",
+            description: "Enjoy custom flashing options for 8HP50 and 8HP75 gearboxes, including adding Launch Control and adjusting to GTAm standards."
+        },
+        {
+            title: "Shift Paddles Fix",
+            description: "Software upgrade of Transmission Control Module (TCM) to fix non-working shift paddles in Race mode."
+        },
+        {
+            title: "Race Mode Fix",
+            description: "Software upgrade of Drivetrain Control Module (DTCM) to activate race mode."
+        },
+        {
+            title: "EVAP Fix",
+            description: "Software upgrade of Engine Control Module (ECM) to disable faulty EVAP system."
+        },
+        {
+            title: "Component Compatibility",
+            description: "Configure modules to work seamlessly with retrofitted ETM and other enhancements."
+        },
+        {
+            title: "Module Reset",
+            description: "Clear VIN codes in all modules for a clean slate."
+        },
+        {
+            title: "Flexible Customization",
+            description: "Any additional updates and software upgrades tailored to your unique driving style."
+        }
+    ];
+
+    return (
+        <div id="product-page">
+            <Helmet>
+                <title>Product Alfa Tuning</title>
+                <meta name="description" content="Alfa Tuning product page for remote flashing device" />
+                <meta
+                    name="keywords"
+                    content="alfaobd, alfa romeo, alfa romeo shop, alfatuning, obd tool, obd, obd2.0, alfa romeo obd, remote flashing device"
+                />
+            </Helmet>
+
+            {/* Hero Section */}
+            <section className='hero-section'>
+                <div className='text-container'>
+                    <Row style={{ width: '100%', alignItems: 'center' }}>
+                        <Col sm={12} md={5} className="image-column">
+                            <div className="image-wrapper" onClick={() => setFullView(!fullView)}>
+                                <img 
+                                    alt="Alfa Romeo Flashing Device Interface" 
+                                    className='interface-image'
+                                    src={require(fullView ? "./../../assets/AlfaFlasher00.png" : "./../../assets/AlfaFlasher01.png")} 
+                                />
+                                <p className="image-hint">Click to switch view</p>
+                            </div>
+                        </Col>
+                        <Col sm={12} md={7} className="text-column">
+                            <h1>Unleash the Full Potential of Your Alfa Romeo</h1>
+                            <p className="subtitle">Advanced Remote Flashing Device for Giulia & Stelvio</p>
+                            <p className="description">
+                                Take your Alfa Romeo to the next level with cutting-edge upgrades and enhancements tailored for car enthusiasts and professionals alike.
+                            </p>
+                            <p className="note">
+                                <strong>Note:</strong> GTAm upgrades are available exclusively for Quadrifoglio owners.
+                            </p>
+                            <div className="cta-buttons">
+                                <button className="btn btn-primary btn-lg">Get Started</button>
+                                <button className="btn btn-outline-primary btn-lg">Learn More</button>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+            </section>
+
+            {/* Features Section */}
+            <section className='features-section'>
+                <div className='text-container'>
+                    <h2>What We Offer</h2>
+                    <Row style={{ width: '100%' }}>
+                        {features.map((feature, index) => (
+                            <Col sm={12} md={6} lg={6} key={index} className="feature-card">
+                                <div className="feature-content">
+                                    <h4>{feature.title}</h4>
+                                    <p>{feature.description}</p>
+                                </div>
+                            </Col>
+                        ))}
+                    </Row>
+                    <div className="service-highlight">
+                        <h3>Professional Services</h3>
+                        <p>
+                            Our service also offers special solutions for tuning companies, allowing them to perform remote flashing for their clients' Alfa Romeo vehicles. Leverage our technology to expand your service offerings and provide high-quality upgrades right from your workshop.
+                        </p>
+                        <p>
+                            Trust in technology that doesn't just enhance but transforms your Alfa Romeo. Build a car ready for the track and enjoy every moment behind the wheel!
+                        </p>
                     </div>
-                </Col>
-                <Col sm={12} md={6} xxl={6}>
-                    <h3 id="ios">IOS users</h3>
-                    <div style={{ textAlign: "left" }}>
-                        <b>Open Settings:</b><br />
-                        Find and tap the "Settings" app on your iPhone. <br />
-                        <img src={require("./../../assets/setup/ios/settings.PNG")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Personal Hotspot:</b> <br />
-                        Tap on "Personal Hotspot." If you don't see this option, tap on "Cellular" first, and then you'll find "Personal
-                        Hotspot." <br />
-                        <img src={require("./../../assets/setup/ios/personalHotspot.PNG")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Enable Hotspot:</b> <br />
-                        Toggle the "Allow Others to Join" switch to turn on the hotspot. <br />
-                        <img src={require("./../../assets/setup/ios/personalHotspotConfigure1.PNG")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Set Wi-Fi Name:</b> <br />
-                        Tap on "Wi-Fi Password" (Note: iPhone doesn't allow changing the Wi-Fi name directly from the settings as it uses
-                        the device's name. To change the Wi-Fi name, you need to change your iPhone's name.)
-                        Go back to "Settings" <span>&#8594;</span> "General" <span>&#8594;</span> "About" <span>&#8594;</span> "Name." <br />
-                        Change the device name to "AlfaRomeoFlasher." <br />
-                        <div style={{ display: "flex", flexWrap: "wrap", columnGap: "10px" }}>
-                            <img src={require("./../../assets/setup/ios/rename1.PNG")} alt="" style={{ height: "500px", marginBottom: "10px" }} />
-                            <img src={require("./../../assets/setup/ios/rename2.PNG")} alt="" style={{ height: "500px", marginBottom: "10px" }} />
-                            <img src={require("./../../assets/setup/ios/rename4.PNG")} alt="" style={{ height: "500px", marginBottom: "10px" }} />
-                        </div><br />
-                        <b>Set Password:</b> <br />
-                        Enter "password" as the Wi-Fi password and tap "Done." <br />
-                        <img src={require("./../../assets/setup/ios/personalHotspotConfigure2.PNG")} alt="" style={{ height: "500px" }} />
-                        <br />
-                        <b>Connect Devices:</b> <br />
-                        Your hotspot is now ready. Look for "AlfaRomeoFlasher" on your portable device and connect using the password
-                        "password".
-                        <br />
-                        <br />
-                        <b>Remarks:</b> <br />
-                        Keep in mind, each cellphone has its own version of android/IOS. Settings can be labeled a bit different <br />
-                        <b>DO NOT PLUG IN AND REMOVE THE DEVICE MANY TIMES.</b> <br /> connect device only after hotspot is ready and
-                        wait few minutes after plugged in to the car
-                        Internet connection and signal should be strong and stable. If not, it can cause connection loss.
-                        After connecting it’s better to not remove the device just because something seems to be wrong
-                        Connect the device and leave it. Even if it does not connect
-                        If the hotspot is created properly. it will connect automatically
-                        <br />
-                        <br />
+                </div>
+            </section>
+
+            {/* Setup Guide Section */}
+            <section className='product-guide'>
+                <div className='text-container'>
+                    <h2>How to Setup</h2>
+                    
+                    {/* Prerequisites */}
+                    <div className="prerequisites">
+                        <h3>Before You Start</h3>
+                        <ul>
+                            <li>Connect to your <strong>HOME WiFi</strong> if your car is close to your router (Cell phone WiFi may be too slow)</li>
+                            <li>Run a WiFi speedtest near your car to check signal strength</li>
+                            <li>Ensure internet connection is strong and stable</li>
+                            <li>Activate compatibility mode for 2.4GHz WiFi networks</li>
+                            <li><strong>Do not plug in and remove the device multiple times</strong></li>
+                        </ul>
                     </div>
-                </Col>
-            </Row>
+
+                    {/* Tab Navigation */}
+                    <div className="tab-navigation">
+                        <button 
+                            className={`tab-button ${activeTab === 'android' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('android')}
+                        >
+                            Android Setup
+                        </button>
+                        <button 
+                            className={`tab-button ${activeTab === 'ios' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('ios')}
+                        >
+                            iOS Setup
+                        </button>
+                    </div>
+
+                    {/* Android Setup */}
+                    {activeTab === 'android' && (
+                        <div className="setup-content android-setup">
+                            <h3 id='android'>Android Setup Instructions</h3>
+                            <div className="instruction-list">
+                                <InstructionStep 
+                                    number="1"
+                                    title="Open Settings"
+                                    description="Find and tap the 'Settings' app on your device."
+                                    imageSrc={require("./../../assets/setup/android/settings.jpg")}
+                                    imageAlt="Android Settings icon"
+                                />
+                                <InstructionStep 
+                                    number="2"
+                                    title="Network & Internet"
+                                    description="Tap on 'Network & Internet' (may be labeled as 'Connections' or 'Wireless & networks' depending on your device)."
+                                    imageSrc={require("./../../assets/setup/android/connections.jpg")}
+                                    imageAlt="Network and Internet settings"
+                                />
+                                <InstructionStep 
+                                    number="3"
+                                    title="Hotspot & Tethering"
+                                    description="Tap on 'Hotspot & tethering' or 'Mobile Hotspot'."
+                                    imageSrc={require("./../../assets/setup/android/mobileHotspot.jpg")}
+                                    imageAlt="Mobile Hotspot option"
+                                />
+                                <InstructionStep 
+                                    number="4"
+                                    title="Configure Wi-Fi Hotspot"
+                                    description="Tap on 'Wi-Fi Hotspot' or 'Portable Wi-Fi hotspot', then 'Set up Wi-Fi hotspot' or 'Configure'."
+                                    imageSrc={require("./../../assets/setup/android/configureMobileHotspot.jpg")}
+                                    imageAlt="Configure hotspot settings"
+                                />
+                                <InstructionStep 
+                                    number="5"
+                                    title="Set Network Name & Password"
+                                    description={
+                                        <>
+                                            <div><strong>Network Name:</strong> Enter "AlfaRomeoFlasher"</div>
+                                            <div><strong>Password:</strong> Enter "password"</div>
+                                        </>
+                                    }
+                                />
+                                <InstructionStep 
+                                    number="6"
+                                    title="Enable Hotspot"
+                                    description="Tap 'Save' or 'Apply', then toggle the switch to turn on the Wi-Fi hotspot."
+                                    imageSrc={require("./../../assets/setup/android/curtain.jpg")}
+                                    imageAlt="Hotspot toggle switch"
+                                />
+                                <InstructionStep 
+                                    number="7"
+                                    title="Connect Your Device"
+                                    description="Look for 'AlfaRomeoFlasher' on your portable device and connect using password 'password'."
+                                />
+                            </div>
+                            <div className="setup-notes">
+                                <h4>Important Notes</h4>
+                                <ul>
+                                    <li>Each device may have slightly different settings labels</li>
+                                    <li>Connect device only after hotspot is ready and wait a few minutes after plugging in</li>
+                                    <li>Do not repeatedly plug in and remove the device</li>
+                                    <li>If the hotspot is created properly, it will connect automatically</li>
+                                    <li>Keep the device connected even if it doesn't connect immediately</li>
+                                </ul>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* iOS Setup */}
+                    {activeTab === 'ios' && (
+                        <div className="setup-content ios-setup">
+                            <h3 id="ios">iOS Setup Instructions</h3>
+                            <div className="instruction-list">
+                                <InstructionStep 
+                                    number="1"
+                                    title="Open Settings"
+                                    description="Find and tap the 'Settings' app on your iPhone."
+                                    imageSrc={require("./../../assets/setup/ios/settings.PNG")}
+                                    imageAlt="iOS Settings icon"
+                                />
+                                <InstructionStep 
+                                    number="2"
+                                    title="Enable Personal Hotspot"
+                                    description="Tap on 'Personal Hotspot'. If you don't see this option, tap on 'Cellular' first."
+                                    imageSrc={require("./../../assets/setup/ios/personalHotspot.PNG")}
+                                    imageAlt="Personal Hotspot option"
+                                />
+                                <InstructionStep 
+                                    number="3"
+                                    title="Allow Others to Join"
+                                    description="Toggle the 'Allow Others to Join' switch to turn on the hotspot."
+                                    imageSrc={require("./../../assets/setup/ios/personalHotspotConfigure1.PNG")}
+                                    imageAlt="Allow Others to Join toggle"
+                                />
+                                <InstructionStep 
+                                    number="4"
+                                    title="Change Device Name"
+                                    description="Go to Settings → General → About → Name and change the device name to 'AlfaRomeoFlasher'."
+                                    imageSrc={require("./../../assets/setup/ios/rename1.PNG")}
+                                    imageAlt="Device name settings"
+                                />
+                                <InstructionStep 
+                                    number="5"
+                                    title="Set Wi-Fi Password"
+                                    description="Tap on 'Wi-Fi Password' and enter 'password' as the password, then tap 'Done'."
+                                    imageSrc={require("./../../assets/setup/ios/personalHotspotConfigure2.PNG")}
+                                    imageAlt="WiFi password configuration"
+                                />
+                                <InstructionStep 
+                                    number="6"
+                                    title="Connect Your Device"
+                                    description="Look for 'AlfaRomeoFlasher' on your portable device and connect using password 'password'."
+                                />
+                            </div>
+                            <div className="setup-notes">
+                                <h4>Important Notes</h4>
+                                <ul>
+                                    <li>Each device may have slightly different settings labels</li>
+                                    <li>Connect device only after hotspot is ready and wait a few minutes after plugging in</li>
+                                    <li>Do not repeatedly plug in and remove the device</li>
+                                    <li>If the hotspot is created properly, it will connect automatically</li>
+                                    <li>Keep the device connected even if it doesn't connect immediately</li>
+                                </ul>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </section>
         </div>
-    </div >)
+    );
 }
 
-export default Product
+// Helper component for instruction steps
+function InstructionStep({ number, title, description, imageSrc, imageAlt }) {
+    return (
+        <div className="instruction-step">
+            <div className="step-header">
+                <div className="step-number">{number}</div>
+                <h4>{title}</h4>
+            </div>
+            <p className="step-description">{description}</p>
+            {imageSrc && (
+                <img 
+                    src={imageSrc} 
+                    alt={imageAlt} 
+                    className="step-image"
+                />
+            )}
+        </div>
+    );
+}
+
+export default Product;
