@@ -7,8 +7,8 @@ import { Helmet } from 'react-helmet';
 function Product() {
     const [fullView, setFullView] = React.useState(true);
     const [activeTab, setActiveTab] = React.useState('features');
-    const uA = navigator.userAgent || navigator.vendor || window.opera;
-    const isIOS = (/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document);
+    //const uA = navigator.userAgent || navigator.vendor || window.opera;
+    //const isIOS = (/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document);
 
     const features = [
         {
