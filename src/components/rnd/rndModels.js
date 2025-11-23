@@ -123,6 +123,12 @@ const rnd = {
         },
         {
             car: ["Giulia GTAm", "Giulia GTA"],
+            part: "Wheel",
+            childs: [],
+            description: "Alfa Romeo Giulia GTA / GTAm  wheel"
+        },
+        {
+            car: ["Giulia GTAm", "Giulia GTA"],
             part: "Hub Bearing",
             childs: [2, 3, 4, 5, 6, 7],
             description: "Alfa Romeo Giulia GTA / GTAm Hub Bearing with Toolhead.<br />This complete hub bearing kit is engineered for accurate fitment on the Alfa Romeo Giulia GTA and GTAm. The central lock nut system uses different thread directions for each side of the vehicle: left-hand thread on one side and right-hand thread on the opposite side. This design ensures correct securing of the hub under high load conditions. The kit also includes a star locking plate to secure the central lock nut and a protective center cap cover. Manufactured to OEM tolerances to ensure proper alignment, long-term durability, and reliable torque distribution during street and track use."
