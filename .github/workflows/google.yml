@@ -135,3 +135,13 @@ jobs:
             --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
             --platform "managed" \
             --allow-unauthenticated
+
+      # Clean up old repository images
+      - name: Clean up old images
+        run: |-
+          gcloud container images list-tags "gcr.io/$PROJECT_ID/$SERVICE_NAME" \
+            --sort-by=TIMESTAMP \
+            --format="get(digest)" \
+            --limit=-1 | tail -n +6 | \
+            xargs -I {} gcloud container images delete "gcr.io/$PROJECT_ID/$SERVICE_NAME@{}" --quiet || true
+        continue-on-error: true
