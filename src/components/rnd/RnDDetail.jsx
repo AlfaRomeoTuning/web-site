@@ -64,7 +64,18 @@ function RnDDetail() {
         },
         "image": absoluteMainImage,
         "url": pageUrl,
-        "category": "Automotive Parts"
+        "category": "Automotive Parts",
+        "offers": {
+            "@type": "Offer",
+            "url": pageUrl,
+            "priceCurrency": "USD",
+            "price": "0.00",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Alfa Tuning"
+        }
+    }
     };
 
     return (
