@@ -32,7 +32,7 @@ const urls = [
 // Добавляем все модели
 if (rndModels.models && Array.isArray(rndModels.models)) {
     rndModels.models.forEach(model => {
-        const slug = `${model.carcar[0]}-${model.part}`
+        const slug = `${model.car[0]}-${model.part}`
             .toLowerCase()
             .replace(/\s+/g, '-')
             .replace(/[^a-z0-9-]/g, '');
