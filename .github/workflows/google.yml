@@ -140,7 +140,7 @@ jobs:
       - name: Clean up old images
         run: |-
           gcloud container images list-tags "gcr.io/$PROJECT_ID/$SERVICE_NAME" \
-            --sort-by=TIMESTAMP \
+            --sort-by=-TIMESTAMP \
             --format="get(digest)" | tail -n +6 | \
             xargs -I {} gcloud container images delete "gcr.io/$PROJECT_ID/$SERVICE_NAME@{}" --quiet --force-delete-tags || true
         continue-on-error: true
