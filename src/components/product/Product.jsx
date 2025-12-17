@@ -45,15 +45,35 @@ function Product() {
         }
     ];
 
+    const flasherImageModule = require("../../assets/AlfaFlasher00.png");
+    const flasherImage = typeof flasherImageModule === 'string' ? flasherImageModule : flasherImageModule.default;
+    const absoluteImage = "https://alfatuning.app" + flasherImage;
+    const pageUrl = "https://alfatuning.app/device";
+
     return (
         <div id="product-page">
             <Helmet>
-                <title>Product Alfa Tuning</title>
-                <meta name="description" content="Alfa Tuning product page for remote flashing device" />
+                <title>Product Alfa Tuning | Remote Flashing Device</title>
+                <meta name="description" content="Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio, including GTAm upgrades, Race Mode, and more." />
                 <meta
                     name="keywords"
-                    content="alfaobd, alfa romeo, alfa romeo shop, alfatuning, obd tool, obd, obd2.0, alfa romeo obd, remote flashing device"
+                    content="alfaobd, alfa romeo, alfa romeo shop, alfatuning, obd tool, obd, obd2.0, alfa romeo obd, remote flashing device, tuning, ecu remap"
                 />
+                <link rel="canonical" href={pageUrl} />
+
+                {/* Open Graph */}
+                <meta property="og:title" content="Product Alfa Tuning | Remote Flashing Device" />
+                <meta property="og:description" content="Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio." />
+                <meta property="og:type" content="product" />
+                <meta property="og:url" content={pageUrl} />
+                <meta property="og:image" content={absoluteImage} />
+                <meta property="og:site_name" content="Alfa Tuning" />
+
+                {/* Twitter Card */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Product Alfa Tuning | Remote Flashing Device" />
+                <meta name="twitter:description" content="Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio." />
+                <meta name="twitter:image" content={absoluteImage} />
             </Helmet>
 
             {/* Hero Section */}
@@ -62,10 +82,10 @@ function Product() {
                     <Row style={{ width: '100%', alignItems: 'center' }}>
                         <Col sm={12} md={5} className="image-column">
                             <div className="image-wrapper" onClick={() => setFullView(!fullView)}>
-                                <img 
-                                    alt="Alfa Romeo Flashing Device Interface" 
+                                <img
+                                    alt="Alfa Romeo Flashing Device Interface"
                                     className='interface-image'
-                                    src={require(fullView ? "./../../assets/AlfaFlasher00.png" : "./../../assets/AlfaFlasher01.png")} 
+                                    src={require(fullView ? "./../../assets/AlfaFlasher00.png" : "./../../assets/AlfaFlasher01.png")}
                                 />
                                 <p className="image-hint">Click to switch view</p>
                             </div>
@@ -118,7 +138,7 @@ function Product() {
             <section className='product-guide'>
                 <div className='text-container'>
                     <h2>How to Setup</h2>
-                    
+
                     {/* Prerequisites */}
                     <div className="prerequisites">
                         <h3>Before You Start</h3>
@@ -133,13 +153,13 @@ function Product() {
 
                     {/* Tab Navigation */}
                     <div className="tab-navigation">
-                        <button 
+                        <button
                             className={`tab-button ${activeTab === 'android' ? 'active' : ''}`}
                             onClick={() => setActiveTab('android')}
                         >
                             Android Setup
                         </button>
-                        <button 
+                        <button
                             className={`tab-button ${activeTab === 'ios' ? 'active' : ''}`}
                             onClick={() => setActiveTab('ios')}
                         >
@@ -152,35 +172,35 @@ function Product() {
                         <div className="setup-content android-setup">
                             <h3 id='android'>Android Setup Instructions</h3>
                             <div className="instruction-list">
-                                <InstructionStep 
+                                <InstructionStep
                                     number="1"
                                     title="Open Settings"
                                     description="Find and tap the 'Settings' app on your device."
                                     imageSrc={require("./../../assets/setup/android/settings.jpg")}
                                     imageAlt="Android Settings icon"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="2"
                                     title="Network & Internet"
                                     description="Tap on 'Network & Internet' (may be labeled as 'Connections' or 'Wireless & networks' depending on your device)."
                                     imageSrc={require("./../../assets/setup/android/connections.jpg")}
                                     imageAlt="Network and Internet settings"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="3"
                                     title="Hotspot & Tethering"
                                     description="Tap on 'Hotspot & tethering' or 'Mobile Hotspot'."
                                     imageSrc={require("./../../assets/setup/android/mobileHotspot.jpg")}
                                     imageAlt="Mobile Hotspot option"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="4"
                                     title="Configure Wi-Fi Hotspot"
                                     description="Tap on 'Wi-Fi Hotspot' or 'Portable Wi-Fi hotspot', then 'Set up Wi-Fi hotspot' or 'Configure'."
                                     imageSrc={require("./../../assets/setup/android/configureMobileHotspot.jpg")}
                                     imageAlt="Configure hotspot settings"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="5"
                                     title="Set Network Name & Password"
                                     description={
@@ -190,14 +210,14 @@ function Product() {
                                         </>
                                     }
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="6"
                                     title="Enable Hotspot"
                                     description="Tap 'Save' or 'Apply', then toggle the switch to turn on the Wi-Fi hotspot."
                                     imageSrc={require("./../../assets/setup/android/curtain.jpg")}
                                     imageAlt="Hotspot toggle switch"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="7"
                                     title="Connect Your Device"
                                     description="Look for 'AlfaRomeoFlasher' on your portable device and connect using password 'password'."
@@ -221,42 +241,42 @@ function Product() {
                         <div className="setup-content ios-setup">
                             <h3 id="ios">iOS Setup Instructions</h3>
                             <div className="instruction-list">
-                                <InstructionStep 
+                                <InstructionStep
                                     number="1"
                                     title="Open Settings"
                                     description="Find and tap the 'Settings' app on your iPhone."
                                     imageSrc={require("./../../assets/setup/ios/settings.PNG")}
                                     imageAlt="iOS Settings icon"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="2"
                                     title="Enable Personal Hotspot"
                                     description="Tap on 'Personal Hotspot'. If you don't see this option, tap on 'Cellular' first."
                                     imageSrc={require("./../../assets/setup/ios/personalHotspot.PNG")}
                                     imageAlt="Personal Hotspot option"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="3"
                                     title="Allow Others to Join"
                                     description="Toggle the 'Allow Others to Join' switch to turn on the hotspot."
                                     imageSrc={require("./../../assets/setup/ios/personalHotspotConfigure1.PNG")}
                                     imageAlt="Allow Others to Join toggle"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="4"
                                     title="Change Device Name"
                                     description="Go to Settings → General → About → Name and change the device name to 'AlfaRomeoFlasher'."
                                     imageSrc={require("./../../assets/setup/ios/rename1.PNG")}
                                     imageAlt="Device name settings"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="5"
                                     title="Set Wi-Fi Password"
                                     description="Tap on 'Wi-Fi Password' and enter 'password' as the password, then tap 'Done'."
                                     imageSrc={require("./../../assets/setup/ios/personalHotspotConfigure2.PNG")}
                                     imageAlt="WiFi password configuration"
                                 />
-                                <InstructionStep 
+                                <InstructionStep
                                     number="6"
                                     title="Connect Your Device"
                                     description="Look for 'AlfaRomeoFlasher' on your portable device and connect using password 'password'."
@@ -290,9 +310,9 @@ function InstructionStep({ number, title, description, imageSrc, imageAlt }) {
             </div>
             <p className="step-description">{description}</p>
             {imageSrc && (
-                <img 
-                    src={imageSrc} 
-                    alt={imageAlt} 
+                <img
+                    src={imageSrc}
+                    alt={imageAlt}
                     className="step-image"
                 />
             )}

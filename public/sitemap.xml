@@ -1,153 +1,470 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://alfatuning.app/</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/partners</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/device</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-bumper</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontBumper.a296decbdcb3b1d7e0df.png</image:loc>
+            <image:title>Front Bumper for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front bumper</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontBumper2.3dd619ce58d9cc2f330a.png</image:loc>
+            <image:title>Front Bumper for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Front Bumper for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontBumper3.e2ebb5ab42c40b9c883f.png</image:loc>
+            <image:title>Front Bumper for Giulia GTAm, Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Front Bumper for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontFender.8c9b40353b5a11ce9b0b.png</image:loc>
+            <image:title>Front Fender for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front fender 3d scanning with all small details</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontFender2.f7203f2fdbde1625b399.png</image:loc>
+            <image:title>Front Fender for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Front Fender for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-bumper-diffuser</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearBumperDiffuser.e810a31dfe849109846e.png</image:loc>
+            <image:title>Rear Bumper Diffuser for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm rear diffuser 3D scanning</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearBumperDiffuser2.efd8cfab9dd28c42739c.png</image:loc>
+            <image:title>Rear Bumper Diffuser for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Rear Bumper Diffuser for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearBumperDiffuser3.388a896e829a1a51ccda.png</image:loc>
+            <image:title>Rear Bumper Diffuser for Giulia GTAm, Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Rear Bumper Diffuser for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearBumperDiffuser4.9bea7690f71fddfc2c34.png</image:loc>
+            <image:title>Rear Bumper Diffuser for Giulia GTAm, Giulia GTA - View 4</image:title>
+            <image:caption>Additional view: Rear Bumper Diffuser for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-adjustable-splitter</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontAdjustableSplitter.1b6bf556a87c8d039125.png</image:loc>
+            <image:title>Front Adjustable Splitter for Giulia GTAm</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front adjustable splitter body 3D scanning</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontAdjustableSplitter2.92667171a17693b17756.png</image:loc>
+            <image:title>Front Adjustable Splitter for Giulia GTAm - View 2</image:title>
+            <image:caption>Additional view: Front Adjustable Splitter for Giulia GTAm</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontAdjustableSplitter3.c2b4edd781cc490f3816.png</image:loc>
+            <image:title>Front Adjustable Splitter for Giulia GTAm - View 3</image:title>
+            <image:caption>Additional view: Front Adjustable Splitter for Giulia GTAm</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontAdjustableSplitter4.debaa6c349656f39684e.png</image:loc>
+            <image:title>Front Adjustable Splitter for Giulia GTAm - View 4</image:title>
+            <image:caption>Additional view: Front Adjustable Splitter for Giulia GTAm</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontAdjustableSplitter5.5a385379865cff545219.png</image:loc>
+            <image:title>Front Adjustable Splitter for Giulia GTAm - View 5</image:title>
+            <image:caption>Additional view: Front Adjustable Splitter for Giulia GTAm</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontAdjustableSplitter6.5019245d3ba5b69bf6c5.png</image:loc>
+            <image:title>Front Adjustable Splitter for Giulia GTAm - View 6</image:title>
+            <image:caption>Additional view: Front Adjustable Splitter for Giulia GTAm</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-fender-air-vent</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFenderAirVent.2f71bc143a8e08b85797.png</image:loc>
+            <image:title>Fender Air Vent for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front bumper internal mounts 3D scanning</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFenderAirVent2.1e69c50661c74776aa65.png</image:loc>
+            <image:title>Fender Air Vent for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Fender Air Vent for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-bumper-cooler-air-conductor</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmBumperCoolerAirConductor.18495b703eaeb9474d25.png</image:loc>
+            <image:title>Bumper Cooler Air Conductor for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front adjustable splitter cover</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmBumperCoolerAirConductor2.6eb0ff3604d4f62e82cc.png</image:loc>
+            <image:title>Bumper Cooler Air Conductor for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Bumper Cooler Air Conductor for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender-mudguard-front-part</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontFenderMudguardFrontPart.9bc2364c9d8ab2852353.png</image:loc>
+            <image:title>Front Fender Mudguard Front Part for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm rear part of left front fender mudguard 3D scanning</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontFenderMudguardFrontPart2.8a4a3a8fb7b8be7d52b7.png</image:loc>
+            <image:title>Front Fender Mudguard Front Part for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Front Fender Mudguard Front Part for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-side-skirt</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSideSkirt.f81a940ad2c102f7c3da.png</image:loc>
+            <image:title>Side Skirt for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm side skirt</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSideSkirt2.67502b60383578fe4280.png</image:loc>
+            <image:title>Side Skirt for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Side Skirt for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSideSkirt3.649710be0845ca93ab33.png</image:loc>
+            <image:title>Side Skirt for Giulia GTAm, Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Side Skirt for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender-mudguard-rear-part</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontFenderMudguardRearPart.c471d90357cf43c61f68.png</image:loc>
+            <image:title>Front Fender Mudguard Rear Part for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm Front Fender Mudguard Rear Part</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontFenderMudguardRearPart2.bd38188244fd0a7a8491.png</image:loc>
+            <image:title>Front Fender Mudguard Rear Part for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Front Fender Mudguard Rear Part for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontFenderMudguardRearPart3.722a880406b5ccdc06a0.png</image:loc>
+            <image:title>Front Fender Mudguard Rear Part for Giulia GTAm, Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Front Fender Mudguard Rear Part for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-radiator-air-conductor</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRadiatorAirConductor.28972160943981bc5b18.png</image:loc>
+            <image:title>Radiator Air Conductor for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm radiator air conductor</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRadiatorAirConductor2.4b03b950b419daac2e8f.png</image:loc>
+            <image:title>Radiator Air Conductor for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Radiator Air Conductor for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRadiatorAirConductor3.acad259914bb546a616e.png</image:loc>
+            <image:title>Radiator Air Conductor for Giulia GTAm, Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Radiator Air Conductor for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-bumper-side-insert</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontBumperSideInsert.0f05389d1e29c0878c61.png</image:loc>
+            <image:title>Front Bumper Side Insert for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front bumper side</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontBumperSideInsert2.675c094d0da25d238b28.png</image:loc>
+            <image:title>Front Bumper Side Insert for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Front Bumper Side Insert for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-side-grill</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSideGrill.4823fe4945d0af47be90.png</image:loc>
+            <image:title>Side Grill for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front bumper side grill</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSideGrill2.a9669b134e9f2ebbd460.png</image:loc>
+            <image:title>Side Grill for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Side Grill for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSideGrill3.da9a944912e665e3daa3.png</image:loc>
+            <image:title>Side Grill for Giulia GTAm, Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Side Grill for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-lower-central-grill</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontLowerCentralGrill.5f245d69e024cc60646f.png</image:loc>
+            <image:title>Front Lower Central Grill for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front lower centrall grill</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-grill</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontGrill.98eb2f6310bcd90a54cd.png</image:loc>
+            <image:title>Front Grill for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front grill</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-seat-bracket</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSeatBracket.c5c7c3b79e16924506bb.png</image:loc>
+            <image:title>Seat Bracket for Giulia GTAm</image:title>
+            <image:caption>Alfa Romeo Giulia GTAm seat brackets</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSeatBracket2.11d0f2d60007888a644c.png</image:loc>
+            <image:title>Seat Bracket for Giulia GTAm - View 2</image:title>
+            <image:caption>Additional view: Seat Bracket for Giulia GTAm</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmSeatBracket3.b276d2333d6813c43832.png</image:loc>
+            <image:title>Seat Bracket for Giulia GTAm - View 3</image:title>
+            <image:caption>Additional view: Seat Bracket for Giulia GTAm</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-fender-arch</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearFenderArch.72c711f366893e51905a.png</image:loc>
+            <image:title>Rear Fender Arch for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm rear fender arch</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearFenderArch2.2b783049f86449cb2e02.png</image:loc>
+            <image:title>Rear Fender Arch for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Rear Fender Arch for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-washer-cap</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmWasherCap.b268674f4bd301254d50.png</image:loc>
+            <image:title>Washer Cap for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm washer cap</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmWasherCap2.505bb6639812962df507.png</image:loc>
+            <image:title>Washer Cap for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Washer Cap for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rollbar-mount</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRollbarMount.500e1d2299252a09183b.png</image:loc>
+            <image:title>Rollbar Mount for Giulia GTAm</image:title>
+            <image:caption>Alfa Romeo Giulia GTAm rollbar mount</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRollbarMount2.b606a6c5fd8befad2e55.png</image:loc>
+            <image:title>Rollbar Mount for Giulia GTAm - View 2</image:title>
+            <image:caption>Additional view: Rollbar Mount for Giulia GTAm</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-wing</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearWing.27f7d72549b71e8047b3.png</image:loc>
+            <image:title>Rear Wing for Giulia GTAm</image:title>
+            <image:caption>Alfa Romeo Giulia GTAm rear adjustable wing</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearWing2.723fb24ef58029230467.png</image:loc>
+            <image:title>Rear Wing for Giulia GTAm - View 2</image:title>
+            <image:caption>Additional view: Rear Wing for Giulia GTAm</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearWing3.dc8f23f571a3e59acc8e.png</image:loc>
+            <image:title>Rear Wing for Giulia GTAm - View 3</image:title>
+            <image:caption>Additional view: Rear Wing for Giulia GTAm</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearWing4.d4508a8023692038372d.png</image:loc>
+            <image:title>Rear Wing for Giulia GTAm - View 4</image:title>
+            <image:caption>Additional view: Rear Wing for Giulia GTAm</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearWing5.509895ef56ee2a9699ce.png</image:loc>
+            <image:title>Rear Wing for Giulia GTAm - View 5</image:title>
+            <image:caption>Additional view: Rear Wing for Giulia GTAm</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gta-rear-spoiler</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTARearSpoiler.1db7d8a8c48c6c4ec129.png</image:loc>
+            <image:title>Rear Spoiler for Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA rear spoiler</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTARearSpoiler2.5f473a4ac8164f3fef59.png</image:loc>
+            <image:title>Rear Spoiler for Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Rear Spoiler for Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTARearSpoiler3.438b0f37f927bc3c72ba.png</image:loc>
+            <image:title>Rear Spoiler for Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Rear Spoiler for Giulia GTA</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://alfatuning.app/rnd/giulia-gtam-wheel</loc>
+        <lastmod>2025-12-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmWheel.229550710808a820195f.png</image:loc>
+            <image:title>Wheel for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm  wheel</image:caption>
+        </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-hub-bearing</loc>
-        <lastmod>2025-11-07</lastmod>
+        <lastmod>2025-12-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing.bcff7ebfe180bb5d3f15.png</image:loc>
+            <image:title>Hub Bearing for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm Hub Bearing with Toolhead.This complete hub bearing kit is engineered for accurate fitment on the Alfa Romeo Giulia GTA and GTAm. The central lock nut system uses different thread directions for each side of the vehicle: left-hand thread on one side and right-hand thread on the opposite side. This design ensures correct securing of the hub under high load conditions. The kit also includes a star locking plate to secure the central lock nut and a protective center cap cover. Manufactured to OEM tolerances to ensure proper alignment, long-term durability, and reliable torque distribution during street and track use.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing2.f30bf285dc71b2ee447c.png</image:loc>
+            <image:title>Hub Bearing for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Hub Bearing for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing3.2bd7ea1cacc3b72faa59.png</image:loc>
+            <image:title>Hub Bearing for Giulia GTAm, Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Hub Bearing for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing4.a7662fe579b832ecdf44.png</image:loc>
+            <image:title>Hub Bearing for Giulia GTAm, Giulia GTA - View 4</image:title>
+            <image:caption>Additional view: Hub Bearing for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing5.20ed8a4adbbceca35503.png</image:loc>
+            <image:title>Hub Bearing for Giulia GTAm, Giulia GTA - View 5</image:title>
+            <image:caption>Additional view: Hub Bearing for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing6.2eb341816115451e9c3f.png</image:loc>
+            <image:title>Hub Bearing for Giulia GTAm, Giulia GTA - View 6</image:title>
+            <image:caption>Additional view: Hub Bearing for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing7.5611fdbeddb009e5a069.png</image:loc>
+            <image:title>Hub Bearing for Giulia GTAm, Giulia GTA - View 7</image:title>
+            <image:caption>Additional view: Hub Bearing for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
     </url>
 </urlset>

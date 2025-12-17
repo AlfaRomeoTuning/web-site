@@ -5,12 +5,28 @@ import { Helmet } from 'react-helmet';
 function Partners() {
     return (<div id="partners-page">
         <Helmet>
-            <title>Partners Alfa Tuning</title>
-            <meta name="description" content="Alfa Tuning partners page" />
+            <title>Partners Alfa Tuning | Our Trusted Partners</title>
+            <meta name="description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide." />
             <meta
                 name="keywords"
-                content="partners, alfa romeo, alfa romeo shop"
+                content="partners, alfa romeo, alfa romeo shop, tuning specialists, mechanics, distributors"
             />
+
+            {/* Open Graph */}
+            <meta property="og:title" content="Partners Alfa Tuning | Our Trusted Partners" />
+            <meta property="og:description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide." />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://alfatuning.app/partners" />
+            <meta property="og:image" content="https://alfatuning.app/logo.png" />
+            <meta property="og:site_name" content="Alfa Tuning" />
+
+            {/* Twitter Card */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Partners Alfa Tuning | Our Trusted Partners" />
+            <meta name="twitter:description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles." />
+            <meta name="twitter:image" content="https://alfatuning.app/logo.png" />
+
+            <link rel="canonical" href="https://alfatuning.app/partners" />
         </Helmet>
         <div className="partners-container">
             <div className="partners">
