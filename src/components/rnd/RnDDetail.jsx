@@ -31,11 +31,7 @@ function RnDDetail() {
         );
     }
 
-    const isBrowser = typeof navigator !== "undefined";
-    const BASE_URL =
-        process.env.NODE_ENV === "production" && isBrowser && navigator.userAgent !== "ReactSnap"
-            ? "/"
-            : "https://alfatuning.app";
+    const BASE_URL = "https://alfatuning.app";
 
     const pageUrl = BASE_URL + `/rnd/${slug}`;
     const mainImageModule = require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png');
