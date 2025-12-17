@@ -40,7 +40,7 @@ function RnDDetail() {
     const pageUrl = BASE_URL + `/rnd/${slug}`;
     const mainImageModule = require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png');
     const mainImage = typeof mainImageModule === 'string' ? mainImageModule : (mainImageModule && mainImageModule.default) ? mainImageModule.default : '';
-    
+
     // Prefer absolute URL for social/meta/structured-data
     const absoluteMainImage = mainImage
         ? (/^https?:\/\//i.test(mainImage) ? mainImage : BASE_URL + (mainImage.startsWith('/') ? '' : '/') + mainImage)
@@ -48,7 +48,7 @@ function RnDDetail() {
 
     // Очищаем HTML для использования в мета-тегах (только текст)
     const plainTextDescription = model.description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
-    
+
     // Очищаем и санитизируем HTML для отображения
     const sanitizedDescription = DOMPurify.sanitize(model.description);
 
@@ -74,8 +74,13 @@ function RnDDetail() {
             "seller": {
                 "@type": "Organization",
                 "name": "Alfa Tuning"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "1"
         }
-    }
     };
 
     return (
