@@ -2,12 +2,36 @@ import { Helmet } from 'react-helmet'
 import './Home.css'
 
 function Home() {
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Alfa Tuning",
+        "url": "https://alfatuning.app/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://alfatuning.app/rnd?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    };
+
+    const organizationData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Alfa Tuning",
+        "url": "https://alfatuning.app/",
+        "logo": "https://alfatuning.app/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/WorksByGw",
+            "https://www.instagram.com/aerodynamic_carbon/"
+        ]
+    };
+
     return (<div id="home">
         <Helmet>
             <title>Home Alfa Tuning | Unlock Your Alfa Romeo's Potential</title>
             <meta name="description" content="Unlock the full potential of your Alfa Romeo with Alfa Tuning. We offer OBD2 interfaces, custom 3D models, manuals, and tuning services for enthusiasts and mechanics." />
             <meta name="keywords" content="Alfa Romeo, tuning, OBD2, 3D models, car parts, Giulia, Stelvio, mechanics, manuals" />
-            
+
             {/* Open Graph */}
             <meta property="og:title" content="Home Alfa Tuning | Unlock Your Alfa Romeo's Potential" />
             <meta property="og:description" content="Unlock the full potential of your Alfa Romeo with Alfa Tuning. We offer OBD2 interfaces, custom 3D models, manuals, and tuning services." />
@@ -23,6 +47,14 @@ function Home() {
             <meta name="twitter:image" content="https://alfatuning.app/logo.png" />
 
             <link rel="canonical" href="https://alfatuning.app/" />
+
+            {/* Structured Data */}
+            <script type="application/ld+json">
+                {JSON.stringify(structuredData)}
+            </script>
+            <script type="application/ld+json">
+                {JSON.stringify(organizationData)}
+            </script>
         </Helmet>
         <div className='text-container'>
             <div className='text'>

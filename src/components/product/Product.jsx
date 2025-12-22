@@ -50,6 +50,36 @@ function Product() {
     const absoluteImage = "https://alfatuning.app" + flasherImage;
     const pageUrl = "https://alfatuning.app/device";
 
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Alfa Romeo Remote Flashing Device",
+        "description": "Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio, including GTAm upgrades, Race Mode, and more.",
+        "image": absoluteImage,
+        "brand": {
+            "@type": "Brand",
+            "name": "Alfa Tuning"
+        },
+        "sku": "AT-FLASHER-01",
+        "mpn": "AT-FLASHER-01",
+        "offers": {
+            "@type": "Offer",
+            "url": pageUrl,
+            "priceCurrency": "USD",
+            "price": "0.00",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+                "@type": "Organization",
+                "name": "Alfa Tuning"
+            }
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "1"
+        }
+    };
+
     return (
         <div id="product-page">
             <Helmet>
@@ -74,6 +104,11 @@ function Product() {
                 <meta name="twitter:title" content="Product Alfa Tuning | Remote Flashing Device" />
                 <meta name="twitter:description" content="Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio." />
                 <meta name="twitter:image" content={absoluteImage} />
+
+                {/* Structured Data */}
+                <script type="application/ld+json">
+                    {JSON.stringify(structuredData)}
+                </script>
             </Helmet>
 
             {/* Hero Section */}

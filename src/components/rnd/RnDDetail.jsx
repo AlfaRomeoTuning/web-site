@@ -42,31 +42,73 @@ function RnDDetail() {
         ? (/^https?:\/\//i.test(mainImage) ? mainImage : BASE_URL + (mainImage.startsWith('/') ? '' : '/') + mainImage)
         : '';
 
+    // Prepare all images for structured data
+    const allImages = [];
+    if (absoluteMainImage) {
+        allImages.push({
+            "@type": "ImageObject",
+            "url": absoluteMainImage,
+            "caption": `${model.part} for Alfa Romeo ${model.car.join(', ')} - Main View`,
+            "contentUrl": absoluteMainImage
+        });
+    }
+
+    if (model.childs) {
+        model.childs.forEach((child, index) => {
+            try {
+                const childModule = require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + child + '.png');
+                const childPath = typeof childModule === 'string' ? childModule : (childModule && childModule.default) ? childModule.default : '';
+                if (childPath) {
+                    const absoluteChildPath = /^https?:\/\//i.test(childPath) ? childPath : BASE_URL + (childPath.startsWith('/') ? '' : '/') + childPath;
+                    allImages.push({
+                        "@type": "ImageObject",
+                        "url": absoluteChildPath,
+                        "caption": `${model.part} for Alfa Romeo ${model.car.join(', ')} - View ${index + 2}`,
+                        "contentUrl": absoluteChildPath
+                    });
+                }
+            } catch (e) {
+                console.warn(`Could not load child image ${child} for ${model.part}`);
+            }
+        });
+    }
+
     // Очищаем HTML для использования в мета-тегах (только текст)
     const plainTextDescription = model.description.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
 
     // Очищаем и санитизируем HTML для отображения
     const sanitizedDescription = DOMPurify.sanitize(model.description);
 
+    const modelName = `${model.part} for Alfa Romeo ${model.car.map(m => m).join(', ')}`;
+    const sku = `AT-RND-${slug.toUpperCase()}`;
+
     // Structured Data для конкретного продукта
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": `${model.part} for Alfa Romeo ${model.car.map(m => m).join(', ')}`,
+        "name": modelName,
         "description": plainTextDescription,
         "brand": {
             "@type": "Brand",
             "name": "Alfa Tuning"
         },
-        "image": absoluteMainImage,
+        "sku": sku,
+        "mpn": sku,
+        "image": allImages,
         "url": pageUrl,
         "category": "Automotive Parts",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": pageUrl
+        },
+        "primaryImageOfPage": allImages.length > 0 ? allImages[0] : undefined,
         "offers": {
             "@type": "Offer",
             "url": pageUrl,
             "priceCurrency": "USD",
             "price": "0.00",
             "availability": "https://schema.org/InStock",
+            "itemCondition": "https://schema.org/NewCondition",
             "seller": {
                 "@type": "Organization",
                 "name": "Alfa Tuning"
@@ -95,7 +137,9 @@ function RnDDetail() {
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "5",
-            "reviewCount": "1"
+            "reviewCount": "1",
+            "bestRating": "5",
+            "worstRating": "1"
         }
     };
 

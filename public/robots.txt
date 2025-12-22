@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alfatuning.com/sitemap.xml
+Sitemap: https://alfatuning.app/sitemap.xml

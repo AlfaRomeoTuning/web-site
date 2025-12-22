@@ -3,6 +3,29 @@ import { ReactComponent as AlfaSpecialists } from './../../assets/partners/alfaS
 import { Helmet } from 'react-helmet';
 
 function Partners() {
+    const pageUrl = "https://alfatuning.app/partners";
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Partners Alfa Tuning | Our Trusted Partners",
+        "description": "Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide.",
+        "url": pageUrl,
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://alfatuning.app/"
+            }, {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Partners",
+                "item": pageUrl
+            }]
+        }
+    };
+
     return (<div id="partners-page">
         <Helmet>
             <title>Partners Alfa Tuning | Our Trusted Partners</title>
@@ -16,7 +39,7 @@ function Partners() {
             <meta property="og:title" content="Partners Alfa Tuning | Our Trusted Partners" />
             <meta property="og:description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide." />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://alfatuning.app/partners" />
+            <meta property="og:url" content={pageUrl} />
             <meta property="og:image" content="https://alfatuning.app/logo.png" />
             <meta property="og:site_name" content="Alfa Tuning" />
 
@@ -26,7 +49,12 @@ function Partners() {
             <meta name="twitter:description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles." />
             <meta name="twitter:image" content="https://alfatuning.app/logo.png" />
 
-            <link rel="canonical" href="https://alfatuning.app/partners" />
+            <link rel="canonical" href={pageUrl} />
+
+            {/* Structured Data */}
+            <script type="application/ld+json">
+                {JSON.stringify(structuredData)}
+            </script>
         </Helmet>
         <div className="partners-container">
             <div className="partners">
