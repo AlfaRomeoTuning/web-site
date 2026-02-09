@@ -229,8 +229,13 @@ function RnDDetail() {
                                     variant="primary"
                                     size="lg"
                                     onClick={() => {
-                                        // Здесь можно добавить функционал скачивания
-                                        alert('Contact with us about that!');
+                                        if (model.downloadFile) {
+                                            const BUCKET_NAME = "alfatuning-app-3d-models";
+                                            const downloadUrl = `https://storage.googleapis.com/${BUCKET_NAME}/${model.downloadFile}`;
+                                            window.open(downloadUrl, '_blank');
+                                        } else {
+                                            alert('Contact with us about that!');
+                                        }
                                     }}
                                 >
                                     Download 3D Model

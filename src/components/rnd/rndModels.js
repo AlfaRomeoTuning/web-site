@@ -17,7 +17,8 @@ const rnd = {
             car: ["Giulia GTAm", "Giulia GTA"],
             part: "Rear Bumper Diffuser",
             childs: [2, 3, 4],
-            description: "Alfa Romeo Giulia GTA / GTAm rear diffuser 3D scanning"
+            description: "Alfa Romeo Giulia GTA / GTAm rear diffuser 3D scanning",
+            downloadFile: "gtam_rear_diffuser.7z"
         },
         {
             car: ["Giulia GTAm"],
@@ -47,7 +48,8 @@ const rnd = {
             car: ["Giulia GTAm", "Giulia GTA"],
             part: "Side Skirt",
             childs: [2, 3],
-            description: "Alfa Romeo Giulia GTA / GTAm side skirt"
+            description: "Alfa Romeo Giulia GTA / GTAm side skirt",
+            downloadFile: "gtam_side_skirt.7z"
         },
         {
             car: ["Giulia GTAm", "Giulia GTA"],
@@ -71,7 +73,8 @@ const rnd = {
             car: ["Giulia GTAm", "Giulia GTA"],
             part: "Side Grill",
             childs: [2, 3],
-            description: "Alfa Romeo Giulia GTA / GTAm front bumper side grill"
+            description: "Alfa Romeo Giulia GTA / GTAm front bumper side grill",
+            downloadFile: "gtam_front_side_grille.7z"
         },
         {
             car: ["Giulia GTAm", "Giulia GTA"],
@@ -113,7 +116,8 @@ const rnd = {
             car: ["Giulia GTAm"],
             part: "Rear Wing",
             childs: [2, 3, 4, 5],
-            description: "Alfa Romeo Giulia GTAm rear adjustable wing"
+            description: "Alfa Romeo Giulia GTAm rear adjustable wing",
+            downloadFile: "gtam_wing_spoiler.7z"
         },
         {
             car: ["Giulia GTA"],
