@@ -114,6 +114,13 @@ const rnd = {
         },
         {
             car: ["Giulia GTAm"],
+            part: "Rear Bars",
+            childs: [2],
+            description: "Alfa Romeo Giulia GTAm rear bars",
+            downloadFile: "gtam_rear_bars.7z"
+        },
+        {
+            car: ["Giulia GTAm"],
             part: "Rear Wing",
             childs: [2, 3, 4, 5],
             description: "Alfa Romeo Giulia GTAm rear adjustable wing",
