@@ -24,26 +24,26 @@ env:
   SERVICE_NAME: alfatuningapp-web-site
     
 jobs:
-  build:
-    name: Build React App
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-22.04
     permissions:
       contents: write
+      id-token: write # required for auth if using OIDC, though SA key is used here
     steps:
       - name: Checkout Repo
         uses: actions/checkout@main
-        
-      - name:  'Automated Version Bump'
-        uses:  'phips28/gh-action-bump-version@master'
+
+      - name: 'Automated Version Bump'
+        uses: 'phips28/gh-action-bump-version@master'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag-prefix:     'v'
-          minor-wording:  'add,Adds,new'
-          major-wording:  'MAJOR,cut-major'
-          patch-wording:  'patch,fixes'     # Providing patch-wording will override commits
-                                            # defaulting to a patch bump.
-          rc-wording:     'RELEASE,alpha'
+          tag-prefix: 'v'
+          minor-wording: 'add,Adds,new'
+          major-wording: 'MAJOR,cut-major'
+          patch-wording: 'patch,fixes'
+          rc-wording: 'RELEASE,alpha'
 
       - name: Set up environment for Puppeteer
         shell: bash
@@ -80,32 +80,10 @@ jobs:
           npm run build
           npm run generate-sitemap
 
-      - name: Check build contents
-        shell: bash
+      - name: Prepare build for Docker context
         run: |
-          tree ./build
-
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@main
-        with:
-          name: build
-          path: build
-          if-no-files-found: error
-
-  deploy-gcr:
-    name: Deploy to GCR
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@main
-
-      - name: Download Artifact
-        uses: actions/download-artifact@main
-        with:
-          name: build
-          path: .docker/build
+          rm -rf .docker/build
+          mv build .docker/build
 
       - name: Authenticate to Google Cloud
         id: auth
@@ -115,7 +93,7 @@ jobs:
 
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v2'
-        
+
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
 
@@ -135,16 +113,3 @@ jobs:
             --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
             --platform "managed" \
             --allow-unauthenticated
-
-      # Clean up old repository images
-      # - name: Clean up old images
-      #   run: |-
-      #     gcloud container images list-tags "gcr.io/$PROJECT_ID/$SERVICE_NAME" \
-      #       --sort-by=TIMESTAMP \
-      #       --format="get(digest)"
-
-      #     gcloud container images list-tags "gcr.io/$PROJECT_ID/$SERVICE_NAME" \
-      #       --sort-by=TIMESTAMP \
-      #       --format="get(digest)" | tail -n +6 | \
-      #       xargs -I {} gcloud container images delete "gcr.io/$PROJECT_ID/$SERVICE_NAME@{}" --quiet --force-delete-tags || true
-      #   continue-on-error: true
