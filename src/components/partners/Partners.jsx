@@ -30,10 +30,6 @@ function Partners() {
         <Helmet>
             <title>Partners Alfa Tuning | Our Trusted Partners</title>
             <meta name="description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide." />
-            <meta
-                name="keywords"
-                content="partners, alfa romeo, alfa romeo shop, tuning specialists, mechanics, distributors"
-            />
 
             {/* Open Graph */}
             <meta property="og:title" content="Partners Alfa Tuning | Our Trusted Partners" />
@@ -51,6 +47,10 @@ function Partners() {
 
             <link rel="canonical" href={pageUrl} />
 
+            {/* Hreflang for international SEO */}
+            <link rel="alternate" hrefLang="x-default" href={pageUrl} />
+            <link rel="alternate" hrefLang="en" href={pageUrl} />
+
             {/* Structured Data */}
             <script type="application/ld+json">
                 {JSON.stringify(structuredData)}
@@ -59,54 +59,54 @@ function Partners() {
         <div className="partners-container">
             <div className="partners">
                 <a href="https://qvstore.pl/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="quadrifoglioStore" className='partners-image qs-store'
+                    <img alt="Quadrifoglio Store - Alfa Romeo parts and accessories" className='partners-image qs-store'
                         src={require("./../../assets/partners/QS.png")} />
                 </a>
                 <a href="https://alfacare.co.uk/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="alfacarelogo" className='partners-image'
+                    <img alt="Alfa Care UK - Alfa Romeo specialist" className='partners-image'
                         src={require("./../../assets/partners/alfacarelogo-1.png")} />
                 </a>
                 <a href="https://alfa-specialists.gr/" target="_blank" rel="noreferrer" className='partner'>
-                    <AlfaSpecialists className='partners-image alfa-specialist small-image' />
+                    <AlfaSpecialists className='partners-image alfa-specialist small-image' title="Alfa Specialists Greece" aria-label="Alfa Specialists Greece" />
                 </a>
                 <a href="https://eng-custom.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="eng-custom" className='partners-image eng-custom  small-image'
+                    <img alt="ENG Custom - Custom automotive engineering" className='partners-image eng-custom  small-image'
                         src={require("./../../assets/partners/eng-custom.png")} />
                 </a>
                 <a href="http://www.3dtechnology.pl/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="3d technologu" className='partners-image'
+                    <img alt="3D Technology - 3D scanning and printing" className='partners-image'
                         src={require("./../../assets/partners/BDTechnology.png")} />
                 </a>
                 <a href="https://alfissimo.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="alfissimo" className='partners-image  small-image'
+                    <img alt="Alfissimo - Alfa Romeo tuning and parts" className='partners-image  small-image'
                         src={require("./../../assets/partners/alfissimo.png")} />
                 </a>
                 <a href="https://www.italoecu.de/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="italoecu" className='partners-image  small-image'
+                    <img alt="Italo ECU - ECU tuning specialist" className='partners-image  small-image'
                         src={require("./../../assets/partners/italoecu1.png")} />
                 </a>
                 <a href="https://www.galemotorsport.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="galemotortsport" className='partners-image  small-image'
+                    <img alt="Gale Motorsport - Racing and performance parts" className='partners-image  small-image'
                         src={require("./../../assets/partners/color_logo_transparent.png")} />
                 </a>
                 <a href="https://squadra-tuning.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="squadra-tuning" className='partners-image  small-image'
+                    <img alt="Squadra Tuning - Performance tuning services" className='partners-image  small-image'
                         src={require("./../../assets/partners/squadra-tuning.png")} />
                 </a>
                 <a href="https://www.facebook.com/WorksByGw" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="works-by-gw" className='partners-image worksbygw  small-image'
+                    <img alt="Works by GW - Custom automotive works" className='partners-image worksbygw  small-image'
                         src={require("./../../assets/partners/worksbygw.png")} />
                 </a>
                 <a href="https://www.instagram.com/aerodynamic_carbon/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="aero-carbon" className='partners-image aerocarbon'
+                    <img alt="Aerodynamic Carbon - Carbon fiber parts" className='partners-image aerocarbon'
                         src={require("./../../assets/partners/aerocarbon.png")} />
                 </a>
                 <a href="https://www.alfaobd.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="works-by-gw" className='partners-image small-image'
+                    <img alt="AlfaOBD - Diagnostic and tuning software" className='partners-image small-image'
                         src={require("./../../assets/partners/AlfaOBD.png")} />
                 </a>
                 <a href="https://www.multiair-tuning-dev.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="works-by-gw" className='partners-image small-image'
+                    <img alt="MultiAir Tuning Development - Engine tuning services" className='partners-image small-image'
                         src={require("./../../assets/partners/MtD.png")} />
                 </a>
             </div>

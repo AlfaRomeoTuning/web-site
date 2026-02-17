@@ -30,7 +30,6 @@ function Home() {
         <Helmet>
             <title>Home Alfa Tuning | Unlock Your Alfa Romeo's Potential</title>
             <meta name="description" content="Unlock the full potential of your Alfa Romeo with Alfa Tuning. We offer OBD2 interfaces, custom 3D models, manuals, and tuning services for enthusiasts and mechanics." />
-            <meta name="keywords" content="Alfa Romeo, tuning, OBD2, 3D models, car parts, Giulia, Stelvio, mechanics, manuals" />
 
             {/* Open Graph */}
             <meta property="og:title" content="Home Alfa Tuning | Unlock Your Alfa Romeo's Potential" />
@@ -47,6 +46,10 @@ function Home() {
             <meta name="twitter:image" content="https://alfatuning.app/logo.png" />
 
             <link rel="canonical" href="https://alfatuning.app/" />
+
+            {/* Hreflang for international SEO */}
+            <link rel="alternate" hrefLang="x-default" href="https://alfatuning.app/" />
+            <link rel="alternate" hrefLang="en" href="https://alfatuning.app/" />
 
             {/* Structured Data */}
             <script type="application/ld+json">

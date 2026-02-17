@@ -116,10 +116,6 @@ function RnD() {
                     name="description"
                     content="Explore Alfa Tuning's research and development of custom 3D models and performance parts for Alfa Romeo Giulia, Stelvio, GTAm, and Quadrifoglio."
                 />
-                <meta
-                    name="keywords"
-                    content="Alfa Romeo tuning, custom car parts, 3D models, Giulia Quadrifoglio, Stelvio, GTAm, fenders, bumpers, air vents"
-                />
                 <link rel="canonical" href={window.location.origin + "/rnd"} />
                 <meta name="robots" content="index, follow, max-image-preview:large" />
                 <meta property="og:type" content="website" />

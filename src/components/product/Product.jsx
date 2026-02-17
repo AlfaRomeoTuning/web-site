@@ -61,23 +61,7 @@ function Product() {
             "name": "Alfa Tuning"
         },
         "sku": "AT-FLASHER-01",
-        "mpn": "AT-FLASHER-01",
-        "offers": {
-            "@type": "Offer",
-            "url": pageUrl,
-            "priceCurrency": "USD",
-            "price": "0.00",
-            "availability": "https://schema.org/InStock",
-            "seller": {
-                "@type": "Organization",
-                "name": "Alfa Tuning"
-            }
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1"
-        }
+        "mpn": "AT-FLASHER-01"
     };
 
     return (
@@ -85,11 +69,11 @@ function Product() {
             <Helmet>
                 <title>Product Alfa Tuning | Remote Flashing Device</title>
                 <meta name="description" content="Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio, including GTAm upgrades, Race Mode, and more." />
-                <meta
-                    name="keywords"
-                    content="alfaobd, alfa romeo, alfa romeo shop, alfatuning, obd tool, obd, obd2.0, alfa romeo obd, remote flashing device, tuning, ecu remap"
-                />
                 <link rel="canonical" href={pageUrl} />
+
+                {/* Hreflang for international SEO */}
+                <link rel="alternate" hrefLang="x-default" href={pageUrl} />
+                <link rel="alternate" hrefLang="en" href={pageUrl} />
 
                 {/* Open Graph */}
                 <meta property="og:title" content="Product Alfa Tuning | Remote Flashing Device" />
