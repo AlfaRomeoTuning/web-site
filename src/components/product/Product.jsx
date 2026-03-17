@@ -64,6 +64,37 @@ function Product() {
         "mpn": "AT-FLASHER-01"
     };
 
+    const faqData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which Alfa Romeo models are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The remote flashing workflow is designed for Alfa Romeo models including Giulia and Stelvio. Contact Alfa Tuning for your exact engine and module compatibility."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a stable internet connection for flashing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Use a strong and stable Wi-Fi connection before and during flashing to ensure reliable communication with the device."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can this device enable custom tuning features?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Alfa Tuning supports custom software updates such as performance remapping, transmission customization, and selected module fixes based on your vehicle setup."
+                }
+            }
+        ]
+    };
+
     return (
         <div id="product-page">
             <Helmet>
@@ -73,7 +104,6 @@ function Product() {
 
                 {/* Hreflang for international SEO */}
                 <link rel="alternate" hrefLang="x-default" href={pageUrl} />
-                <link rel="alternate" hrefLang="en" href={pageUrl} />
 
                 {/* Open Graph */}
                 <meta property="og:title" content="Product Alfa Tuning | Remote Flashing Device" />
@@ -81,6 +111,7 @@ function Product() {
                 <meta property="og:type" content="product" />
                 <meta property="og:url" content={pageUrl} />
                 <meta property="og:image" content={absoluteImage} />
+                <meta property="og:image:alt" content="Alfa Romeo remote flashing device by Alfa Tuning" />
                 <meta property="og:site_name" content="Alfa Tuning" />
 
                 {/* Twitter Card */}
@@ -92,6 +123,9 @@ function Product() {
                 {/* Structured Data */}
                 <script type="application/ld+json">
                     {JSON.stringify(structuredData)}
+                </script>
+                <script type="application/ld+json">
+                    {JSON.stringify(faqData)}
                 </script>
             </Helmet>
 

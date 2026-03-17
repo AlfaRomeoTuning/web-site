@@ -101,46 +101,7 @@ function RnDDetail() {
             "@type": "WebPage",
             "@id": pageUrl
         },
-        "primaryImageOfPage": allImages.length > 0 ? allImages[0] : undefined,
-        "offers": {
-            "@type": "Offer",
-            "url": pageUrl,
-            "priceCurrency": "USD",
-            "price": "0.00",
-            "availability": "https://schema.org/InStock",
-            "itemCondition": "https://schema.org/NewCondition",
-            "seller": {
-                "@type": "Organization",
-                "name": "Alfa Tuning"
-            },
-            "shippingDetails": {
-                "@type": "OfferShippingDetails",
-                "shippingRate": {
-                    "@type": "MonetaryAmount",
-                    "value": "0",
-                    "currency": "USD"
-                },
-                "shippingDestination": {
-                    "@type": "DefinedRegion",
-                    "addressCountry": "US"
-                }
-            },
-            "hasMerchantReturnPolicy": {
-                "@type": "MerchantReturnPolicy",
-                "applicableCountry": "US",
-                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-                "merchantReturnDays": "30",
-                "returnMethod": "https://schema.org/ReturnByMail",
-                "returnFees": "https://schema.org/ReturnShippingFees"
-            }
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1",
-            "bestRating": "5",
-            "worstRating": "1"
-        }
+        "primaryImageOfPage": allImages.length > 0 ? allImages[0] : undefined
     };
 
     return (
@@ -157,6 +118,7 @@ function RnDDetail() {
                     content={`${model.car.map(m => m).join(', ')}, ${model.part}, Alfa Romeo, custom parts, 3D model, tuning, ${model.car.map(m => m).join(', ')} ${model.part}`}
                 />
                 <link rel="canonical" href={pageUrl} />
+                <link rel="alternate" hrefLang="x-default" href={pageUrl} />
 
                 <meta name="robots" content="index, follow, max-image-preview:large" />
 
@@ -166,6 +128,7 @@ function RnDDetail() {
                 <meta property="og:description" content={plainTextDescription} />
                 <meta property="og:url" content={pageUrl} />
                 <meta property="og:image" content={absoluteMainImage} />
+                <meta property="og:image:alt" content={`${model.part} for Alfa Romeo ${model.car.join(', ')}`} />
                 <meta property="og:site_name" content="Alfa Tuning" />
 
                 {/* Twitter Card */}

@@ -3,7 +3,11 @@ import { ReactComponent as AlfaSpecialists } from './../../assets/partners/alfaS
 import { Helmet } from 'react-helmet';
 
 function Partners() {
+    const BASE_URL = 'https://alfatuning.app';
     const pageUrl = "https://alfatuning.app/partners";
+    const partnersOgImageModule = require('./../../assets/partners/QS.png');
+    const partnersOgImagePath = typeof partnersOgImageModule === 'string' ? partnersOgImageModule : partnersOgImageModule.default;
+    const partnersOgImage = `${BASE_URL}${partnersOgImagePath}`;
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -36,20 +40,20 @@ function Partners() {
             <meta property="og:description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide." />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={pageUrl} />
-            <meta property="og:image" content="https://alfatuning.app/logo.png" />
+            <meta property="og:image" content={partnersOgImage} />
+            <meta property="og:image:alt" content="Alfa Tuning trusted partners" />
             <meta property="og:site_name" content="Alfa Tuning" />
 
             {/* Twitter Card */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="Partners Alfa Tuning | Our Trusted Partners" />
             <meta name="twitter:description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles." />
-            <meta name="twitter:image" content="https://alfatuning.app/logo.png" />
+            <meta name="twitter:image" content={partnersOgImage} />
 
             <link rel="canonical" href={pageUrl} />
 
             {/* Hreflang for international SEO */}
             <link rel="alternate" hrefLang="x-default" href={pageUrl} />
-            <link rel="alternate" hrefLang="en" href={pageUrl} />
 
             {/* Structured Data */}
             <script type="application/ld+json">

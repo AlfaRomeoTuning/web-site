@@ -2,6 +2,12 @@ import { Helmet } from 'react-helmet'
 import './Home.css'
 
 function Home() {
+    const BASE_URL = 'https://alfatuning.app';
+    const pageUrl = `${BASE_URL}/`;
+    const homeOgImageModule = require('../../assets/AlfaFlasher00.png');
+    const homeOgImagePath = typeof homeOgImageModule === 'string' ? homeOgImageModule : homeOgImageModule.default;
+    const homeOgImage = `${BASE_URL}${homeOgImagePath}`;
+
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -35,21 +41,21 @@ function Home() {
             <meta property="og:title" content="Home Alfa Tuning | Unlock Your Alfa Romeo's Potential" />
             <meta property="og:description" content="Unlock the full potential of your Alfa Romeo with Alfa Tuning. We offer OBD2 interfaces, custom 3D models, manuals, and tuning services." />
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://alfatuning.app/" />
-            <meta property="og:image" content="https://alfatuning.app/logo.png" />
+            <meta property="og:url" content={pageUrl} />
+            <meta property="og:image" content={homeOgImage} />
+            <meta property="og:image:alt" content="Alfa Romeo remote flashing device by Alfa Tuning" />
             <meta property="og:site_name" content="Alfa Tuning" />
 
             {/* Twitter Card */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="Home Alfa Tuning | Unlock Your Alfa Romeo's Potential" />
             <meta name="twitter:description" content="Unlock the full potential of your Alfa Romeo with Alfa Tuning. We offer OBD2 interfaces, custom 3D models, manuals, and tuning services." />
-            <meta name="twitter:image" content="https://alfatuning.app/logo.png" />
+            <meta name="twitter:image" content={homeOgImage} />
 
-            <link rel="canonical" href="https://alfatuning.app/" />
+            <link rel="canonical" href={pageUrl} />
 
             {/* Hreflang for international SEO */}
-            <link rel="alternate" hrefLang="x-default" href="https://alfatuning.app/" />
-            <link rel="alternate" hrefLang="en" href="https://alfatuning.app/" />
+            <link rel="alternate" hrefLang="x-default" href={pageUrl} />
 
             {/* Structured Data */}
             <script type="application/ld+json">

@@ -8,6 +8,7 @@ function NoMatch() {
             <title>404 Not Found Alfa Tuning</title>
             <meta name="description" content="Alfa Tuning not found page" />
             <meta name="keywords" content="Alfa Tuning 404" />
+            <meta name="robots" content="noindex, nofollow" />
         </Helmet>
         <div className="nomatch">
             <img alt="not found page" src={require("./../../assets/404.png")} />

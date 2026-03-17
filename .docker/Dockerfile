@@ -1,16 +1,6 @@
-FROM node:lts-alpine as build
+FROM caddy:2.8-alpine
 
-WORKDIR /app
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY build /srv
 
-COPY . ./
-
-FROM fholzer/nginx-brotli:latest
-
-WORKDIR /etc/nginx
-ADD nginx.conf /etc/nginx/nginx.conf
-
-COPY --from=build /app/build /usr/share/nginx/html
 EXPOSE 8080
-
-ENTRYPOINT ["nginx"]
-CMD ["-g", "daemon off;"]

@@ -70,8 +70,14 @@ function RnDCard(props) {
 }
 
 function RnD() {
+    const BASE_URL = 'https://alfatuning.app';
+    const pageUrl = `${BASE_URL}/rnd`;
     const [searchTerm, setSearchTerm] = useState('');
     const [filterCar, setFilterCar] = useState('all');
+
+    const rndOgImageModule = require('../../assets/rnd/GiuliaGTAmFrontBumper.png');
+    const rndOgImagePath = typeof rndOgImageModule === 'string' ? rndOgImageModule : rndOgImageModule.default;
+    const rndOgImage = `${BASE_URL}${rndOgImagePath}`;
 
     // Get unique car models for filter
     const uniqueCars = useMemo(() => {
@@ -99,7 +105,7 @@ function RnD() {
         "@type": "CollectionPage",
         "name": "Alfa Tuning Research & Development",
         "description": "3D models and custom parts for Alfa Romeo vehicles",
-        "url": window.location.origin + "/rnd",
+        "url": pageUrl,
         "numberOfItems": rndModels.models.length,
         "about": {
             "@type": "Thing",
@@ -116,12 +122,19 @@ function RnD() {
                     name="description"
                     content="Explore Alfa Tuning's research and development of custom 3D models and performance parts for Alfa Romeo Giulia, Stelvio, GTAm, and Quadrifoglio."
                 />
-                <link rel="canonical" href={window.location.origin + "/rnd"} />
+                <link rel="canonical" href={pageUrl} />
                 <meta name="robots" content="index, follow, max-image-preview:large" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="R&D - Alfa Tuning | Custom Parts & 3D Models" />
                 <meta property="og:description" content="Premium custom parts and 3D models for Alfa Romeo vehicles." />
-                <meta property="og:url" content={window.location.origin + "/rnd"} />
+                <meta property="og:url" content={pageUrl} />
+                <meta property="og:image" content={rndOgImage} />
+                <meta property="og:image:alt" content="Alfa Romeo GTAm front bumper 3D model by Alfa Tuning" />
+                <meta property="og:site_name" content="Alfa Tuning" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="R&D - Alfa Tuning | Custom Parts & 3D Models" />
+                <meta name="twitter:description" content="Premium custom parts and 3D models for Alfa Romeo vehicles." />
+                <meta name="twitter:image" content={rndOgImage} />
                 <script type="application/ld+json">
                     {JSON.stringify(structuredData)}
                 </script>

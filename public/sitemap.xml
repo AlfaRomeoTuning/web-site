@@ -3,31 +3,31 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://alfatuning.app/</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/partners</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/device</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-bumper</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -48,7 +48,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -64,7 +64,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-bumper-diffuser</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -90,7 +90,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-adjustable-splitter</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -126,7 +126,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-fender-air-vent</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -142,7 +142,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-bumper-cooler-air-conductor</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -158,7 +158,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender-mudguard-front-part</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -174,7 +174,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-side-skirt</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -195,7 +195,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender-mudguard-rear-part</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -216,7 +216,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-radiator-air-conductor</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -237,7 +237,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-bumper-side-insert</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -253,7 +253,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-side-grill</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -274,7 +274,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-lower-central-grill</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -285,7 +285,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-grill</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -296,7 +296,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-seat-bracket</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -317,7 +317,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-fender-arch</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -333,7 +333,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-washer-cap</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -349,7 +349,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rollbar-mount</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -364,8 +364,24 @@
         </image:image>
     </url>
     <url>
+        <loc>https://alfatuning.app/rnd/giulia-gtam-rear-bars</loc>
+        <lastmod>2026-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearBars.8cd2a7d46b4ecf960ea8.png</image:loc>
+            <image:title>Rear Bars for Giulia GTAm</image:title>
+            <image:caption>Alfa Romeo Giulia GTAm rear bars</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmRearBars2.8007e06be9c5a8da2aa8.png</image:loc>
+            <image:title>Rear Bars for Giulia GTAm - View 2</image:title>
+            <image:caption>Additional view: Rear Bars for Giulia GTAm</image:caption>
+        </image:image>
+    </url>
+    <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-wing</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -396,7 +412,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gta-rear-spoiler</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -417,7 +433,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-wheel</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -428,7 +444,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-hub-bearing</loc>
-        <lastmod>2025-12-22</lastmod>
+        <lastmod>2026-03-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -465,6 +481,32 @@
             <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing7.5611fdbeddb009e5a069.png</image:loc>
             <image:title>Hub Bearing for Giulia GTAm, Giulia GTA - View 7</image:title>
             <image:caption>Additional view: Hub Bearing for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://alfatuning.app/rnd/giulia-gtam-exhaust-system</loc>
+        <lastmod>2026-03-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmExhaustSystem.3b0b80bf1128ecbcd938.png</image:loc>
+            <image:title>Exhaust System for Giulia GTAm, Giulia GTA</image:title>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm Exhaust System. Scans only include the visible parts of the exhaust system, such as the muffler and tailpipes. The internal components of the exhaust system, such as the catalytic converter and resonator, are not included in the scans due to their location and complexity.</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmExhaustSystem2.9565a3b59b812ad8615c.png</image:loc>
+            <image:title>Exhaust System for Giulia GTAm, Giulia GTA - View 2</image:title>
+            <image:caption>Additional view: Exhaust System for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmExhaustSystem3.373021bbfa650489d0f2.png</image:loc>
+            <image:title>Exhaust System for Giulia GTAm, Giulia GTA - View 3</image:title>
+            <image:caption>Additional view: Exhaust System for Giulia GTAm, Giulia GTA</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://alfatuning.app/static/media/GiuliaGTAmExhaustSystem4.80a5fb034c67b576feab.png</image:loc>
+            <image:title>Exhaust System for Giulia GTAm, Giulia GTA - View 4</image:title>
+            <image:caption>Additional view: Exhaust System for Giulia GTAm, Giulia GTA</image:caption>
         </image:image>
     </url>
 </urlset>

@@ -1,0 +1,25 @@
+{
+    auto_https off
+}
+
+:{$PORT:8080} {
+    root * /srv
+
+    encode zstd gzip
+
+    @www host www.alfatuning.app
+    redir @www https://alfatuning.app{uri} permanent
+
+    header {
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        X-XSS-Protection "1; mode=block"
+        Cache-Control "no-store, no-cache, must-revalidate"
+    }
+
+    @assets path *.js *.css *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.ttf *.eot
+    header @assets Cache-Control "public, no-transform, max-age=864000"
+
+    try_files {path} /index.html
+    file_server
+}
