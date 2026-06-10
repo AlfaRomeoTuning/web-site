@@ -35,6 +35,8 @@ function RnDCard(props) {
                                 alt={altText}
                                 title={`${props.model.part} for Alfa Romeo ${carModels}`}
                                 loading="lazy"
+                                width="800"
+                                height="600"
                                 onError={() => setImageError(true)}
                                 className="card-image"
                             />

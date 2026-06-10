@@ -1,8 +1,7 @@
 /* Product Page Styles */
 
-* {
-    margin: 0;
-    padding: 0;
+#product-page,
+#product-page * {
     box-sizing: border-box;
 }
 

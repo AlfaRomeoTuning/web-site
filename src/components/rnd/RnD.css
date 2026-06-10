@@ -256,7 +256,7 @@
 }
 
 .no-results .btn:hover {
-    background: darken(#e32027, 10%);
+    background: #b6191f;
     transform: scale(1.05);
 }
 

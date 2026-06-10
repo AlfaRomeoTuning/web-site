@@ -2,21 +2,15 @@
 const fs = require('fs');
 const path = require('path');
 
-// Импортируем данные моделей
-const rndModelsPath = path.join(__dirname, '../src/components/rnd/rndModels.js');
-let rndModels;
+// Load model data from JSON to avoid executing source files.
+const rndModelsPath = path.join(__dirname, '../src/components/rnd/rndModelsData.json');
+let rndModels = { models: [] };
 
 try {
-    // Читаем файл и извлекаем данные
     const fileContent = fs.readFileSync(rndModelsPath, 'utf8');
-    // Создаем временный модуль для извлечения данных
-    const module = { exports: {} };
-    eval(fileContent.replace('export default', 'module.exports ='));
-    rndModels = module.exports;
+    rndModels = { models: JSON.parse(fileContent) };
 } catch (error) {
-    console.error('Error reading rndModels:', error);
-    // Fallback - пустой массив
-    rndModels = { models: [] };
+    console.error('Error reading rndModelsData.json:', error);
 }
 
 // Load asset manifest from build directory
