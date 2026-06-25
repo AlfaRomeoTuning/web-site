@@ -207,6 +207,27 @@
   },
   {
     "car": [
+      "Giulia GTAm",
+      "Giulia GTA"
+    ],
+    "part": "Door Handle",
+    "childs": [
+    ],
+    "description": "Alfa Romeo Giulia GTAm / GTA door handle"
+  },
+  {
+    "car": [
+      "Giulia GTAm",
+      "Giulia GTA"
+    ],
+    "part": "Splitter Motor Body",
+    "childs": [
+      2
+    ],
+    "description": "Alfa Romeo Giulia GTAm / GTA splitter motor body"
+  },
+  {
+    "car": [
       "Giulia GTAm"
     ],
     "part": "Rear Bars",
