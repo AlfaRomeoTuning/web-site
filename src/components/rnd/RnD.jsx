@@ -9,6 +9,7 @@ import rndModels from './rndModels';
 import './RnD.css';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../config';
 
 function RnDCard(props) {
     const [imageError, setImageError] = useState(false);
@@ -72,7 +73,6 @@ function RnDCard(props) {
 }
 
 function RnD() {
-    const BASE_URL = 'https://alfatuning.app';
     const pageUrl = `${BASE_URL}/rnd`;
     const [searchTerm, setSearchTerm] = useState('');
     const [filterCar, setFilterCar] = useState('all');

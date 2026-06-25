@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet'
 import './Home.css'
+import { BASE_URL } from '../../config';
 
 function Home() {
-    const BASE_URL = 'https://alfatuning.app';
     const pageUrl = `${BASE_URL}/`;
     const homeOgImageModule = require('../../assets/AlfaFlasher00.png');
     const homeOgImagePath = typeof homeOgImageModule === 'string' ? homeOgImageModule : homeOgImageModule.default;
@@ -12,10 +12,10 @@ function Home() {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Alfa Tuning",
-        "url": "https://alfatuning.app/",
+        "url": `${BASE_URL}/`,
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://alfatuning.app/rnd?search={search_term_string}",
+            "target": `${BASE_URL}/rnd?search={search_term_string}`,
             "query-input": "required name=search_term_string"
         }
     };
@@ -24,8 +24,8 @@ function Home() {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Alfa Tuning",
-        "url": "https://alfatuning.app/",
-        "logo": "https://alfatuning.app/logo.png",
+        "url": `${BASE_URL}/`,
+        "logo": `${BASE_URL}/logo.png`,
         "sameAs": [
             "https://www.facebook.com/WorksByGw",
             "https://www.instagram.com/aerodynamic_carbon/"

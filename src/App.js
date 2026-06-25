@@ -1,5 +1,6 @@
 import './App.css';
 import Navigation from './components/navigation/Navigation';
+import ErrorBoundary from './components/ErrorBoundary';
 
 import { Route, Navigate, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 
@@ -23,5 +24,9 @@ let router = createBrowserRouter(
   </Route>))
 
 export default function App() {
-  return <RouterProvider router={router} future={{ v7_startTransition: true }} />;
+  return (
+    <ErrorBoundary>
+      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+    </ErrorBoundary>
+  );
 }

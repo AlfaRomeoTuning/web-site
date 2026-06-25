@@ -1,15 +1,35 @@
 #partners-page {
-    background-color: rgb(35, 35, 35);
+    background-color: #ffffff;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 2rem 1.5rem 4rem;
+}
+
+/* Shared page header (matches R&D look) */
+.partners-header {
+    max-width: 1400px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.partners-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.partners-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+    font-weight: 300;
 }
 
 #partners-page .partners-container {
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
     padding: 10px;
-    /* padding-top: 45px; */
 }
 
 #partners-page .partners {
@@ -67,8 +87,12 @@
 
 #partners-page .partners {
     margin: 0 auto;
-    width: 90%;
-    margin-top: 60px;
+    max-width: 1200px;
+    width: 100%;
+    background: rgb(35, 35, 35);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    justify-content: center;
 }
 
 #partners-page .aerocarbon{

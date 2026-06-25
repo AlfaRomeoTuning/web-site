@@ -7,6 +7,7 @@ import rndModels from './rndModels';
 import './RnD.css';
 import parse from 'html-react-parser';
 import DOMPurify from 'dompurify';
+import { BASE_URL } from '../../config';
 
 function RnDDetail() {
     const { slug } = useParams();
@@ -31,10 +32,7 @@ function RnDDetail() {
         );
     }
 
-    const BASE_URL = "https://alfatuning.app";
-
-    const pageUrl = BASE_URL + `/rnd/${slug}`;
-    const mainImageModule = require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png');
+    const pageUrl = BASE_URL + `/rnd/${slug}`;    const mainImageModule = require('../../assets/rnd/' + model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png');
     const mainImage = typeof mainImageModule === 'string' ? mainImageModule : (mainImageModule && mainImageModule.default) ? mainImageModule.default : '';
 
     // Prefer absolute URL for social/meta/structured-data

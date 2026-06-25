@@ -1,3 +1,19 @@
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 1100;
+    padding: 0.6rem 1rem;
+    background: #c0392b;
+    color: #fff;
+    border-radius: 0 0 4px 0;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
 .navbar-link,
 .navbar-link a,
 .dropdown-toggle a {
@@ -33,6 +49,18 @@
 .navbar .navbar-contact-us {
     padding: 12px;
     width: 270px;
+}
+
+.navbar-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 8px 0;
+}
+
+.navbar-contact-row .contact-icon {
+    flex-shrink: 0;
+    color: #c0392b;
 }
 
 .default-dom-link {

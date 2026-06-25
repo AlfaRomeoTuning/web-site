@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './Product.css'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet';
+import { BASE_URL } from '../../config';
+
+// Provides the "open image in lightbox" handler to nested instruction steps
+// without prop-drilling through every step.
+const LightboxContext = React.createContext(() => {});
 
 function Product() {
     const [fullView, setFullView] = React.useState(true);
     const [activeTab, setActiveTab] = React.useState('features');
+    const [lightboxImage, setLightboxImage] = useState(null);
+
+    const openLightbox = useCallback((src, alt) => setLightboxImage({ src, alt }), []);
+    const closeLightbox = useCallback(() => setLightboxImage(null), []);
     //const uA = navigator.userAgent || navigator.vendor || window.opera;
     //const isIOS = (/iPad|iPhone|iPod/.test(uA) && !window.MSStream) || (uA.includes('Mac') && 'ontouchend' in document);
 
@@ -47,8 +56,8 @@ function Product() {
 
     const flasherImageModule = require("../../assets/AlfaFlasher00.png");
     const flasherImage = typeof flasherImageModule === 'string' ? flasherImageModule : flasherImageModule.default;
-    const absoluteImage = "https://alfatuning.app" + flasherImage;
-    const pageUrl = "https://alfatuning.app/device";
+    const absoluteImage = BASE_URL + flasherImage;
+    const pageUrl = `${BASE_URL}/device`;
 
     const structuredData = {
         "@context": "https://schema.org",
@@ -96,6 +105,7 @@ function Product() {
     };
 
     return (
+        <LightboxContext.Provider value={openLightbox}>
         <div id="product-page">
             <Helmet>
                 <title>Product Alfa Tuning | Remote Flashing Device</title>
@@ -134,7 +144,20 @@ function Product() {
                 <div className='text-container'>
                     <Row style={{ width: '100%', alignItems: 'center' }}>
                         <Col sm={12} md={5} className="image-column">
-                            <div className="image-wrapper" onClick={() => setFullView(!fullView)}>
+                            <div
+                                className="image-wrapper"
+                                role="button"
+                                tabIndex={0}
+                                aria-pressed={!fullView}
+                                aria-label="Switch product image view"
+                                onClick={() => setFullView(!fullView)}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault();
+                                        setFullView(!fullView);
+                                    }
+                                }}
+                            >
                                 <img
                                     alt="Alfa Romeo Flashing Device Interface"
                                     className='interface-image'
@@ -350,25 +373,96 @@ function Product() {
                 </div>
             </section>
         </div>
+        {lightboxImage && (
+            <Lightbox image={lightboxImage} onClose={closeLightbox} />
+        )}
+        </LightboxContext.Provider>
     );
 }
 
 // Helper component for instruction steps
 function InstructionStep({ number, title, description, imageSrc, imageAlt }) {
+    const openLightbox = React.useContext(LightboxContext);
+
     return (
         <div className="instruction-step">
             <div className="step-header">
                 <div className="step-number">{number}</div>
                 <h4>{title}</h4>
             </div>
-            <p className="step-description">{description}</p>
-            {imageSrc && (
+            <div className="step-body">
+                <div className="step-text">
+                    <p className="step-description">{description}</p>
+                </div>
+                {imageSrc && (
+                    <button
+                        type="button"
+                        className="step-image-button"
+                        onClick={() => openLightbox(imageSrc, imageAlt)}
+                        aria-label={`Enlarge image: ${imageAlt}`}
+                    >
+                        <img
+                            src={imageSrc}
+                            alt={imageAlt}
+                            className="step-image"
+                            loading="lazy"
+                        />
+                        <span className="zoom-badge" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /><line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" /></svg>
+                            Tap to zoom
+                        </span>
+                    </button>
+                )}
+            </div>
+        </div>
+    );
+}
+
+// Fullscreen image viewer with zoom toggle, keyboard + click-to-close support
+function Lightbox({ image, onClose }) {
+    const [zoomed, setZoomed] = useState(false);
+    const closeRef = useRef(null);
+
+    useEffect(() => {
+        const onKeyDown = (e) => {
+            if (e.key === 'Escape') onClose();
+        };
+        document.addEventListener('keydown', onKeyDown);
+        const prevOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        if (closeRef.current) closeRef.current.focus();
+        return () => {
+            document.removeEventListener('keydown', onKeyDown);
+            document.body.style.overflow = prevOverflow;
+        };
+    }, [onClose]);
+
+    return (
+        <div
+            className="lightbox-overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-label={image.alt || 'Enlarged image'}
+            onClick={onClose}
+        >
+            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                <button
+                    type="button"
+                    className="lightbox-close"
+                    onClick={onClose}
+                    aria-label="Close image viewer"
+                    ref={closeRef}
+                >
+                    &times;
+                </button>
                 <img
-                    src={imageSrc}
-                    alt={imageAlt}
-                    className="step-image"
+                    src={image.src}
+                    alt={image.alt}
+                    className={`lightbox-image ${zoomed ? 'zoomed' : ''}`}
+                    onClick={() => setZoomed((z) => !z)}
                 />
-            )}
+                <p className="lightbox-hint">{zoomed ? 'Click image to zoom out' : 'Click image to zoom in'}</p>
+            </div>
         </div>
     );
 }
