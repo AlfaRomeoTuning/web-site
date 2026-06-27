@@ -276,6 +276,20 @@
       "Giulia GTAm",
       "Giulia GTA"
     ],
+    "part": "Prototype Wheel",
+    "childs": [
+      2,
+      3,
+      4
+    ],
+    "description": "<p><strong>APPTECH Italy Prototype Wheels for Alfa Romeo Giulia GTA / GTAm</strong></p>\n\n<p>\nTransform the appearance and performance of your <strong>Alfa Romeo Giulia Quadrifoglio</strong> with exclusive\n<strong>APPTECH Italy GTA / GTAm Prototype Wheels</strong>. Inspired by the iconic factory\n<em>Alfa Romeo Giulia GTA</em> and <em>GTAm</em>, these 20-inch wheels combine aggressive motorsport styling with\na precise fitment engineered specifically for the Giulia platform.\n</p>\n\n<p>\nFeaturing a staggered setup with wider rear wheels, these prototype wheels provide a more planted stance,\nimproved traction, and the unmistakable appearance of Alfa Romeo's most exclusive performance models.\nWhether you're building a street car, weekend track machine, or show vehicle, APPTECH Italy wheels deliver\nthe perfect balance of style, performance, and exclusivity.\n</p>\n\n<br>\n\n<p><strong>Specifications</strong></p>\n\n<p>\n<strong>Front:</strong> 9.5J × 20\" ET23<br>\n<strong>Rear:</strong> 11J × 20\" ET29\n</p>\n\n<br>\n\n<p><strong>Key Features</strong></p>\n\n<p>\n• Designed exclusively for the Alfa Romeo Giulia platform<br>\n• Inspired by the factory Alfa Romeo Giulia GTA &amp; GTAm<br>\n• Exclusive APPTECH Italy prototype design<br>\n• Aggressive staggered fitment for maximum visual impact<br>\n• Wide rear wheels improve traction and handling stability<br>\n• Perfect for performance road cars and track builds<br>\n• Premium manufacturing with exceptional attention to detail<br>\n• Compatible with high-performance tire setups\n</p>\n\n<br>\n\n<p><strong>Designed for Enthusiasts</strong></p>\n\n<p>\nThe wider <strong>11J rear</strong> wheels create a muscular stance while allowing wider tires for increased grip during\nhard acceleration. The <strong>9.5J front</strong> wheels maintain precise steering response and balanced handling,\nmaking this combination ideal for spirited driving.\n</p>\n\n<p>\nEvery detail of the APPTECH Italy prototype wheels has been developed to complement the aggressive lines of\nthe Alfa Romeo Giulia, giving your car a factory-inspired appearance that stands out both on the road and at\nautomotive events.\n</p>\n\n",
+    "downloadFile": "gtam_prototype_wheel.7z"
+  },
+  {
+    "car": [
+      "Giulia GTAm",
+      "Giulia GTA"
+    ],
     "part": "Hub Bearing",
     "childs": [
       2,
