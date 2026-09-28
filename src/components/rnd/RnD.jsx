@@ -10,31 +10,29 @@ import './RnD.css';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { BASE_URL } from '../../config';
+import { getRndImage } from './rndAssetLoader';
+import { createModelSlug, getModelFileName } from './rndModelUtils';
 
-function RnDCard(props) {
+const MODELS = rndModels.models;
+
+function RnDCard({ model }) {
     const [imageError, setImageError] = useState(false);
-    
-    // Generate slug from model name and part
-    const slug = `${props.model.car[0]}-${props.model.part}`
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^a-z0-9-]/g, '');
-
-    const imagePath = require('../../assets/rnd/' + props.model.car[0].replace(/ /g, '') + props.model.part.replace(/ /g, '') + '.png');
-    const carModels = props.model.car.join(', ');
-    const altText = `${props.model.part} for ${carModels} - Alfa Tuning 3D model`;
+    const imagePath = getRndImage(getModelFileName(model.raw));
+    const hasImage = Boolean(imagePath) && !imageError;
+    const carModels = model.carModels;
+    const altText = `${model.part} for ${carModels} - Alfa Tuning 3D model`;
 
     return (
         <Col>
-            <Link to={`/rnd/${slug}`} className="model-link">
+            <Link to={`/rnd/${model.slug}`} className="model-link" aria-label={`View ${model.part} for ${carModels}`}>
                 <Card as="article" className="model-card h-100">
                     <div className="card-image-wrapper">
-                        {!imageError ? (
+                        {hasImage ? (
                             <Card.Img
                                 variant="top"
                                 src={imagePath}
                                 alt={altText}
-                                title={`${props.model.part} for Alfa Romeo ${carModels}`}
+                                title={`${model.part} for Alfa Romeo ${carModels}`}
                                 loading="lazy"
                                 width="800"
                                 height="600"
@@ -48,17 +46,22 @@ function RnDCard(props) {
                         )}
                     </div>
                     <Card.Body className="d-flex flex-column">
+                        <div className="card-meta-row">
+                            <span className={`model-status ${model.downloadFile ? 'is-download' : 'is-preview'}`}>
+                                {model.downloadFile ? 'Download Available' : 'Preview Only'}
+                            </span>
+                        </div>
                         <Card.Title as="h3" className="card-title">
-                            {props.model.part}
+                            {model.part}
                         </Card.Title>
                         <Card.Text className="card-subtitle text-muted">
-                            {props.model.car.length > 1 
+                            {model.car.length > 1 
                                 ? `For ${carModels}` 
-                                : `For ${props.model.car[0]}`}
+                                : `For ${model.car[0]}`}
                         </Card.Text>
-                        {props.model.specs && (
+                        {model.specs && (
                             <Card.Text className="card-specs">
-                                {props.model.specs}
+                                {model.specs}
                             </Card.Text>
                         )}
                         <div className="card-footer-spacer"></div>
@@ -81,26 +84,48 @@ function RnD() {
     const rndOgImagePath = typeof rndOgImageModule === 'string' ? rndOgImageModule : rndOgImageModule.default;
     const rndOgImage = `${BASE_URL}${rndOgImagePath}`;
 
-    // Get unique car models for filter
-    const uniqueCars = useMemo(() => {
-        const cars = new Set();
-        rndModels.models.forEach(model => {
-            model.car.forEach(carName => cars.add(carName));
-        });
-        return Array.from(cars).sort();
+    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+
+    const modelEntries = useMemo(() => {
+        return MODELS.map(model => ({
+            ...model,
+            slug: createModelSlug(model),
+            carModels: model.car.join(', '),
+            searchText: `${model.part} ${model.car.join(' ')}`.toLowerCase(),
+            raw: model,
+        }));
     }, []);
 
-    // Filter and search models
+    const { uniqueCars, carModelCounts } = useMemo(() => {
+        const cars = new Set();
+        const counts = {};
+
+        modelEntries.forEach(model => {
+            model.car.forEach(carName => cars.add(carName));
+            model.car.forEach(carName => {
+                counts[carName] = (counts[carName] || 0) + 1;
+            });
+        });
+
+        return {
+            uniqueCars: Array.from(cars).sort(),
+            carModelCounts: counts,
+        };
+    }, [modelEntries]);
+
     const filteredModels = useMemo(() => {
-        return rndModels.models.filter(model => {
-            const matchesSearch = model.part.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                model.car.some(car => car.toLowerCase().includes(searchTerm.toLowerCase()));
+        return modelEntries.filter(model => {
+            const matchesSearch = normalizedSearchTerm === '' || model.searchText.includes(normalizedSearchTerm);
             
             const matchesFilter = filterCar === 'all' || model.car.includes(filterCar);
             
             return matchesSearch && matchesFilter;
         });
-    }, [searchTerm, filterCar]);
+    }, [filterCar, modelEntries, normalizedSearchTerm]);
+
+    const modelCount = modelEntries.length;
+    const visibleDownloadableCount = filteredModels.filter(model => Boolean(model.downloadFile)).length;
+    const quickFilters = uniqueCars.slice(0, 4);
 
     const structuredData = {
         "@context": "https://schema.org",
@@ -108,7 +133,7 @@ function RnD() {
         "name": "Alfa Tuning Research & Development",
         "description": "3D models and custom parts for Alfa Romeo vehicles",
         "url": pageUrl,
-        "numberOfItems": rndModels.models.length,
+        "numberOfItems": modelCount,
         "about": {
             "@type": "Thing",
             "name": "Alfa Romeo Custom Parts"
@@ -142,55 +167,103 @@ function RnD() {
                 </script>
             </Helmet>
 
-            <main id='rnd-page'>
+            <div id='rnd-page'>
                 <section className="rnd-header">
+                    <div className="rnd-eyebrow">Alfa Tuning Research and Development Catalog</div>
                     <h1>3D Models & Custom Parts</h1>
                     <p className="rnd-subtitle">Browse our collection of premium Alfa Romeo modifications</p>
+                    <div className="rnd-summary" aria-label="Catalog summary">
+                        <span><strong>{modelCount}</strong> total models</span>
+                        <span><strong>{filteredModels.length}</strong> visible</span>
+                        <span><strong>{visibleDownloadableCount}</strong> downloadable</span>
+                    </div>
                 </section>
 
                 <section className="rnd-filters">
-                    <InputGroup className="search-bar">
-                        <InputGroup.Text>🔍</InputGroup.Text>
-                        <Form.Control
-                            placeholder="Search by part or model..."
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                            aria-label="Search 3D models"
-                        />
-                    </InputGroup>
+                    <div className="rnd-filter-panel" role="search" aria-label="R and D catalog filters">
+                        <InputGroup className="search-bar">
+                            <InputGroup.Text id="rnd-search-icon" aria-hidden="true">🔍</InputGroup.Text>
+                            <Form.Control
+                                placeholder="Search by part or model..."
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                aria-label="Search 3D models"
+                                aria-describedby="rnd-search-icon"
+                            />
+                        </InputGroup>
 
-                    <Form.Group className="filter-group">
-                        <Form.Label htmlFor="car-filter">Car Model:</Form.Label>
-                        <Form.Select 
-                            id="car-filter"
-                            value={filterCar} 
-                            onChange={(e) => setFilterCar(e.target.value)}
-                            aria-label="Filter by car model"
+                        <Form.Group className="filter-group">
+                            <Form.Label htmlFor="car-filter">Platform</Form.Label>
+                            <Form.Select
+                                id="car-filter"
+                                value={filterCar}
+                                onChange={(e) => setFilterCar(e.target.value)}
+                                aria-label="Filter by car model"
+                            >
+                                <option value="all">All Models ({modelCount})</option>
+                                {uniqueCars.map(car => {
+                                    return (
+                                        <option key={car} value={car}>
+                                            {car} ({carModelCounts[car]})
+                                        </option>
+                                    );
+                                })}
+                            </Form.Select>
+                        </Form.Group>
+
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setSearchTerm('');
+                                setFilterCar('all');
+                            }}
+                            className="btn rnd-clear-btn"
+                            aria-label="Reset search and platform filters"
                         >
-                            <option value="all">All Models ({rndModels.models.length})</option>
-                            {uniqueCars.map(car => {
-                                const count = rndModels.models.filter(m => m.car.includes(car)).length;
-                                return (
-                                    <option key={car} value={car}>
-                                        {car} ({count})
-                                    </option>
-                                );
-                            })}
-                        </Form.Select>
-                    </Form.Group>
+                            Reset Filters
+                        </button>
+                    </div>
+
+                    <div className="rnd-quick-filters" aria-label="Quick platform filters">
+                        <button
+                            type="button"
+                            className={`quick-filter-pill ${filterCar === 'all' ? 'is-active' : ''}`}
+                            onClick={() => setFilterCar('all')}
+                            aria-pressed={filterCar === 'all'}
+                        >
+                            All
+                        </button>
+                        {quickFilters.map(car => (
+                            <button
+                                key={car}
+                                type="button"
+                                className={`quick-filter-pill ${filterCar === car ? 'is-active' : ''}`}
+                                onClick={() => setFilterCar(car)}
+                                aria-pressed={filterCar === car}
+                            >
+                                {car}
+                            </button>
+                        ))}
+                    </div>
                 </section>
 
                 {filteredModels.length > 0 ? (
                     <Row xs={1} sm={2} md={3} lg={4} xxl={5} className="models-grid">
                         {filteredModels.map(model =>
-                            <RnDCard key={model.car[0] + model.part} model={model} />
+                            <RnDCard key={model.slug} model={model} />
                         )}
                     </Row>
                 ) : (
                     <div className="no-results">
                         <h2>No models found</h2>
-                        <p>Try adjusting your search or filters</p>
+                        <p>
+                            No matches for
+                            {' '}
+                            <strong>{searchTerm || 'your current filters'}</strong>
+                            . Try adjusting your search or filters.
+                        </p>
                         <button 
+                            type="button"
                             onClick={() => {
                                 setSearchTerm('');
                                 setFilterCar('all');
@@ -202,10 +275,10 @@ function RnD() {
                     </div>
                 )}
 
-                <div className="results-count">
-                    Showing {filteredModels.length} of {rndModels.models.length} models
+                <div className="results-count" aria-live="polite">
+                    Showing {filteredModels.length} of {modelCount} models
                 </div>
-            </main>
+            </div>
         </>
     );
 }

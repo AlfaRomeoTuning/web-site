@@ -1,8 +1,36 @@
 .nomatch{
     text-align: center;
+    padding: 1rem;
 }
 
 .nomatch img{
     margin-top: 20px;
     height: 40vh;
+    max-width: min(92vw, 620px);
+    object-fit: contain;
+}
+
+.nomatch p {
+    margin: 0.75rem auto 0;
+    max-width: 64ch;
+    color: #4a4f57;
+}
+
+.nomatch-actions {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+@media (max-width: 560px) {
+    .nomatch-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nomatch-actions .btn {
+        width: min(280px, 94vw);
+    }
 }

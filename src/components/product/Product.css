@@ -116,7 +116,7 @@
     flex-wrap: wrap;
 }
 
-.cta-buttons button {
+.cta-buttons .btn {
     padding: 12px 30px;
     font-size: 1rem;
     font-weight: 600;
@@ -124,6 +124,7 @@
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -174,7 +175,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg, #e32027 0%, #b3171c 100%);
     border-radius: 2px;
 }
 
@@ -192,13 +193,13 @@
 }
 
 .feature-content:hover {
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
-    border-left-color: #667eea;
+    box-shadow: 0 10px 30px rgba(227, 32, 39, 0.15);
+    border-left-color: #ad1d23;
     transform: translateY(-5px);
 }
 
 .feature-content h4 {
-    color: #667eea;
+    color: #ad1d23;
     font-size: 1.2rem;
     margin-bottom: 12px;
     font-weight: 600;
@@ -211,15 +212,15 @@
 }
 
 .service-highlight {
-    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    background: linear-gradient(135deg, rgba(227, 32, 39, 0.08) 0%, rgba(179, 23, 28, 0.08) 100%);
     padding: 40px;
     border-radius: 15px;
     margin-top: 50px;
-    border: 1px solid #667eea30;
+    border: 1px solid rgba(227, 32, 39, 0.2);
 }
 
 .service-highlight h3 {
-    color: #667eea;
+    color: #ad1d23;
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
@@ -257,7 +258,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg, #e32027 0%, #b3171c 100%);
     border-radius: 2px;
 }
 
@@ -270,7 +271,7 @@
 }
 
 .prerequisites h3 {
-    color: #667eea;
+    color: #ad1d23;
     font-size: 1.3rem;
     margin-bottom: 20px;
 }
@@ -291,7 +292,7 @@
     content: '✓';
     position: absolute;
     left: 0;
-    color: #667eea;
+    color: #ad1d23;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -319,12 +320,12 @@
 }
 
 .tab-button:hover {
-    color: #667eea;
+    color: #ad1d23;
 }
 
 .tab-button.active {
-    color: #667eea;
-    border-bottom-color: #667eea;
+    color: #ad1d23;
+    border-bottom-color: #ad1d23;
 }
 
 /* ============ SETUP CONTENT ============ */
@@ -362,12 +363,12 @@
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    border-left: 5px solid #667eea;
+    border-left: 5px solid #ad1d23;
     transition: all 0.3s ease;
 }
 
 .instruction-step:hover {
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
+    box-shadow: 0 5px 20px rgba(227, 32, 39, 0.15);
 }
 
 .step-header {

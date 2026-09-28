@@ -48,7 +48,7 @@ function Footer() {
                             </a>
                         </li>
                         <li>
-                            <a href={INSTAGRAM_URL} target="_blank" rel="noreferrer" className="contact-link">
+                            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="contact-link">
                                 <InstagramIcon className="contact-icon" />
                                 <span>@{INSTAGRAM_HANDLE}</span>
                             </a>

@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet';
 import { BASE_URL } from '../../config';
+import { Link } from 'react-router-dom';
 
 // Provides the "open image in lightbox" handler to nested instruction steps
 // without prop-drilling through every step.
@@ -11,7 +12,7 @@ const LightboxContext = React.createContext(() => {});
 
 function Product() {
     const [fullView, setFullView] = React.useState(true);
-    const [activeTab, setActiveTab] = React.useState('features');
+    const [activeTab, setActiveTab] = React.useState('android');
     const [lightboxImage, setLightboxImage] = useState(null);
 
     const openLightbox = useCallback((src, alt) => setLightboxImage({ src, alt }), []);
@@ -109,7 +110,7 @@ function Product() {
         <div id="product-page">
             <Helmet>
                 <title>Product Alfa Tuning | Remote Flashing Device</title>
-                <meta name="description" content="Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio, including GTAm upgrades, Race Mode, and more." />
+                <meta name="description" content="Remote flashing device workflow for Alfa Romeo Giulia and Stelvio, with setup guidance, connectivity prerequisites, and custom module updates." />
                 <link rel="canonical" href={pageUrl} />
 
                 {/* Hreflang for international SEO */}
@@ -162,22 +163,24 @@ function Product() {
                                     alt="Alfa Romeo Flashing Device Interface"
                                     className='interface-image'
                                     src={require(fullView ? "./../../assets/AlfaFlasher00.png" : "./../../assets/AlfaFlasher01.png")}
+                                    width="1200"
+                                    height="900"
                                 />
                                 <p className="image-hint">Click to switch view</p>
                             </div>
                         </Col>
                         <Col sm={12} md={7} className="text-column">
                             <h1>Unleash the Full Potential of Your Alfa Romeo</h1>
-                            <p className="subtitle">Advanced Remote Flashing Device for Giulia & Stelvio</p>
+                            <p className="subtitle">Remote Flashing Device Workflow for Giulia and Stelvio</p>
                             <p className="description">
-                                Take your Alfa Romeo to the next level with cutting-edge upgrades and enhancements tailored for car enthusiasts and professionals alike.
+                                Designed for enthusiasts and workshops that need a repeatable calibration path without unnecessary workshop downtime.
                             </p>
                             <p className="note">
-                                <strong>Note:</strong> GTAm upgrades are available exclusively for Quadrifoglio owners.
+                                <strong>Note:</strong> Feature availability depends on vehicle setup and module compatibility.
                             </p>
                             <div className="cta-buttons">
-                                <button className="btn btn-primary btn-lg">Get Started</button>
-                                <button className="btn btn-outline-primary btn-lg">Learn More</button>
+                                <a href="#setup-guide" className="btn btn-primary btn-lg">Open Setup Guide</a>
+                                <Link to="/rnd" className="btn btn-outline-primary btn-lg">Browse Related R&amp;D</Link>
                             </div>
                         </Col>
                     </Row>
@@ -211,7 +214,7 @@ function Product() {
             </section>
 
             {/* Setup Guide Section */}
-            <section className='product-guide'>
+            <section className='product-guide' id="setup-guide">
                 <div className='text-container'>
                     <h2>How to Setup</h2>
 
@@ -228,14 +231,22 @@ function Product() {
                     </div>
 
                     {/* Tab Navigation */}
-                    <div className="tab-navigation">
+                    <div className="tab-navigation" role="tablist" aria-label="Setup platform selector">
                         <button
+                            id="tab-android"
+                            role="tab"
+                            aria-selected={activeTab === 'android'}
+                            aria-controls="panel-android"
                             className={`tab-button ${activeTab === 'android' ? 'active' : ''}`}
                             onClick={() => setActiveTab('android')}
                         >
                             Android Setup
                         </button>
                         <button
+                            id="tab-ios"
+                            role="tab"
+                            aria-selected={activeTab === 'ios'}
+                            aria-controls="panel-ios"
                             className={`tab-button ${activeTab === 'ios' ? 'active' : ''}`}
                             onClick={() => setActiveTab('ios')}
                         >
@@ -245,7 +256,12 @@ function Product() {
 
                     {/* Android Setup */}
                     {activeTab === 'android' && (
-                        <div className="setup-content android-setup">
+                        <div
+                            className="setup-content android-setup"
+                            id="panel-android"
+                            role="tabpanel"
+                            aria-labelledby="tab-android"
+                        >
                             <h3 id='android'>Android Setup Instructions</h3>
                             <div className="instruction-list">
                                 <InstructionStep
@@ -314,7 +330,12 @@ function Product() {
 
                     {/* iOS Setup */}
                     {activeTab === 'ios' && (
-                        <div className="setup-content ios-setup">
+                        <div
+                            className="setup-content ios-setup"
+                            id="panel-ios"
+                            role="tabpanel"
+                            aria-labelledby="tab-ios"
+                        >
                             <h3 id="ios">iOS Setup Instructions</h3>
                             <div className="instruction-list">
                                 <InstructionStep
@@ -406,6 +427,8 @@ function InstructionStep({ number, title, description, imageSrc, imageAlt }) {
                             alt={imageAlt}
                             className="step-image"
                             loading="lazy"
+                            width="1080"
+                            height="1920"
                         />
                         <span className="zoom-badge" aria-hidden="true">
                             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /><line x1="11" y1="8" x2="11" y2="14" /><line x1="8" y1="11" x2="14" y2="11" /></svg>
@@ -422,11 +445,37 @@ function InstructionStep({ number, title, description, imageSrc, imageAlt }) {
 function Lightbox({ image, onClose }) {
     const [zoomed, setZoomed] = useState(false);
     const closeRef = useRef(null);
+    const contentRef = useRef(null);
 
     useEffect(() => {
         const onKeyDown = (e) => {
-            if (e.key === 'Escape') onClose();
+            if (e.key === 'Escape') {
+                onClose();
+                return;
+            }
+
+            if (e.key === 'Tab' && contentRef.current) {
+                const focusable = contentRef.current.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+
+                if (!focusable.length) {
+                    return;
+                }
+
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
+            }
         };
+
         document.addEventListener('keydown', onKeyDown);
         const prevOverflow = document.body.style.overflow;
         document.body.style.overflow = 'hidden';
@@ -445,7 +494,7 @@ function Lightbox({ image, onClose }) {
             aria-label={image.alt || 'Enlarged image'}
             onClick={onClose}
         >
-            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-content" onClick={(e) => e.stopPropagation()} ref={contentRef}>
                 <button
                     type="button"
                     className="lightbox-close"

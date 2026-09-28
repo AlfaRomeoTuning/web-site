@@ -3,6 +3,85 @@ import { ReactComponent as AlfaSpecialists } from './../../assets/partners/alfaS
 import { Helmet } from 'react-helmet';
 import { BASE_URL } from '../../config';
 
+const PARTNERS = [
+    {
+        name: 'Quadrifoglio Store',
+        href: 'https://qvstore.pl/',
+        image: require('./../../assets/partners/QS.png'),
+        className: 'qs-store',
+    },
+    {
+        name: 'Alfa Care UK',
+        href: 'https://alfacare.co.uk/',
+        image: require('./../../assets/partners/alfacarelogo-1.png'),
+    },
+    {
+        name: 'Alfa Specialists Greece',
+        href: 'https://alfa-specialists.gr/',
+        icon: 'alfa-specialists',
+        className: 'alfa-specialist small-image',
+    },
+    {
+        name: 'ENG Custom',
+        href: 'https://eng-custom.com/',
+        image: require('./../../assets/partners/eng-custom.png'),
+        className: 'eng-custom small-image',
+    },
+    {
+        name: '3D Technology',
+        href: 'http://www.3dtechnology.pl/',
+        image: require('./../../assets/partners/BDTechnology.png'),
+    },
+    {
+        name: 'Alfissimo',
+        href: 'https://alfissimo.com/',
+        image: require('./../../assets/partners/alfissimo.png'),
+        className: 'small-image',
+    },
+    {
+        name: 'Italo ECU',
+        href: 'https://www.italoecu.de/',
+        image: require('./../../assets/partners/italoecu1.png'),
+        className: 'small-image',
+    },
+    {
+        name: 'Gale Motorsport',
+        href: 'https://www.galemotorsport.com/',
+        image: require('./../../assets/partners/color_logo_transparent.png'),
+        className: 'small-image',
+    },
+    {
+        name: 'Squadra Tuning',
+        href: 'https://squadra-tuning.com/',
+        image: require('./../../assets/partners/squadra-tuning.png'),
+        className: 'small-image',
+    },
+    {
+        name: 'Works by GW',
+        href: 'https://www.facebook.com/WorksByGw',
+        image: require('./../../assets/partners/worksbygw.png'),
+        className: 'worksbygw small-image',
+    },
+    {
+        name: 'Aerodynamic Carbon',
+        href: 'https://www.instagram.com/aerodynamic_carbon/',
+        image: require('./../../assets/partners/aerocarbon.png'),
+        className: 'aerocarbon',
+    },
+    {
+        name: 'AlfaOBD',
+        href: 'https://www.alfaobd.com/',
+        image: require('./../../assets/partners/AlfaOBD.png'),
+        className: 'small-image',
+    },
+    {
+        name: 'MultiAir Tuning Development',
+        href: 'https://www.multiair-tuning-dev.com/',
+        image: require('./../../assets/partners/MtD.png'),
+        className: 'small-image',
+    },
+];
+
 function Partners() {
     const pageUrl = `${BASE_URL}/partners`;
     const partnersOgImageModule = require('./../../assets/partners/QS.png');
@@ -62,61 +141,46 @@ function Partners() {
         </Helmet>
         <header className="partners-header">
             <h1>Our Partners</h1>
-            <p className="partners-subtitle">Trusted tuning specialists and suppliers for Alfa Romeo worldwide.</p>
+            <p className="partners-subtitle">Specialist network supporting Alfa Romeo tuning workflows, parts, and engineering services.</p>
         </header>
         <div className="partners-container">
-            <div className="partners">
-                <a href="https://qvstore.pl/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="Quadrifoglio Store - Alfa Romeo parts and accessories" className='partners-image qs-store'
-                        loading="lazy" src={require("./../../assets/partners/QS.png")} />
-                </a>
-                <a href="https://alfacare.co.uk/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="Alfa Care UK - Alfa Romeo specialist" className='partners-image'
-                        loading="lazy" src={require("./../../assets/partners/alfacarelogo-1.png")} />
-                </a>
-                <a href="https://alfa-specialists.gr/" target="_blank" rel="noreferrer" className='partner'>
-                    <AlfaSpecialists className='partners-image alfa-specialist small-image' title="Alfa Specialists Greece" aria-label="Alfa Specialists Greece" />
-                </a>
-                <a href="https://eng-custom.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="ENG Custom - Custom automotive engineering" className='partners-image eng-custom  small-image'
-                        loading="lazy" src={require("./../../assets/partners/eng-custom.png")} />
-                </a>
-                <a href="http://www.3dtechnology.pl/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="3D Technology - 3D scanning and printing" className='partners-image'
-                        loading="lazy" src={require("./../../assets/partners/BDTechnology.png")} />
-                </a>
-                <a href="https://alfissimo.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="Alfissimo - Alfa Romeo tuning and parts" className='partners-image  small-image'
-                        loading="lazy" src={require("./../../assets/partners/alfissimo.png")} />
-                </a>
-                <a href="https://www.italoecu.de/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="Italo ECU - ECU tuning specialist" className='partners-image  small-image'
-                        loading="lazy" src={require("./../../assets/partners/italoecu1.png")} />
-                </a>
-                <a href="https://www.galemotorsport.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="Gale Motorsport - Racing and performance parts" className='partners-image  small-image'
-                        loading="lazy" src={require("./../../assets/partners/color_logo_transparent.png")} />
-                </a>
-                <a href="https://squadra-tuning.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="Squadra Tuning - Performance tuning services" className='partners-image  small-image'
-                        loading="lazy" src={require("./../../assets/partners/squadra-tuning.png")} />
-                </a>
-                <a href="https://www.facebook.com/WorksByGw" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="Works by GW - Custom automotive works" className='partners-image worksbygw  small-image'
-                        loading="lazy" src={require("./../../assets/partners/worksbygw.png")} />
-                </a>
-                <a href="https://www.instagram.com/aerodynamic_carbon/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="Aerodynamic Carbon - Carbon fiber parts" className='partners-image aerocarbon'
-                        loading="lazy" src={require("./../../assets/partners/aerocarbon.png")} />
-                </a>
-                <a href="https://www.alfaobd.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="AlfaOBD - Diagnostic and tuning software" className='partners-image small-image'
-                        loading="lazy" src={require("./../../assets/partners/AlfaOBD.png")} />
-                </a>
-                <a href="https://www.multiair-tuning-dev.com/" target="_blank" rel="noreferrer" className='partner'>
-                    <img alt="MultiAir Tuning Development - Engine tuning services" className='partners-image small-image'
-                        loading="lazy" src={require("./../../assets/partners/MtD.png")} />
-                </a>
+            <section className="partners-meta" aria-label="Partner network summary">
+                <p>
+                    Use this directory to find regional specialists and platform partners connected to the Alfa Tuning ecosystem.
+                    For technical coordination, start through Contact in the main navigation.
+                </p>
+                <div className="partners-badges">
+                    <span>{PARTNERS.length} listed partners</span>
+                    <span>External specialist network</span>
+                </div>
+            </section>
+            <div className="partners-grid">
+                {PARTNERS.map((partner) => (
+                    <a
+                        key={partner.name}
+                        href={partner.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className='partner-card'
+                        aria-label={`Visit ${partner.name}`}
+                    >
+                        <div className="partner-logo-wrap">
+                            {partner.icon === 'alfa-specialists' ? (
+                                <AlfaSpecialists className={`partners-image ${partner.className || ''}`} title={partner.name} aria-label={partner.name} />
+                            ) : (
+                                <img
+                                    alt={`${partner.name} logo`}
+                                    className={`partners-image ${partner.className || ''}`}
+                                    loading="lazy"
+                                    src={partner.image}
+                                    width="280"
+                                    height="90"
+                                />
+                            )}
+                        </div>
+                        <p className="partner-name">{partner.name}</p>
+                    </a>
+                ))}
             </div>
         </div>
     </div>)

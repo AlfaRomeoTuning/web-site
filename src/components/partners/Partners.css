@@ -28,107 +28,145 @@
 }
 
 #partners-page .partners-container {
-    display: flex;
+    display: grid;
+    gap: 1.1rem;
     padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#partners-page .partners {
+#partners-page .partners-meta {
+    border: 1px solid rgba(19, 22, 26, 0.12);
+    border-radius: 14px;
+    background: linear-gradient(180deg, #fbfbfc, #f4f6f8);
+    padding: 1rem;
+}
+
+#partners-page .partners-meta p {
+    margin: 0;
+    color: #454d56;
+    line-height: 1.55;
+}
+
+#partners-page .partners-badges {
+    margin-top: 0.75rem;
     display: flex;
     flex-wrap: wrap;
-    /* padding: 10px;*/
-    column-gap: 20px;
-    row-gap: 10px;
-    /* display: grid;
-    grid-template-columns: repeat(5, auto); */
-
+    gap: 0.5rem;
 }
 
-#partners-page .partner {
-    height: 80px;
-    width: 300px;
-    text-align: center;
+#partners-page .partners-badges span {
+    display: inline-flex;
+    border: 1px solid rgba(19, 22, 26, 0.14);
+    border-radius: 999px;
+    padding: 0.25rem 0.68rem;
+    background: #fff;
+    color: #333b45;
+    font-size: 0.86rem;
+    font-weight: 600;
 }
 
-#partners-page .partners-image {
-    height: 60px;
-    margin: 10px 0;
-}
-
-#partners-page .partners-image:hover {
-    height: 62px;
-}
-
-#partners-page .qs-store {
-    height: 35px;
-    margin-top: 20px;
-}
-
-#partners-page .qs-store:hover {
-    height: 37px;
-    margin-top: 20px;
-}
-
-#partners-page .alfa-specialists {
-    height: 70px;
-    margin-top: 10px;
-}
-
-#partners-page .alfa-specialists:hover {
-    height: 72px;
-}
-
-#partners-page .worksbygw {
-    height: 80px;
-}
-
-#partners-page .worksbygw:hover {
-    height: 82px;
-}
-
-#partners-page .partners {
+#partners-page .partners-grid {
     margin: 0 auto;
-    max-width: 1200px;
     width: 100%;
     background: rgb(35, 35, 35);
     border-radius: 16px;
-    padding: 2.5rem 2rem;
+    padding: 1.3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.85rem;
+}
+
+#partners-page .partner-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 0.85rem;
+    min-height: 148px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#partners-page .partner-card:hover,
+#partners-page .partner-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(227, 32, 39, 0.56);
+    background: rgba(227, 32, 39, 0.12);
+}
+
+#partners-page .partner-logo-wrap {
+    height: 86px;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    padding: 0.25rem;
 }
 
-#partners-page .aerocarbon{
-    height: 80px;
+#partners-page .partners-image {
+    width: 100%;
+    max-width: 150px;
+    max-height: 64px;
+    height: auto;
+    object-fit: contain;
+    margin: 0;
 }
 
-#partners-page .aerocarbon:hover{
-    height: 82px;
+#partners-page .partner-logo-wrap svg.partners-image {
+    width: 100%;
+    max-width: 150px;
+    height: 64px;
+}
+
+#partners-page .partner-name {
+    margin: 0.4rem 0 0;
+    color: #f4f6f8;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+#partners-page .qs-store {
+    max-height: 40px;
+}
+
+#partners-page .worksbygw {
+    max-height: 72px;
+}
+
+#partners-page .aerocarbon {
+    max-height: 74px;
 }
 
 @media only screen and (max-width: 600px) {
-    #partners-page .partners {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
+    #partners-page .partners-grid {
+        grid-template-columns: 1fr 1fr;
+        padding: 0.95rem;
     }
 
-    #partners-page .partner {
-        width: 150px;
+    #partners-page .partner-card {
+        min-height: 130px;
+        padding: 0.75rem;
+    }
+
+    #partners-page .partner-logo-wrap {
+        height: 70px;
     }
 
     #partners-page .partners-image {
-        /* height: 20px; */
-        height: 25px;
+        max-width: 118px;
+        max-height: 48px;
     }
 
-    #partners-page .small-image {
-        height: 40px;
+    #partners-page .partner-logo-wrap svg.partners-image {
+        max-width: 118px;
+        height: 48px;
     }
 
-    #partners-page .partners-image:hover {
-        height: 25px;
+    #partners-page .partner-name {
+        font-size: 0.82rem;
     }
-
-    #partners-page .small-image:hover {
-        height: 40px;
-    }
-
-   
 }
