@@ -63,9 +63,14 @@ function Product() {
             description: "Configure modules to work seamlessly with retrofitted ETM and other enhancements."
         },
         {
+            title: "RFHUB Fix",
+            id: "rfhub-fix",
+            description: "Fix the RFHUB fault B1042-42 - Control unit faulty (EEPROM), which may appear after key programming or PIN reading. Contact Alfa Tuning with your vehicle details and fault report to confirm the repair."
+        },
+        {
             title: "Module Reset",
             id: "module-reset",
-            description: "Clear stored VIN data as part of module preparation, including BCM (Body Computer Module) cleaning to a virgin state for adaptation to another vehicle. After BCM cleaning, the customer must write the new VIN code, write the vehicle's PROXI configuration, and transfer the secret keys from RFHUB to BCM using the vehicle's PIN. Confirm module compatibility before installation; cleaning alone does not complete vehicle configuration."
+            description: "Clear stored VIN data and reset the BCM (Body Computer Module) to a virgin state for use in another vehicle. After cleaning, you must write the new VIN and PROXI configuration, then transfer the secret keys from RFHUB to BCM using the vehicle's PIN. Check compatibility first; cleaning does not complete the setup."
         },
         {
             title: "Flexible Customization",

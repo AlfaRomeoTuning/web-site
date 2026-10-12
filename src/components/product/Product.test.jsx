@@ -96,7 +96,16 @@ test('describes BCM virgin-state cleaning and the need for vehicle adaptation', 
     renderProduct();
 
     expect(screen.getByRole('heading', { name: 'Module Reset', level: 3 })).toBeInTheDocument();
-    expect(screen.getByText(/BCM \(Body Computer Module\) cleaning to a virgin state for adaptation to another vehicle/)).toBeInTheDocument();
-    expect(screen.getByText(/the customer must write the new VIN code, write the vehicle's PROXI configuration, and transfer the secret keys from RFHUB to BCM using the vehicle's PIN/)).toBeInTheDocument();
-    expect(screen.getByText(/cleaning alone does not complete vehicle configuration/)).toBeInTheDocument();
+    expect(screen.getByText(/reset the BCM \(Body Computer Module\) to a virgin state for use in another vehicle/)).toBeInTheDocument();
+    expect(screen.getByText(/you must write the new VIN and PROXI configuration, then transfer the secret keys from RFHUB to BCM using the vehicle's PIN/)).toBeInTheDocument();
+    expect(screen.getByText(/Check compatibility first; cleaning does not complete the setup/)).toBeInTheDocument();
+});
+
+test('shows simple RFHUB repair guidance without a forum link', () => {
+    renderProduct();
+
+    expect(screen.getByRole('heading', { name: 'RFHUB Fix', level: 3 })).toBeInTheDocument();
+    expect(screen.getByText(/Fix the RFHUB fault B1042-42 - Control unit faulty \(EEPROM\)/)).toBeInTheDocument();
+    expect(screen.getByText(/Contact Alfa Tuning with your vehicle details and fault report to confirm the repair/)).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Read the RFHUB B1042-42 owner discussion' })).not.toBeInTheDocument();
 });
