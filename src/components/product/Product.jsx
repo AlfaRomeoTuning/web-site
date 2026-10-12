@@ -3,14 +3,21 @@ import './Product.css'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet';
-import { BASE_URL } from '../../config';
-import { Link } from 'react-router-dom';
+import { BASE_URL, CONTACT_EMAIL } from '../../config';
+import { Link, useLocation } from 'react-router-dom';
 
 // Provides the "open image in lightbox" handler to nested instruction steps
 // without prop-drilling through every step.
 const LightboxContext = React.createContext(() => {});
 
 function Product() {
+    const { hash } = useLocation();
+    useEffect(() => {
+        if (hash) {
+            document.getElementById(hash.slice(1))?.scrollIntoView();
+        }
+    }, [hash]);
+
     const [fullView, setFullView] = React.useState(true);
     const [activeTab, setActiveTab] = React.useState('android');
     const [lightboxImage, setLightboxImage] = useState(null);
@@ -23,11 +30,21 @@ function Product() {
     const features = [
         {
             title: "Boost Performance",
-            description: "Upgrade your Quadrifoglio engine to GTAm specifications for an impressive 540 HP or increase horsepower for 2.0 engine models."
+            description: "Explore engine tuning for Alfa Romeo Giulia and Stelvio, from 2.0-litre ECU calibration to Quadrifoglio software options. Availability depends on your engine, hardware, and current software.",
+            href: "#engine-tuning",
+            linkText: "Explore Giulia and Stelvio engine tuning"
         },
         {
             title: "Transmission Customization",
-            description: "Enjoy custom flashing options for 8HP50 and 8HP75 gearboxes, including adding Launch Control and adjusting to GTAm standards."
+            description: "Explore transmission software options for your Giulia or Stelvio, including 8HP50 and 8HP75 compatibility, shift behavior, and selected Launch Control or GTAm-related updates.",
+            href: "#transmission-customization",
+            linkText: "Explore Giulia and Stelvio transmission customization"
+        },
+        {
+            title: "ABS Customisation",
+            description: "Address ABS-requested preventive engine torque reduction with a software-only tune for Giulia and Stelvio, across all engines and driving modes. ABS braking, traction control, and ESC remain operational.",
+            href: "#abs-customisation",
+            linkText: "Explore Giulia and Stelvio ABS customisation"
         },
         {
             title: "Shift Paddles Fix",
@@ -47,7 +64,8 @@ function Product() {
         },
         {
             title: "Module Reset",
-            description: "Clear VIN codes in all modules for a clean slate."
+            id: "module-reset",
+            description: "Clear stored VIN data as part of module preparation, including BCM (Body Computer Module) cleaning to a virgin state for adaptation to another vehicle. After BCM cleaning, the customer must write the new VIN code, write the vehicle's PROXI configuration, and transfer the secret keys from RFHUB to BCM using the vehicle's PIN. Confirm module compatibility before installation; cleaning alone does not complete vehicle configuration."
         },
         {
             title: "Flexible Customization",
@@ -59,12 +77,13 @@ function Product() {
     const flasherImage = typeof flasherImageModule === 'string' ? flasherImageModule : flasherImageModule.default;
     const absoluteImage = BASE_URL + flasherImage;
     const pageUrl = `${BASE_URL}/device`;
+    const pageDescription = "Explore Alfa Romeo Giulia and Stelvio engine tuning, transmission and ABS customisation, with software-only updates and remote flashing setup guidance.";
 
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "Alfa Romeo Remote Flashing Device",
-        "description": "Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio, including GTAm upgrades, Race Mode, and more.",
+        "description": pageDescription,
         "image": absoluteImage,
         "brand": {
             "@type": "Brand",
@@ -110,7 +129,7 @@ function Product() {
         <div id="product-page">
             <Helmet>
                 <title>Product Alfa Tuning | Remote Flashing Device</title>
-                <meta name="description" content="Remote flashing device workflow for Alfa Romeo Giulia and Stelvio, with setup guidance, connectivity prerequisites, and custom module updates." />
+                <meta name="description" content={pageDescription} />
                 <link rel="canonical" href={pageUrl} />
 
                 {/* Hreflang for international SEO */}
@@ -118,7 +137,7 @@ function Product() {
 
                 {/* Open Graph */}
                 <meta property="og:title" content="Product Alfa Tuning | Remote Flashing Device" />
-                <meta property="og:description" content="Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio." />
+                <meta property="og:description" content={pageDescription} />
                 <meta property="og:type" content="product" />
                 <meta property="og:url" content={pageUrl} />
                 <meta property="og:image" content={absoluteImage} />
@@ -128,7 +147,7 @@ function Product() {
                 {/* Twitter Card */}
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Product Alfa Tuning | Remote Flashing Device" />
-                <meta name="twitter:description" content="Unlock your Alfa Romeo's potential with our Remote Flashing Device. Custom tuning for Giulia & Stelvio." />
+                <meta name="twitter:description" content={pageDescription} />
                 <meta name="twitter:image" content={absoluteImage} />
 
                 {/* Structured Data */}
@@ -194,9 +213,12 @@ function Product() {
                     <Row style={{ width: '100%' }}>
                         {features.map((feature, index) => (
                             <Col sm={12} md={6} lg={6} key={index} className="feature-card">
-                                <div className="feature-content">
-                                    <h4>{feature.title}</h4>
+                                <div className="feature-content" id={feature.id}>
+                                    <h3>{feature.title}</h3>
                                     <p>{feature.description}</p>
+                                    {feature.href && (
+                                        <a href={feature.href}>{feature.linkText}</a>
+                                    )}
                                 </div>
                             </Col>
                         ))}
@@ -209,6 +231,208 @@ function Product() {
                         <p>
                             Trust in technology that doesn't just enhance but transforms your Alfa Romeo. Build a car ready for the track and enjoy every moment behind the wheel!
                         </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="tuning-details-section" id="engine-tuning" aria-labelledby="engine-tuning-heading">
+                <div className="text-container">
+                    <h2 id="engine-tuning-heading">Engine Tuning for Alfa Romeo Giulia and Stelvio</h2>
+                    <p className="description">
+                        Engine tuning starts with the car you have and the way you want to use it.
+                        For Giulia and Stelvio owners, the discussion should cover power delivery,
+                        throttle response, and everyday drivability, rather than a peak horsepower
+                        figure alone. The right calibration depends on the exact engine, vehicle
+                        condition, fuel, installed hardware, and existing ECU software.
+                    </p>
+                    <Row className="g-4 mb-4">
+                        <Col md={6}>
+                            <h3>2.0-litre Engine Calibration</h3>
+                            <p>
+                                ECU calibration coordinates functions such as torque requests,
+                                boost control, ignition, and fueling. These settings need to work
+                                together with the engine and transmission, not simply request more
+                                boost. Share your current specification and any modifications so
+                                the available tuning options can be assessed for your Giulia or Stelvio.
+                            </p>
+                        </Col>
+                        <Col md={6}>
+                            <h3>Quadrifoglio and GTAm Software Options</h3>
+                            <p>
+                                Quadrifoglio tuning requires its own compatibility assessment.
+                                Ask about the GTAm-related software options available for your
+                                configuration rather than assuming every Giulia or Stelvio can
+                                use the same calibration. A software update is not a complete GTAm
+                                hardware conversion, and does not by itself establish a particular
+                                power output.
+                            </p>
+                        </Col>
+                    </Row>
+                    <h3>From ECU Calibration to Remote Flashing</h3>
+                    <p>
+                        Calibration defines how the engine is controlled; flashing writes the
+                        agreed software to a compatible module. The Remote Flashing Device
+                        provides the update workflow, but does not determine which tune is suitable
+                        for your car. Confirm compatibility and the intended changes with Alfa Tuning
+                        before starting, then follow the setup guide for a stable connection.
+                        Transmission customization is a separate option, not an automatic part of
+                        every engine update.
+                    </p>
+                    <h3>Before Discussing Your Tune</h3>
+                    <ul>
+                        <li>Provide the model, model year, engine variant, and current ECU software details if known.</li>
+                        <li>Describe installed hardware, previous tuning, and the fuel you normally use.</li>
+                        <li>Explain your goals and report any diagnostic faults or maintenance concerns.</li>
+                        <li>Confirm how the proposed changes will be validated and what results can realistically be expected.</li>
+                    </ul>
+                    <p className="note">
+                        No single power or torque gain applies to every Giulia or Stelvio.
+                        Results depend on the vehicle and calibration and should be supported by
+                        measurements. Check local road-use and emissions requirements, along with
+                        warranty and insurance implications, before proceeding.
+                    </p>
+                    <div className="cta-buttons">
+                        <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">Discuss Your Engine Tune</a>
+                        <a href="#setup-guide" className="btn btn-outline-primary">Review the Flashing Setup Guide</a>
+                    </div>
+                </div>
+            </section>
+
+            <section className="tuning-details-section" id="transmission-customization" aria-labelledby="transmission-customization-heading">
+                <div className="text-container">
+                    <h2 id="transmission-customization-heading">Transmission Customization for Alfa Romeo Giulia and Stelvio</h2>
+                    <p className="description">
+                        Transmission software is part of how your Giulia or Stelvio delivers power,
+                        not just how quickly it changes gear. The Transmission Control Module (TCM)
+                        manages gear selection and shift execution in coordination with the engine.
+                        Discuss the behavior you want in everyday driving and manual shifting before
+                        selecting an update.
+                    </p>
+                    <Row className="g-4 mb-4">
+                        <Col md={6}>
+                            <h3>8HP50 and 8HP75 Compatibility</h3>
+                            <p>
+                                Start by identifying the gearbox fitted to your car and its current
+                                TCM software. Options for an 8HP50 or 8HP75 must be assessed against
+                                the exact vehicle configuration; the gearbox family alone does not
+                                confirm compatibility. Include the model year, engine variant, and
+                                any previous engine or transmission updates when contacting Alfa Tuning.
+                            </p>
+                        </Col>
+                        <Col md={6}>
+                            <h3>Shift Behavior and Engine Coordination</h3>
+                            <p>
+                                Shift scheduling, shift feel, and manual-mode response are useful
+                                starting points for a customization discussion. Engine torque delivery
+                                and transmission control need to remain coordinated, especially if
+                                the ECU has already been tuned. A software update does not upgrade
+                                gearbox hardware or establish a new mechanical torque rating.
+                            </p>
+                        </Col>
+                    </Row>
+                    <h3>Launch Control and GTAm-related Software Options</h3>
+                    <p>
+                        Ask whether Launch Control or GTAm-related transmission updates are available
+                        for your particular configuration. These are selected options, not features
+                        included with every flash or supported by every Giulia and Stelvio.
+                        Confirm the required hardware, software, and operating conditions before
+                        proceeding. GTAm-related software does not turn the transmission or vehicle
+                        into a complete GTAm specification.
+                    </p>
+                    <h3>Customization Is Not a Fault Repair</h3>
+                    <p>
+                        Report warning messages, rough shifts, or non-working paddles before
+                        requesting a tune. Mechanical and diagnostic issues need assessment rather
+                        than being masked by a calibration change. The Race-mode shift-paddle
+                        software fix listed above is a separate compatibility-dependent service;
+                        it should not be assumed to be part of every transmission customization.
+                    </p>
+                    <h3>Before Discussing Your Transmission Update</h3>
+                    <ul>
+                        <li>Provide the model, model year, engine variant, gearbox identification, and TCM software details if known.</li>
+                        <li>Describe existing ECU tuning, transmission updates, hardware changes, and any diagnostic faults.</li>
+                        <li>Explain which driving modes or shift behavior you want to discuss.</li>
+                        <li>Agree on the available changes, preparation requirements, and post-update checks before flashing.</li>
+                    </ul>
+                    <p className="note">
+                        Availability and results depend on the vehicle, gearbox condition, and
+                        software combination. Do not assume a faster shift time, increased torque
+                        capacity, or Launch Control availability without confirmation.
+                        Check warranty, insurance, and local road-use requirements before proceeding.
+                    </p>
+                    <p>
+                        Planning both updates? Review the <a href="#engine-tuning">Giulia and Stelvio engine tuning guidance</a> so
+                        ECU and TCM changes can be discussed together. Once compatibility is confirmed,
+                        use the setup guide for the Remote Flashing Device connection workflow.
+                    </p>
+                    <div className="cta-buttons">
+                        <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">Discuss Your Transmission Update</a>
+                        <a href="#setup-guide" className="btn btn-outline-primary">Review the Flashing Setup Guide</a>
+                    </div>
+                </div>
+            </section>
+
+            <section className="tuning-details-section" id="abs-customisation" aria-labelledby="abs-customisation-heading">
+                <div className="text-container">
+                    <h2 id="abs-customisation-heading">ABS Customisation for Alfa Romeo Giulia and Stelvio</h2>
+                    <p className="description">
+                        Engine torque can be limited by requests from the ABS control unit, not
+                        just by the ECU or transmission software. Alfa Tuning offers a software-only
+                        solution addressing this preventive torque-reduction behavior for Giulia
+                        and Stelvio, across all engine variants and driving modes.
+                    </p>
+                    <Row className="g-4 mb-4">
+                        <Col md={6}>
+                            <h3>Understanding Preventive Torque Reduction</h3>
+                            <p>
+                                In its Quadrifoglio investigation, Squadra Tuning describes the ABS
+                                module requesting an engine torque limit before wheelspin occurs.
+                                This can restrict power delivery in lower gears in A, N, and D
+                                modes, even when the driver expects more from the engine.
+                                The article distinguishes this preventive strategy from traction
+                                control intervention once wheelspin occurs.
+                            </p>
+                            <p>
+                                Read the background in <a href="https://squadra-tuning.com/quadrifoglio-torque-reduction/">Squadra Tuning's Quadrifoglio torque-reduction investigation</a>.
+                                Its findings concern the Quadrifoglio; the service scope described
+                                here is Alfa Tuning's own.
+                            </p>
+                        </Col>
+                        <Col md={6}>
+                            <h3>Our Software-only Solution</h3>
+                            <p>
+                                Our approach uses a software tune, not an added CAN filter,
+                                wiring modification, or external hardware. We can address this
+                                behavior across driving modes without requiring you to switch to
+                                Race mode as a workaround. Share your vehicle and current software
+                                details so we can agree on the appropriate update.
+                            </p>
+                        </Col>
+                    </Row>
+                    <h3>ABS Braking, Traction Control, and ESC Remain Operational</h3>
+                    <p>
+                        This customisation targets preventive engine torque reduction; it is not
+                        an ABS braking delete or a request to disable traction control or Electronic
+                        Stability Control (ESC). ABS braking, traction control, and ESC remain
+                        operational after the tune. Existing driving-mode behavior still matters:
+                        the update does not add driving aids to modes where they are already disabled.
+                    </p>
+                    <h3>Before Discussing Your ABS Update</h3>
+                    <ul>
+                        <li>Provide the model, model year, engine variant, and ABS software details if known.</li>
+                        <li>Describe existing engine or transmission tuning and the driving modes in which you notice torque reduction.</li>
+                        <li>Report ABS, traction-control, or ESC warning messages for diagnosis before customisation.</li>
+                        <li>Confirm the update scope and post-update checks with Alfa Tuning before proceeding.</li>
+                    </ul>
+                    <p className="note">
+                        This is a control-software change, not an increase in engine power or a
+                        repair for braking-system faults. Results depend on the vehicle and its
+                        current configuration. Check local road-use requirements, warranty, and
+                        insurance implications before proceeding.
+                    </p>
+                    <div className="cta-buttons">
+                        <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn-primary">Discuss Your ABS Customisation</a>
+                        <a href="#engine-tuning" className="btn btn-outline-primary">Review Related Engine Tuning</a>
                     </div>
                 </div>
             </section>

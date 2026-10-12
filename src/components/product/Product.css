@@ -198,11 +198,39 @@
     transform: translateY(-5px);
 }
 
-.feature-content h4 {
+.feature-content h3 {
     color: #ad1d23;
     font-size: 1.2rem;
     margin-bottom: 12px;
     font-weight: 600;
+}
+
+.tuning-details-section {
+    padding: 60px 0;
+    border-top: 1px solid #eee;
+    scroll-margin-top: 100px;
+}
+
+.tuning-details-section h2 {
+    color: #333;
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+}
+
+.tuning-details-section h3 {
+    color: #ad1d23;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.tuning-details-section p,
+.tuning-details-section li {
+    color: #555;
+    line-height: 1.7;
+}
+
+.tuning-details-section li {
+    margin-bottom: 8px;
 }
 
 .feature-content p {
@@ -779,4 +807,3 @@ img {
         transform: scale(1.4);
     }
 }
-

@@ -4,7 +4,7 @@ import App from './App';
 test('renders homepage hero heading', () => {
   render(<App />);
   expect(
-    screen.getByRole('heading', { name: /build a repeatable alfa romeo tuning workflow from diagnostics to deployed calibration/i })
+    screen.getByRole('heading', { name: /your alfa romeo\. tuned with purpose\./i })
   ).toBeInTheDocument();
 });
 
