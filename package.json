@@ -60,6 +60,10 @@
     },
     "fixWebpackChunksIssue": false,
     "crawl": true,
+    "include": [
+      "/",
+      "/mobilecda/privacy-policy"
+    ],
     "destination": "build"
   }
 }

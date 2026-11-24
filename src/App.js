@@ -10,6 +10,8 @@ import RnDDetail from './components/rnd/RnDDetail';
 import Home from './components/home/Home';
 import NoMatch from './components/nomatch/NoMatch';
 import Partners from './components/partners/Partners';
+import MobileCda from './components/mobilecda/MobileCda';
+import MobileCdaPrivacyPolicy from './components/privacy/MobileCdaPrivacyPolicy';
 
 let router = createBrowserRouter(
   createRoutesFromElements(<Route path="/" element={<Navigation />}>
@@ -21,6 +23,8 @@ let router = createBrowserRouter(
     <Route path="/rnd" element={<RnD />} />
     <Route path="/rnd/:slug" element={<RnDDetail />} />
     <Route path="/partners" element={<Partners />} />
+    <Route path="/mobilecda" element={<MobileCda />} />
+    <Route path="/mobilecda/privacy-policy" element={<MobileCdaPrivacyPolicy />} />
   </Route>))
 
 export default function App() {

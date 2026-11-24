@@ -37,6 +37,9 @@ function Navigation() {
                                 <Link to="/device" className='navbar-link default-dom-link'>
                                     Remote Flasher Device
                                 </Link>
+                                <Link to="/mobilecda" className='navbar-link default-dom-link'>
+                                    mobileCDA
+                                </Link>
                                 <Link to="/rnd" className='navbar-link default-dom-link'>
                                     R&D Lab
                                 </Link>

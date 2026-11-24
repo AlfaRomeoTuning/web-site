@@ -15,4 +15,5 @@ test('renders primary navigation links', () => {
   expect(topNavigation).toBeInTheDocument();
   expect(within(topNavigation).getByRole('link', { name: /remote flasher device/i })).toBeInTheDocument();
   expect(within(topNavigation).getByRole('link', { name: /partners/i })).toBeInTheDocument();
+  expect(within(topNavigation).getByRole('link', { name: 'mobileCDA' })).toHaveAttribute('href', '/mobilecda');
 });
