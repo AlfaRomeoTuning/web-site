@@ -20,6 +20,11 @@ updates:
     commit-message:
       prefix: deps
     groups:
+      # react-dom pins react to the same version; separate PRs can't install.
+      react:
+        patterns:
+          - react
+          - react-dom
       npm-minor-patch:
         update-types:
           - minor

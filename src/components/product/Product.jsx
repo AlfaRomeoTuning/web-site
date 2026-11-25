@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet';
 import { BASE_URL, CONTACT_EMAIL } from '../../config';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 
 // Provides the "open image in lightbox" handler to nested instruction steps
 // without prop-drilling through every step.

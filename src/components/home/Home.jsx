@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet'
 import './Home.css'
 import { BASE_URL, CONTACT_EMAIL } from '../../config';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

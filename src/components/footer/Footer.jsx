@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from '../../config';
 import { EmailIcon, InstagramIcon } from '../icons/SocialIcons';
 import './Footer.css';

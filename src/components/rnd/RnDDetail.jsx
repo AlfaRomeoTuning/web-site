@@ -1,6 +1,6 @@
 // RnDDetail.jsx
 import React from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router';
 import { Container, Button, Carousel, Row, Col, Breadcrumb } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import rndModels from './rndModels';

@@ -8,7 +8,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import rndModels from './rndModels';
 import './RnD.css';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { BASE_URL } from '../../config';
 import { getRndImage } from './rndAssetLoader';
 import { createModelSlug, getModelFileName } from './rndModelUtils';
