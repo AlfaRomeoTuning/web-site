@@ -100,7 +100,7 @@ const FEATURES = [
         eyebrow: 'Vehicle network',
         title: 'See how the car is wired before you scan it',
         body: [
-            'The Topology tab draws the gateway, every CAN bus with its OBD pins and bitrate, and the ECUs on each bus. A 2022 Giulia has 36 ECUs in the list.',
+            'The Topology tab draws the gateway, every CAN bus with its OBD pins and bitrate, and the ECUs on each bus.',
             'Scan the vehicle to mark which systems are actually fitted.'
         ],
         screen: 'topology'
@@ -130,7 +130,7 @@ const FEATURES = [
         eyebrow: 'Vehicles',
         title: 'Alfa Romeo first, with the rest of the FCA range',
         body: [
-            'The vehicle list has 111 models from Alfa Romeo, Fiat, Jeep, Chrysler, Dodge, Ram, Lancia, Maserati, Iveco and Volkswagen. Search by model name or body code, such as GA for the Giulia.',
+            'The vehicle list covers Alfa Romeo, Fiat, Jeep, Chrysler, Dodge, Ram, Lancia, Maserati, Iveco and other brands. Search by brand, model or body code.',
             'The selected vehicle decides which ECU list and topology the app shows.'
         ],
         screen: 'vehicle-select'
@@ -268,19 +268,15 @@ function MobileCda() {
                 <Container>
                     <h2 id="more-heading">Also in the app</h2>
                     <Row className="g-4 mcda-more">
-                        <Col md={6} lg={3}>
-                            <h3>Logs</h3>
-                            <p>Adapter, server and app events for the current session. Copy or share them when you report a problem.</p>
-                        </Col>
-                        <Col md={6} lg={3}>
+                        <Col md={4}>
                             <h3>Phone and tablet layouts</h3>
                             <p>On a tablet, the system list and the ECU details sit side by side. On a phone, they open as separate pages.</p>
                         </Col>
-                        <Col md={6} lg={3}>
+                        <Col md={4}>
                             <h3>Light and dark theme</h3>
                             <p>Follows the device setting, or pick one in Settings. Text scales with the system font size.</p>
                         </Col>
-                        <Col md={6} lg={3}>
+                        <Col md={4}>
                             <h3>In development</h3>
                             <p>Coding and adaptations, and service functions and resets. Both are visible in the app and marked "Coming soon".</p>
                         </Col>
@@ -310,7 +306,7 @@ function MobileCda() {
                             <ul>
                                 <li>An ELM327-compatible OBD adapter (Bluetooth or Wi-Fi) for diagnostics.</li>
                                 <li>A wiTECH VCI (MicroPod) for flashing.</li>
-                                <li>A mobileCDA account. You can sign in with Google.</li>
+                                <li>A mobileCDA account.</li>
                                 <li>An internet connection for ECU lookup and for downloading flash files.</li>
                             </ul>
                         </Col>
