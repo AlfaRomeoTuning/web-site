@@ -2,7 +2,7 @@ import './App.css';
 import Navigation from './components/navigation/Navigation';
 import ErrorBoundary from './components/ErrorBoundary';
 
-import { Route, Navigate, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import { Route, Navigate, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router";
 
 import Product from './components/product/Product';
 import RnD from './components/rnd/RnD';

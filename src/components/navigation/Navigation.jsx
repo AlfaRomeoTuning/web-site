@@ -1,7 +1,7 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container'
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router";
 import Footer from '../footer/Footer';
 import { EmailIcon, InstagramIcon } from '../icons/SocialIcons';
 import { CONTACT_EMAIL, INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../../config';

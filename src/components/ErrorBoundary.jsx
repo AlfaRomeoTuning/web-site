@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 // Catches render-time errors anywhere in the tree and shows a friendly
 // fallback instead of a blank white screen.
