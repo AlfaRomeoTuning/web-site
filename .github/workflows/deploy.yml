@@ -20,7 +20,7 @@ env:
   PROJECT_ID: ${{ secrets.GCR_PROJECT }}
   RUN_REGION: us-central1
   SERVICE_NAME: alfatuningapp-web-site
-  AR_REPO: web-site
+  AR_REPO: alfatuningapp-web-site
 
 jobs:
   ci:
