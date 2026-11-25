@@ -3,31 +3,43 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://alfatuning.app/</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/partners</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://alfatuning.app/device</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://alfatuning.app/mobilecda</loc>
+        <lastmod>2026-11-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://alfatuning.app/mobilecda/privacy-policy</loc>
+        <lastmod>2026-11-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-bumper</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -48,7 +60,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -64,7 +76,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-bumper-diffuser</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -90,7 +102,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-adjustable-splitter</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -126,7 +138,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-fender-air-vent</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -142,7 +154,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-bumper-cooler-air-conductor</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -158,7 +170,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender-mudguard-front-part</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -174,7 +186,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-side-skirt</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -195,7 +207,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-fender-mudguard-rear-part</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -216,7 +228,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-radiator-air-conductor</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -237,7 +249,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-bumper-side-insert</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -253,7 +265,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-side-grill</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -274,18 +286,18 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-lower-central-grill</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
             <image:loc>https://alfatuning.app/static/media/GiuliaGTAmFrontLowerCentralGrill.5f245d69e024cc60646f.png</image:loc>
             <image:title>Front Lower Central Grill for Giulia GTAm, Giulia GTA</image:title>
-            <image:caption>Alfa Romeo Giulia GTA / GTAm front lower centrall grill</image:caption>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm front lower central grill</image:caption>
         </image:image>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-front-grill</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -296,7 +308,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-seat-bracket</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -317,7 +329,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-fender-arch</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -333,7 +345,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-washer-cap</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -349,7 +361,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rollbar-mount</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -365,7 +377,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-door-handle</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -376,7 +388,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-splitter-motor-body</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -392,7 +404,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-bars</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -408,7 +420,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-rear-wing</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -439,7 +451,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gta-rear-spoiler</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -460,7 +472,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-wheel</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -471,7 +483,7 @@
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-prototype-wheel</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -480,17 +492,13 @@
             <image:caption>APPTECH Italy Prototype Wheels for Alfa Romeo Giulia GTA / GTAm
 
 
-Transform the appearance and performance of your Alfa Romeo Giulia Quadrifoglio with exclusive
-APPTECH Italy GTA / GTAm Prototype Wheels. Inspired by the iconic factory
-Alfa Romeo Giulia GTA and GTAm, these 20-inch wheels combine aggressive motorsport styling with
-a precise fitment engineered specifically for the Giulia platform.
+20-inch prototype wheels by APPTECH Italy for the Alfa Romeo Giulia Quadrifoglio, styled after the factory
+Alfa Romeo Giulia GTA and GTAm wheels and sized for the Giulia platform.
 
 
 
-Featuring a staggered setup with wider rear wheels, these prototype wheels provide a more planted stance,
-improved traction, and the unmistakable appearance of Alfa Romeo's most exclusive performance models.
-Whether you're building a street car, weekend track machine, or show vehicle, APPTECH Italy wheels deliver
-the perfect balance of style, performance, and exclusivity.
+The setup is staggered: the rear wheels are wider than the fronts, which allows wider rear tires for more grip under hard acceleration.
+The narrower front wheels keep steering response and handling balanced.
 
 
 
@@ -507,30 +515,11 @@ Rear: 11J × 20" ET29
 Key Features
 
 
-• Designed exclusively for the Alfa Romeo Giulia platform
-• Inspired by the factory Alfa Romeo Giulia GTA &amp; GTAm
-• Exclusive APPTECH Italy prototype design
-• Aggressive staggered fitment for maximum visual impact
-• Wide rear wheels improve traction and handling stability
-• Perfect for performance road cars and track builds
-• Premium manufacturing with exceptional attention to detail
-• Compatible with high-performance tire setups
-
-
-
-
-Designed for Enthusiasts
-
-
-The wider 11J rear wheels create a muscular stance while allowing wider tires for increased grip during
-hard acceleration. The 9.5J front wheels maintain precise steering response and balanced handling,
-making this combination ideal for spirited driving.
-
-
-
-Every detail of the APPTECH Italy prototype wheels has been developed to complement the aggressive lines of
-the Alfa Romeo Giulia, giving your car a factory-inspired appearance that stands out both on the road and at
-automotive events.</image:caption>
+• Designed for the Alfa Romeo Giulia platform
+• Styled after the factory Giulia GTA &amp; GTAm wheels
+• APPTECH Italy prototype design
+• Staggered fitment with 11J rear and 9.5J front wheels
+• For road cars and track builds</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://alfatuning.app/static/media/GiuliaGTAmPrototypeWheel2.4599f82127b357cdfd34.png</image:loc>
@@ -550,13 +539,13 @@ automotive events.</image:caption>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-hub-bearing</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
             <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing.bcff7ebfe180bb5d3f15.png</image:loc>
             <image:title>Hub Bearing for Giulia GTAm, Giulia GTA</image:title>
-            <image:caption>Alfa Romeo Giulia GTA / GTAm Hub Bearing with Toolhead.This complete hub bearing kit is engineered for accurate fitment on the Alfa Romeo Giulia GTA and GTAm. The central lock nut system uses different thread directions for each side of the vehicle: left-hand thread on one side and right-hand thread on the opposite side. This design ensures correct securing of the hub under high load conditions. The kit also includes a star locking plate to secure the central lock nut and a protective center cap cover. Manufactured to OEM tolerances to ensure proper alignment, long-term durability, and reliable torque distribution during street and track use.</image:caption>
+            <image:caption>Alfa Romeo Giulia GTA / GTAm Hub Bearing with Toolhead.The kit is made for the Alfa Romeo Giulia GTA and GTAm. The central lock nut uses a left-hand thread on one side of the car and a right-hand thread on the other, so the nut does not loosen under load. The kit also includes a star locking plate that secures the central lock nut and a protective center cap. Parts are made to OEM tolerances for correct alignment on the street and on track.</image:caption>
         </image:image>
         <image:image>
             <image:loc>https://alfatuning.app/static/media/GiuliaGTAmHubBearing2.f30bf285dc71b2ee447c.png</image:loc>
@@ -591,7 +580,7 @@ automotive events.</image:caption>
     </url>
     <url>
         <loc>https://alfatuning.app/rnd/giulia-gtam-exhaust-system</loc>
-        <lastmod>2026-09-28</lastmod>
+        <lastmod>2026-11-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>

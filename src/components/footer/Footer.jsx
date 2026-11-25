@@ -33,6 +33,7 @@ function Footer() {
                     <ul>
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/device">Remote Flasher Device</Link></li>
+                        <li><Link to="/mobilecda">mobileCDA</Link></li>
                         <li><Link to="/rnd">R&amp;D</Link></li>
                         <li><Link to="/partners">Partners</Link></li>
                     </ul>

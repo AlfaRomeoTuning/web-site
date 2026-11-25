@@ -62,6 +62,7 @@
     "crawl": true,
     "include": [
       "/",
+      "/mobilecda",
       "/mobilecda/privacy-policy"
     ],
     "destination": "build"

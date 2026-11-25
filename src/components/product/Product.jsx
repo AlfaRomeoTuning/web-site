@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './Product.css'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet';
 import { BASE_URL, CONTACT_EMAIL } from '../../config';
 import { Link, useLocation } from 'react-router-dom';
+import Lightbox from '../lightbox/Lightbox';
 
 // Provides the "open image in lightbox" handler to nested instruction steps
 // without prop-drilling through every step.
@@ -663,81 +664,6 @@ function InstructionStep({ number, title, description, imageSrc, imageAlt }) {
                         </span>
                     </button>
                 )}
-            </div>
-        </div>
-    );
-}
-
-// Fullscreen image viewer with zoom toggle, keyboard + click-to-close support
-function Lightbox({ image, onClose }) {
-    const [zoomed, setZoomed] = useState(false);
-    const closeRef = useRef(null);
-    const contentRef = useRef(null);
-
-    useEffect(() => {
-        const onKeyDown = (e) => {
-            if (e.key === 'Escape') {
-                onClose();
-                return;
-            }
-
-            if (e.key === 'Tab' && contentRef.current) {
-                const focusable = contentRef.current.querySelectorAll(
-                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                );
-
-                if (!focusable.length) {
-                    return;
-                }
-
-                const first = focusable[0];
-                const last = focusable[focusable.length - 1];
-
-                if (e.shiftKey && document.activeElement === first) {
-                    e.preventDefault();
-                    last.focus();
-                } else if (!e.shiftKey && document.activeElement === last) {
-                    e.preventDefault();
-                    first.focus();
-                }
-            }
-        };
-
-        document.addEventListener('keydown', onKeyDown);
-        const prevOverflow = document.body.style.overflow;
-        document.body.style.overflow = 'hidden';
-        if (closeRef.current) closeRef.current.focus();
-        return () => {
-            document.removeEventListener('keydown', onKeyDown);
-            document.body.style.overflow = prevOverflow;
-        };
-    }, [onClose]);
-
-    return (
-        <div
-            className="lightbox-overlay"
-            role="dialog"
-            aria-modal="true"
-            aria-label={image.alt || 'Enlarged image'}
-            onClick={onClose}
-        >
-            <div className="lightbox-content" onClick={(e) => e.stopPropagation()} ref={contentRef}>
-                <button
-                    type="button"
-                    className="lightbox-close"
-                    onClick={onClose}
-                    aria-label="Close image viewer"
-                    ref={closeRef}
-                >
-                    &times;
-                </button>
-                <img
-                    src={image.src}
-                    alt={image.alt}
-                    className={`lightbox-image ${zoomed ? 'zoomed' : ''}`}
-                    onClick={() => setZoomed((z) => !z)}
-                />
-                <p className="lightbox-hint">{zoomed ? 'Click image to zoom out' : 'Click image to zoom in'}</p>
             </div>
         </div>
     );
