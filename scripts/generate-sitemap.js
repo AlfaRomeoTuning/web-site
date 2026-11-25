@@ -43,7 +43,7 @@ const urls = [
     { loc: '/rnd', priority: '0.9', changefreq: 'weekly' },
     { loc: '/partners', priority: '0.8', changefreq: 'weekly' },
     { loc: '/device', priority: '0.7', changefreq: 'weekly' },
-    { loc: '/mobilecda', priority: '0.5', changefreq: 'monthly' },
+    { loc: '/mobilecda', priority: '0.7', changefreq: 'monthly' },
     { loc: '/mobilecda/privacy-policy', priority: '0.3', changefreq: 'yearly' },
 ];
 
