@@ -50,6 +50,7 @@
     "baseline-browser-mapping": "^2.10.35"
   },
   "reactSnap": {
+    "port": 4173,
     "inlineCss": false,
     "puppeteerArgs": [
       "--no-sandbox",

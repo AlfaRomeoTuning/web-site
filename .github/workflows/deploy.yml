@@ -32,6 +32,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       # Ship the exact build the ci job tested. The image is tagged with the commit SHA.
       - name: Download build
