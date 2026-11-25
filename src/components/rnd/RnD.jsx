@@ -147,20 +147,20 @@ function RnD() {
                 <title>R&D - Alfa Tuning | Custom 3D Models & Parts for Alfa Romeo</title>
                 <meta
                     name="description"
-                    content="Explore Alfa Tuning's research and development of custom 3D models and performance parts for Alfa Romeo Giulia, Stelvio, GTAm, and Quadrifoglio."
+                    content="3D scans and models of Alfa Romeo Giulia GTA and GTAm parts from Alfa Tuning R&D: bumpers, splitters, aero, wheels, and brackets."
                 />
                 <link rel="canonical" href={pageUrl} />
                 <meta name="robots" content="index, follow, max-image-preview:large" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="R&D - Alfa Tuning | Custom Parts & 3D Models" />
-                <meta property="og:description" content="Premium custom parts and 3D models for Alfa Romeo vehicles." />
+                <meta property="og:description" content="3D scans and models of Alfa Romeo Giulia GTA and GTAm parts." />
                 <meta property="og:url" content={pageUrl} />
                 <meta property="og:image" content={rndOgImage} />
                 <meta property="og:image:alt" content="Alfa Romeo GTAm front bumper 3D model by Alfa Tuning" />
                 <meta property="og:site_name" content="Alfa Tuning" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="R&D - Alfa Tuning | Custom Parts & 3D Models" />
-                <meta name="twitter:description" content="Premium custom parts and 3D models for Alfa Romeo vehicles." />
+                <meta name="twitter:description" content="3D scans and models of Alfa Romeo Giulia GTA and GTAm parts." />
                 <meta name="twitter:image" content={rndOgImage} />
                 <script type="application/ld+json">
                     {JSON.stringify(structuredData)}
@@ -171,7 +171,7 @@ function RnD() {
                 <section className="rnd-header">
                     <div className="rnd-eyebrow">Alfa Tuning Research and Development Catalog</div>
                     <h1>3D Models & Custom Parts</h1>
-                    <p className="rnd-subtitle">Browse our collection of premium Alfa Romeo modifications</p>
+                    <p className="rnd-subtitle">3D scans and models of Giulia GTA and GTAm parts. Filter by platform or search by part name.</p>
                     <div className="rnd-summary" aria-label="Catalog summary">
                         <span><strong>{modelCount}</strong> total models</span>
                         <span><strong>{filteredModels.length}</strong> visible</span>

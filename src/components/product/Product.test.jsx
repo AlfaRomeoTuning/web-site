@@ -15,7 +15,7 @@ function renderProduct() {
 test('links the performance summary to detailed Giulia and Stelvio engine tuning guidance', () => {
     renderProduct();
 
-    expect(screen.getByRole('heading', { name: 'Boost Performance', level: 3 })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Engine Tuning', level: 3 })).toBeInTheDocument();
     const link = screen.getByRole('link', { name: 'Explore Giulia and Stelvio engine tuning' });
     const section = screen.getByRole('region', { name: 'Engine Tuning for Alfa Romeo Giulia and Stelvio' });
 
@@ -32,7 +32,7 @@ test('provides contact and setup actions alongside engine tuning guidance', () =
     expect(within(section).getByRole('link', { name: 'Discuss Your Engine Tune' })).toHaveAttribute('href', `mailto:${CONTACT_EMAIL}`);
     const setupLink = within(section).getByRole('link', { name: 'Review the Flashing Setup Guide' });
     expect(setupLink).toHaveAttribute('href', '#setup-guide');
-    expect(screen.getByRole('heading', { name: 'How to Setup' }).closest('section')).toHaveAttribute('id', 'setup-guide');
+    expect(screen.getByRole('heading', { name: 'How to Set Up' }).closest('section')).toHaveAttribute('id', 'setup-guide');
 });
 
 test('preserves switching between Android and iOS setup instructions', async () => {

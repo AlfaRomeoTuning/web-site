@@ -95,7 +95,7 @@ function RnDDetail() {
                 <title>{`${model.part} for Alfa Romeo ${carList} | Alfa Tuning Research and Development`}</title>
                 <meta
                     name="description"
-                    content={`${plainTextDescription} - Custom ${model.part} designed for ${carList}. Premium 3D model and tuning part by Alfa Tuning.`}
+                    content={`${plainTextDescription.replace(/\.$/, '')}. 3D model of the ${model.part} for ${carList} from Alfa Tuning R&D.`}
                 />
                 <meta
                     name="keywords"

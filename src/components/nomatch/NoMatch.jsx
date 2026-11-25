@@ -18,8 +18,8 @@ function NoMatch() {
                 width="800"
                 height="450"
             />
-            <h1>404 Page not found...</h1>
-            <p>The page you requested is unavailable. Continue with one of the technical sections below.</p>
+            <h1>404: Page not found</h1>
+            <p>This page does not exist or has moved. Try one of these sections instead.</p>
             <div className="nomatch-actions" aria-label="Recovery navigation">
                 <Link to="/" className="btn btn-primary">Go to Home</Link>
                 <Link to="/device" className="btn btn-outline-secondary">Device Workflow</Link>
