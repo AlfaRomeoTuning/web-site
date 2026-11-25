@@ -8,7 +8,7 @@
 
 The current project uses:
 
-* Jest through Create React App
+* Vitest with jsdom (config in `vite.config.js`, setup in `src/test/setup.js`)
 * React Testing Library
 * `@testing-library/jest-dom`
 * `@testing-library/user-event`
@@ -17,18 +17,11 @@ Use the existing testing infrastructure for normal development.
 
 ---
 
-## Important: Do Not Migrate the Test Runner
+## Test Runner
 
-Do not migrate:
+Tests run on Vitest with `globals: true`, so `test`, `expect` and the jest-dom matchers are available without imports. Use `vi` from `vitest` for mocks.
 
-* Jest → Vitest
-* Jest → node:test
-
-as part of normal feature development.
-
-A test-runner migration is a separate architectural task and must be explicitly requested.
-
-If a test infrastructure change is requested, use the `node-testing` skill to evaluate the available options and migration requirements.
+Do not switch to another test runner as part of normal feature development; that is a separate task and must be explicitly requested.
 
 ---
 

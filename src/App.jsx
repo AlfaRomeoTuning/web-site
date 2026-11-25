@@ -30,7 +30,7 @@ let router = createBrowserRouter(
 export default function App() {
   return (
     <ErrorBoundary>
-      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+      <RouterProvider router={router} />
     </ErrorBoundary>
   );
 }

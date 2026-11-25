@@ -1,36 +1,42 @@
-// scripts/generate-sitemap.js
-const fs = require('fs');
-const path = require('path');
+// Writes build/sitemap.xml after `vite build`.
+// Image URLs come from build/.vite/manifest.json, which maps each source file to its hashed output.
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { createModelSlug, getModelFileName } from '../src/components/rnd/rndModelUtils.js';
 
-// Load model data from JSON to avoid executing source files.
-const rndModelsPath = path.join(__dirname, '../src/components/rnd/rndModelsData.json');
-let rndModels = { models: [] };
-
-try {
-    const fileContent = fs.readFileSync(rndModelsPath, 'utf8');
-    rndModels = { models: JSON.parse(fileContent) };
-} catch (error) {
-    console.error('Error reading rndModelsData.json:', error);
-}
-
-// Load asset manifest from build directory
-const manifestPath = path.join(__dirname, '../build/asset-manifest.json');
-let assetManifest = null;
-
-try {
-    if (fs.existsSync(manifestPath)) {
-        const manifestContent = fs.readFileSync(manifestPath, 'utf8');
-        assetManifest = JSON.parse(manifestContent);
-        console.log('✅ Loaded asset-manifest.json');
-    } else {
-        console.warn('⚠️ Warning: build/asset-manifest.json not found. Image sitemap will not include images. Run "npm run build" first.');
-    }
-} catch (error) {
-    console.error('Error reading asset-manifest.json:', error);
-}
+const rootDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const buildDir = path.join(rootDir, 'build');
+const manifestDir = path.join(buildDir, '.vite');
+const manifestPath = path.join(manifestDir, 'manifest.json');
 
 const baseUrl = 'https://alfatuning.app';
 const today = new Date().toISOString().split('T')[0];
+
+const models = JSON.parse(
+    fs.readFileSync(path.join(rootDir, 'src/components/rnd/rndModelsData.json'), 'utf8')
+);
+
+if (!fs.existsSync(manifestPath)) {
+    console.error('build/.vite/manifest.json not found. Run "vite build" first.');
+    process.exit(1);
+}
+const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+
+// Only R&D images that the app imports are in the manifest; images under
+// build.assetsInlineLimit are inlined as data URIs and have no URL.
+function imageUrl(fileName) {
+    const entry = manifest[`src/assets/rnd/${fileName}`];
+    return entry ? `${baseUrl}/${entry.file}` : null;
+}
+
+const escapeXml = (value) =>
+    value
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&apos;');
 
 const urls = [
     { loc: '/', priority: '1.0', changefreq: 'daily' },
@@ -38,115 +44,67 @@ const urls = [
     { loc: '/partners', priority: '0.8', changefreq: 'weekly' },
     { loc: '/device', priority: '0.7', changefreq: 'weekly' },
     { loc: '/mobilecda', priority: '0.5', changefreq: 'monthly' },
-    { loc: '/mobilecda/privacy-policy', priority: '0.3', changefreq: 'yearly' }
+    { loc: '/mobilecda/privacy-policy', priority: '0.3', changefreq: 'yearly' },
 ];
 
-// Helper to find image in manifest
-function getHashedImagePath(baseFilename) {
-    if (!assetManifest || !assetManifest.files) return null;
+for (const model of models) {
+    const cars = model.car.join(', ');
+    const page = {
+        loc: `/rnd/${createModelSlug(model)}`,
+        priority: '0.8',
+        changefreq: 'monthly',
+        images: [],
+    };
 
-    // 1. Try exact/suffix match (case sensitive)
-    let entry = Object.entries(assetManifest.files).find(([key, value]) => {
-        // key often includes full path like "static/media/file.ext"
-        return key === baseFilename || key.endsWith('/' + baseFilename) || key.endsWith(baseFilename);
-    });
-
-    // 2. Fallback: Try case-insensitive suffix match
-    if (!entry) {
-        entry = Object.entries(assetManifest.files).find(([key, value]) => {
-            return key.toLowerCase().endsWith('/' + baseFilename.toLowerCase()) ||
-                key.toLowerCase().endsWith(baseFilename.toLowerCase());
+    const mainImage = imageUrl(getModelFileName(model));
+    if (mainImage) {
+        page.images.push({
+            loc: mainImage,
+            title: `${model.part} for ${cars}`,
+            caption: model.description.replace(/<[^>]*>/g, '').trim(),
         });
-    }
-
-    return entry ? entry[1] : null;
-}
-
-// Добавляем все модели
-if (rndModels.models && Array.isArray(rndModels.models)) {
-    rndModels.models.forEach(model => {
-        const slug = `${model.car[0]}-${model.part}`
-            .toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/[^a-z0-9-]/g, '');
-
-        const pageUrl = {
-            loc: `/rnd/${slug}`,
-            priority: '0.8',
-            changefreq: 'monthly',
-            images: []
-        };
-
-        // Construct main image filename based on RnD.jsx logic
-        const mainImageFilename = model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + '.png';
-        const mainImagePath = getHashedImagePath(mainImageFilename);
-
-        if (mainImagePath) {
-            pageUrl.images.push({
-                loc: baseUrl + mainImagePath,
-                title: `${model.part} for ${model.car.join(', ')}`,
-                caption: model.description.replace(/<[^>]*>/g, '').trim() // Strip HTML
-            });
-
-            // Also check for child images (view 2, 3, etc.)
-            if (model.childs && Array.isArray(model.childs)) {
-                model.childs.forEach(childIndex => {
-                    const childFilename = model.car[0].replace(/ /g, '') + model.part.replace(/ /g, '') + childIndex + '.png';
-                    const childPath = getHashedImagePath(childFilename);
-                    // Image search usually prefers the main one, but we can add all
-                    if (childPath) {
-                        pageUrl.images.push({
-                            loc: baseUrl + childPath,
-                            title: `${model.part} for ${model.car.join(', ')} - View ${childIndex}`,
-                            caption: `Additional view: ${model.part} for ${model.car.join(', ')}`
-                        });
-                    }
+        for (const child of model.childs || []) {
+            const childImage = imageUrl(getModelFileName(model, child));
+            if (childImage) {
+                page.images.push({
+                    loc: childImage,
+                    title: `${model.part} for ${cars} - View ${child}`,
+                    caption: `Additional view: ${model.part} for ${cars}`,
                 });
             }
-        } else {
-            console.warn(`⚠️ Warning: Image not found in manifest for ${model.part}: ${mainImageFilename}`);
         }
+    } else {
+        console.warn(`Warning: no image in the build for ${model.part}: ${getModelFileName(model)}`);
+    }
 
-        urls.push(pageUrl);
-    });
+    urls.push(page);
 }
+
+const entries = urls.map((url) => {
+    const images = (url.images || []).map((img) => `
+        <image:image>
+            <image:loc>${escapeXml(img.loc)}</image:loc>
+            <image:title>${escapeXml(img.title)}</image:title>
+            <image:caption>${escapeXml(img.caption)}</image:caption>
+        </image:image>`).join('');
+    return `    <url>
+        <loc>${baseUrl}${url.loc}</loc>
+        <lastmod>${today}</lastmod>
+        <changefreq>${url.changefreq}</changefreq>
+        <priority>${url.priority}</priority>${images}
+    </url>`;
+});
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-${urls.map(url => {
-    let xml = `    <url>
-        <loc>${baseUrl}${url.loc}</loc>
-        <lastmod>${today}</lastmod>
-        <changefreq>${url.changefreq}</changefreq>
-        <priority>${url.priority}</priority>`;
+${entries.join('\n')}
+</urlset>
+`;
 
-    // Add images if present
-    if (url.images && url.images.length > 0) {
-        url.images.forEach(img => {
-            xml += `
-        <image:image>
-            <image:loc>${img.loc}</image:loc>
-            <image:title>${img.title}</image:title>
-            <image:caption>${img.caption}</image:caption>
-        </image:image>`;
-        });
-    }
+fs.writeFileSync(path.join(buildDir, 'sitemap.xml'), sitemap);
 
-    xml += `
-    </url>`;
-    return xml;
-}).join('\n')}
-</urlset>`;
+// Nothing after this step needs the manifest, and it shouldn't be served.
+fs.rmSync(manifestDir, { recursive: true, force: true });
 
-// Создаем папку public если её нет
-const publicDir = path.join(__dirname, '../public');
-if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
-}
-
-// Сохраняем sitemap
-fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemap);
-console.log('✅ Sitemap generated successfully!');
-console.log(`📊 Total URLs: ${urls.length}`);
-console.log(`📁 Location: public/sitemap.xml`);
+console.log(`Sitemap written to build/sitemap.xml with ${urls.length} URLs.`);

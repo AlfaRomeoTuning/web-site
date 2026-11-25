@@ -20,6 +20,7 @@
     @assets path *.js *.css *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.ttf *.eot
     header @assets Cache-Control "public, no-transform, max-age=864000"
 
-    try_files {path} /index.html
+    # Prerendered routes are saved as <route>/index.html; other paths get the app shell.
+    try_files {path} {path}/index.html /index.html
     file_server
 }

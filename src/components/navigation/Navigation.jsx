@@ -6,6 +6,7 @@ import Footer from '../footer/Footer';
 import { EmailIcon, InstagramIcon } from '../icons/SocialIcons';
 import { CONTACT_EMAIL, INSTAGRAM_URL, INSTAGRAM_HANDLE } from '../../config';
 import './Navigation.css'
+import logoImage from '../../assets/logo.png';
 
 function Navigation() {
     return (
@@ -21,7 +22,7 @@ function Navigation() {
                                 <img
                                     className="brand-logo"
                                     alt="Alfa Tuning logo"
-                                    src={require("./../../assets/logo.png")}
+                                    src={logoImage}
                                     width="30"
                                     height="30"
                                 ></img>

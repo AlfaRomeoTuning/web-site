@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Link } from 'react-router';
 import "./NoMatch.css";
+import img404Image from '../../assets/404.png';
 
 function NoMatch() {
     return (<div id="nomatch">
@@ -14,7 +15,7 @@ function NoMatch() {
         <div className="nomatch">
             <img
                 alt="404 page not found illustration"
-                src={require("./../../assets/404.png")}
+                src={img404Image}
                 width="800"
                 height="450"
             />

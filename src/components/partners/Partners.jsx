@@ -1,19 +1,31 @@
 import './Partners.css'
-import { ReactComponent as AlfaSpecialists } from './../../assets/partners/alfaSpecialists.svg';
+import AlfaSpecialists from '../../assets/partners/alfaSpecialists.svg?react';
 import { Helmet } from 'react-helmet';
 import { BASE_URL } from '../../config';
+import qSImage from '../../assets/partners/QS.png';
+import alfacarelogo1Image from '../../assets/partners/alfacarelogo-1.png';
+import engCustomImage from '../../assets/partners/eng-custom.png';
+import bDTechnologyImage from '../../assets/partners/BDTechnology.png';
+import alfissimoImage from '../../assets/partners/alfissimo.png';
+import italoecu1Image from '../../assets/partners/italoecu1.png';
+import colorLogoTransparentImage from '../../assets/partners/color_logo_transparent.png';
+import squadraTuningImage from '../../assets/partners/squadra-tuning.png';
+import worksbygwImage from '../../assets/partners/worksbygw.png';
+import aerocarbonImage from '../../assets/partners/aerocarbon.png';
+import alfaOBDImage from '../../assets/partners/AlfaOBD.png';
+import mtDImage from '../../assets/partners/MtD.png';
 
 const PARTNERS = [
     {
         name: 'Quadrifoglio Store',
         href: 'https://qvstore.pl/',
-        image: require('./../../assets/partners/QS.png'),
+        image: qSImage,
         className: 'qs-store',
     },
     {
         name: 'Alfa Care UK',
         href: 'https://alfacare.co.uk/',
-        image: require('./../../assets/partners/alfacarelogo-1.png'),
+        image: alfacarelogo1Image,
     },
     {
         name: 'Alfa Specialists Greece',
@@ -24,69 +36,67 @@ const PARTNERS = [
     {
         name: 'ENG Custom',
         href: 'https://eng-custom.com/',
-        image: require('./../../assets/partners/eng-custom.png'),
+        image: engCustomImage,
         className: 'eng-custom small-image',
     },
     {
         name: '3D Technology',
         href: 'http://www.3dtechnology.pl/',
-        image: require('./../../assets/partners/BDTechnology.png'),
+        image: bDTechnologyImage,
     },
     {
         name: 'Alfissimo',
         href: 'https://alfissimo.com/',
-        image: require('./../../assets/partners/alfissimo.png'),
+        image: alfissimoImage,
         className: 'small-image',
     },
     {
         name: 'Italo ECU',
         href: 'https://www.italoecu.de/',
-        image: require('./../../assets/partners/italoecu1.png'),
+        image: italoecu1Image,
         className: 'small-image',
     },
     {
         name: 'Gale Motorsport',
         href: 'https://www.galemotorsport.com/',
-        image: require('./../../assets/partners/color_logo_transparent.png'),
+        image: colorLogoTransparentImage,
         className: 'small-image',
     },
     {
         name: 'Squadra Tuning',
         href: 'https://squadra-tuning.com/',
-        image: require('./../../assets/partners/squadra-tuning.png'),
+        image: squadraTuningImage,
         className: 'small-image',
     },
     {
         name: 'Works by GW',
         href: 'https://www.facebook.com/WorksByGw',
-        image: require('./../../assets/partners/worksbygw.png'),
+        image: worksbygwImage,
         className: 'worksbygw small-image',
     },
     {
         name: 'Aerodynamic Carbon',
         href: 'https://www.instagram.com/aerodynamic_carbon/',
-        image: require('./../../assets/partners/aerocarbon.png'),
+        image: aerocarbonImage,
         className: 'aerocarbon',
     },
     {
         name: 'AlfaOBD',
         href: 'https://www.alfaobd.com/',
-        image: require('./../../assets/partners/AlfaOBD.png'),
+        image: alfaOBDImage,
         className: 'small-image',
     },
     {
         name: 'MultiAir Tuning Development',
         href: 'https://www.multiair-tuning-dev.com/',
-        image: require('./../../assets/partners/MtD.png'),
+        image: mtDImage,
         className: 'small-image',
     },
 ];
 
 function Partners() {
     const pageUrl = `${BASE_URL}/partners`;
-    const partnersOgImageModule = require('./../../assets/partners/QS.png');
-    const partnersOgImagePath = typeof partnersOgImageModule === 'string' ? partnersOgImageModule : partnersOgImageModule.default;
-    const partnersOgImage = `${BASE_URL}${partnersOgImagePath}`;
+    const partnersOgImage = `${BASE_URL}${qSImage}`;
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "WebPage",

@@ -11,8 +11,8 @@ These instructions apply to all public-facing pages and content.
 The project uses:
 
 * `react-helmet`
-* `react-snap`
-* custom sitemap generation
+* `scripts/prerender.js` (Puppeteer prerendering of every sitemap route)
+* `scripts/generate-sitemap.js` (writes `build/sitemap.xml`)
 
 Do not introduce another SEO framework unless explicitly requested.
 

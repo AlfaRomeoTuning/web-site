@@ -3,9 +3,6 @@
   "version": "0.17.4",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^8.0.0",
-    "@testing-library/react": "^16.3.3",
-    "@testing-library/user-event": "^14.6.13",
     "bootstrap": "^5.3.9",
     "dompurify": "^3.5.0",
     "html-react-parser": "^6.1.10",
@@ -13,67 +10,31 @@
     "react-bootstrap": "^2.10.4",
     "react-dom": "^19.3.1",
     "react-helmet": "^6.1.0",
-    "react-router": "^7.18.7",
-    "react-scripts": "5.0.1",
-    "react-snap": "^1.23.0",
-    "web-vitals": "^6.2.3"
+    "react-router": "^8.5.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap && npm run generate-sitemap",
-    "generate-sitemap": "node scripts/generate-sitemap.js"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "start": "vite",
+    "build": "vite build && npm run generate-sitemap && npm run prerender",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate-sitemap": "node scripts/generate-sitemap.js",
+    "prerender": "node scripts/prerender.js"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "ajv": "^8.20.0",
-    "baseline-browser-mapping": "^2.11.39"
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^8.0.0",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.13",
+    "@vitejs/plugin-react": "^6.3.0",
+    "jsdom": "^31.0.1",
+    "puppeteer": "^25.19.0",
+    "vite": "^8.3.8",
+    "vite-plugin-svgr": "^5.2.0",
+    "vitest": "^5.1.2"
   },
-  "reactSnap": {
-    "port": 4173,
-    "inlineCss": false,
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--disable-dev-shm-usage",
-      "--single-process"
-    ],
-    "source": "build",
-    "minifyHtml": {
-      "removeComments": false
-    },
-    "fixWebpackChunksIssue": false,
-    "crawl": true,
-    "include": [
-      "/",
-      "/mobilecda/privacy-policy"
-    ],
-    "destination": "build"
-  },
-  "jest": {
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\](?!(html-react-parser|html-dom-parser|htmlparser2|domhandler|domelementtype|domutils|dom-serializer|entities)[/\\\\]).+\\.(js|jsx|mjs|cjs|ts|tsx)$",
-      "^.+\\.module\\.(css|sass|scss)$"
-    ]
+  "type": "module",
+  "allowScripts": {
+    "puppeteer": true
   }
 }
