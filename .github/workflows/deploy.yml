@@ -14,10 +14,13 @@ concurrency:
   group: deploy-production
   cancel-in-progress: false
 
+# GCP side (Workload Identity Federation, deploy service account, Artifact Registry
+# repository) is created once by .github/gcp-setup.sh.
 env:
   PROJECT_ID: ${{ secrets.GCR_PROJECT }}
   RUN_REGION: us-central1
   SERVICE_NAME: alfatuningapp-web-site
+  AR_REPO: alfatuningapp-web-site
 
 jobs:
   ci:
@@ -29,6 +32,9 @@ jobs:
     needs: ci
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write # GitHub OIDC token for Workload Identity Federation
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v7
@@ -45,22 +51,28 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v3
         with:
-          credentials_json: ${{ secrets.GCR_SA_KEY }}
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT }}
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v3
 
+      # The image is Caddy plus the static build, so it is built on the runner;
+      # the deploy account only needs to push to Artifact Registry.
       - name: Build & Push
         run: |-
-          gcloud builds submit \
-            --default-buckets-behavior=REGIONAL_USER_OWNED_BUCKET \
-            --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
+          IMAGE="$RUN_REGION-docker.pkg.dev/$PROJECT_ID/$AR_REPO/$SERVICE_NAME:$GITHUB_SHA"
+          echo "IMAGE=$IMAGE" >> "$GITHUB_ENV"
+          gcloud auth configure-docker "$RUN_REGION-docker.pkg.dev" --quiet
+          docker build --tag "$IMAGE" .
+          docker push "$IMAGE"
         working-directory: .docker
 
-      - name: Deploy GCR
+      # The service already allows unauthenticated access; that IAM policy stays
+      # as is, so the deploy account doesn't need permission to change it.
+      - name: Deploy to Cloud Run
         run: |-
           gcloud run deploy "$SERVICE_NAME" \
             --region "$RUN_REGION" \
-            --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
-            --platform "managed" \
-            --allow-unauthenticated
+            --image "$IMAGE" \
+            --platform "managed"
