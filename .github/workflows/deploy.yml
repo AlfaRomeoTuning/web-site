@@ -1,0 +1,80 @@
+name: Google Cloud Run Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '.github/**'
+      - 'package.json'
+
+permissions:
+  contents: read
+
+# One deploy at a time; a newer push waits instead of cancelling a deploy in flight.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  PROJECT_ID: ${{ secrets.GCR_PROJECT }}
+  RUN_REGION: us-central1
+  SERVICE_NAME: alfatuningapp-web-site
+
+jobs:
+  ci:
+    name: CI
+    uses: ./.github/workflows/ci.yml
+
+  deploy:
+    name: Deploy
+    needs: ci
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write # version bump commit and tag
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v7
+
+      - name: Automated Version Bump
+        uses: phips28/gh-action-bump-version@v12.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag-prefix: 'v'
+          minor-wording: 'add,Adds,new'
+          major-wording: 'MAJOR,cut-major'
+          patch-wording: 'patch,fixes'
+          rc-wording: 'RELEASE,alpha'
+
+      # The build tested in the ci job; it doesn't embed the package version, so the bump above doesn't change it.
+      - name: Download build
+        uses: actions/download-artifact@v8
+        with:
+          name: build
+          path: .docker/build
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v3
+        with:
+          credentials_json: ${{ secrets.GCR_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v3
+
+      - name: Build & Push
+        run: |-
+          gcloud builds submit \
+            --default-buckets-behavior=REGIONAL_USER_OWNED_BUCKET \
+            --tag "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA"
+        working-directory: .docker
+
+      - name: Deploy GCR
+        run: |-
+          gcloud run deploy "$SERVICE_NAME" \
+            --region "$RUN_REGION" \
+            --image "gcr.io/$PROJECT_ID/$SERVICE_NAME:$GITHUB_SHA" \
+            --platform "managed" \
+            --allow-unauthenticated
