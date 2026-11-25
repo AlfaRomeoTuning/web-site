@@ -5,9 +5,6 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '.github/**'
-      - 'package.json'
 
 permissions:
   contents: read
@@ -32,24 +29,11 @@ jobs:
     needs: ci
     runs-on: ubuntu-24.04
     timeout-minutes: 20
-    permissions:
-      contents: write # version bump commit and tag
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v7
 
-      - name: Automated Version Bump
-        uses: phips28/gh-action-bump-version@v12.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag-prefix: 'v'
-          minor-wording: 'add,Adds,new'
-          major-wording: 'MAJOR,cut-major'
-          patch-wording: 'patch,fixes'
-          rc-wording: 'RELEASE,alpha'
-
-      # The build tested in the ci job; it doesn't embed the package version, so the bump above doesn't change it.
+      # Ship the exact build the ci job tested. The image is tagged with the commit SHA.
       - name: Download build
         uses: actions/download-artifact@v8
         with:
