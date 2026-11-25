@@ -101,11 +101,11 @@ function Home() {
             <Container>
                 <div className="home-hero-copy">
                     <p className='home-eyebrow'>Alfa Romeo software &amp; engineering</p>
-                    <h1>Your Alfa Romeo.<br />Tuned with purpose.</h1>
+                    <h1>Software tuning for Alfa Romeo Giulia and Stelvio</h1>
                     <p className='home-lead'>
-                        Engine tuning, transmission software, and ABS customisation for
-                        Giulia and Stelvio. Start with your vehicle and your goals.
-                        Find the right software path with Alfa Tuning.
+                        Engine tuning, transmission software, and ABS customisation.
+                        Send us your car's details and what you want to change, and we will
+                        tell you which updates fit it.
                     </p>
                     <div className='home-actions'>
                         <a href="#tuning-services" className='home-cta home-cta-primary'>Explore Tuning Services</a>
@@ -150,13 +150,13 @@ function Home() {
                         <img src={homeOgImagePath} alt="Exploded view of the Alfa Tuning Remote Flashing Device" width="3840" height="2160" loading="lazy" className="img-fluid" />
                     </Col>
                     <Col md={6}>
-                        <p className="home-eyebrow">The connection to your calibration</p>
-                        <h2 id="home-device-heading">Remote flashing.<br />A clear path from setup to update.</h2>
-                        <p>Our dedicated device connects your vehicle to the remote flashing workflow. Confirm compatibility first, then follow the Android or iOS connection guide.</p>
+                        <p className="home-eyebrow">Remote flashing device</p>
+                        <h2 id="home-device-heading">Update your car's software over Wi-Fi</h2>
+                        <p>The device plugs into your car and connects to the internet through your phone's Wi-Fi hotspot, so the agreed software can be flashed remotely. Confirm compatibility first, then follow the Android or iOS setup guide.</p>
                         <ol className="home-steps">
                             <li><strong>Define the update.</strong> Share your vehicle details, existing software, and goals.</li>
-                            <li><strong>Prepare the connection.</strong> Follow the guide and establish stable Wi-Fi.</li>
-                            <li><strong>Agree on the checks.</strong> Confirm preparation and post-update validation with Alfa Tuning.</li>
+                            <li><strong>Set up the connection.</strong> Follow the guide and check that the Wi-Fi signal near the car is stable.</li>
+                            <li><strong>Agree on the checks.</strong> Decide with Alfa Tuning what to check before and after the update.</li>
                         </ol>
                         <Link to="/device#setup-guide" className="home-inline-link">Explore the Remote Flasher &amp; Setup Guide<span aria-hidden="true"> &rarr;</span></Link>
                     </Col>
@@ -169,8 +169,8 @@ function Home() {
                 <Row className="g-4 align-items-center">
                     <Col md={5}>
                         <p className="home-eyebrow">Beyond software</p>
-                        <h2 id="home-engineering-heading">Engineering you can explore.</h2>
-                        <p>Browse Giulia GTA and GTAm 3D scans and models. See the component, inspect its views, and check download or request availability in the R&amp;D catalog.</p>
+                        <h2 id="home-engineering-heading">GTA and GTAm parts, scanned in 3D</h2>
+                        <p>Browse Giulia GTA and GTAm 3D scans and models. Each part has several views and shows whether the files can be downloaded or are shared on request.</p>
                         <Link to="/rnd" className="home-inline-link">Explore the R&amp;D Catalog<span aria-hidden="true"> &rarr;</span></Link>
                     </Col>
                     <Col md={7}>
@@ -188,13 +188,13 @@ function Home() {
                 <Row className="g-4">
                     <Col md={7}>
                         <p className="home-eyebrow">Start with your vehicle</p>
-                        <h2 id="home-contact-heading">Tell us what you have.<br />And what you want to change.</h2>
-                        <p>Include your model, year, engine, existing modifications, and the service you are interested in. We can discuss compatibility and the next steps.</p>
+                        <h2 id="home-contact-heading">Tell us about your car and what you want to change</h2>
+                        <p>Include your model, year, engine, existing modifications, and the service you are interested in. We will check compatibility and suggest the next steps.</p>
                         <a href={`mailto:${CONTACT_EMAIL}`} className="home-cta home-cta-primary">Email Alfa Tuning</a>
                     </Col>
                     <Col md={5} className="home-partner-support">
                         <h3>Looking for specialist support?</h3>
-                        <p>Explore the partner network for Alfa Romeo workshops, parts, and engineering services.</p>
+                        <p>The partner list covers Alfa Romeo workshops, parts suppliers, and engineering services.</p>
                         <Link to="/partners" className="home-inline-link">Find a Partner<span aria-hidden="true"> &rarr;</span></Link>
                     </Col>
                 </Row>

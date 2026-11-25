@@ -29,7 +29,7 @@ function Product() {
 
     const features = [
         {
-            title: "Boost Performance",
+            title: "Engine Tuning",
             description: "Explore engine tuning for Alfa Romeo Giulia and Stelvio, from 2.0-litre ECU calibration to Quadrifoglio software options. Availability depends on your engine, hardware, and current software.",
             href: "#engine-tuning",
             linkText: "Explore Giulia and Stelvio engine tuning"
@@ -60,7 +60,7 @@ function Product() {
         },
         {
             title: "Component Compatibility",
-            description: "Configure modules to work seamlessly with retrofitted ETM and other enhancements."
+            description: "Configure modules to work with a retrofitted ETM and other added hardware."
         },
         {
             title: "RFHUB Fix",
@@ -73,8 +73,8 @@ function Product() {
             description: "Clear stored VIN data and reset the BCM (Body Computer Module) to a virgin state for use in another vehicle. After cleaning, you must write the new VIN and PROXI configuration, then transfer the secret keys from RFHUB to BCM using the vehicle's PIN. Check compatibility first; cleaning does not complete the setup."
         },
         {
-            title: "Flexible Customization",
-            description: "Any additional updates and software upgrades tailored to your unique driving style."
+            title: "Other Software Changes",
+            description: "Other module updates on request. Tell us what you want to change and we will check whether your car supports it."
         }
     ];
 
@@ -115,7 +115,7 @@ function Product() {
                 "name": "Do I need a stable internet connection for flashing?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Use a strong and stable Wi-Fi connection before and during flashing to ensure reliable communication with the device."
+                    "text": "Yes. Keep a strong, stable Wi-Fi connection before and during flashing so the device does not lose contact with the server."
                 }
             },
             {
@@ -194,10 +194,10 @@ function Product() {
                             </div>
                         </Col>
                         <Col sm={12} md={7} className="text-column">
-                            <h1>Unleash the Full Potential of Your Alfa Romeo</h1>
-                            <p className="subtitle">Remote Flashing Device Workflow for Giulia and Stelvio</p>
+                            <h1>Remote Flashing Device for Giulia and Stelvio</h1>
+                            <p className="subtitle">Engine, transmission, and module software, flashed over Wi-Fi</p>
                             <p className="description">
-                                Designed for enthusiasts and workshops that need a repeatable calibration path without unnecessary workshop downtime.
+                                For owners and workshops who want to update module software without booking workshop time.
                             </p>
                             <p className="note">
                                 <strong>Note:</strong> Feature availability depends on vehicle setup and module compatibility.
@@ -214,7 +214,7 @@ function Product() {
             {/* Features Section */}
             <section className='features-section'>
                 <div className='text-container'>
-                    <h2>What We Offer</h2>
+                    <h2>Services</h2>
                     <Row style={{ width: '100%' }}>
                         {features.map((feature, index) => (
                             <Col sm={12} md={6} lg={6} key={index} className="feature-card">
@@ -229,12 +229,10 @@ function Product() {
                         ))}
                     </Row>
                     <div className="service-highlight">
-                        <h3>Professional Services</h3>
+                        <h3>For Tuning Companies</h3>
                         <p>
-                            Our service also offers special solutions for tuning companies, allowing them to perform remote flashing for their clients' Alfa Romeo vehicles. Leverage our technology to expand your service offerings and provide high-quality upgrades right from your workshop.
-                        </p>
-                        <p>
-                            Trust in technology that doesn't just enhance but transforms your Alfa Romeo. Build a car ready for the track and enjoy every moment behind the wheel!
+                            Tuning companies can use the same device to flash their clients' Alfa Romeo vehicles remotely
+                            and offer these updates from their own workshop. <a href={`mailto:${CONTACT_EMAIL}`}>Email us</a> to discuss workshop access.
                         </p>
                     </div>
                 </div>
@@ -307,8 +305,8 @@ function Product() {
                 <div className="text-container">
                     <h2 id="transmission-customization-heading">Transmission Customization for Alfa Romeo Giulia and Stelvio</h2>
                     <p className="description">
-                        Transmission software is part of how your Giulia or Stelvio delivers power,
-                        not just how quickly it changes gear. The Transmission Control Module (TCM)
+                        Transmission software affects how your Giulia or Stelvio delivers power
+                        as well as how quickly it changes gear. The Transmission Control Module (TCM)
                         manages gear selection and shift execution in coordination with the engine.
                         Discuss the behavior you want in everyday driving and manual shifting before
                         selecting an update.
@@ -445,7 +443,7 @@ function Product() {
             {/* Setup Guide Section */}
             <section className='product-guide' id="setup-guide">
                 <div className='text-container'>
-                    <h2>How to Setup</h2>
+                    <h2>How to Set Up</h2>
 
                     {/* Prerequisites */}
                     <div className="prerequisites">
@@ -453,7 +451,7 @@ function Product() {
                         <ul>
                             <li>Connect to your <strong>HOME WiFi</strong> if your car is close to your router (Cell phone WiFi may be too slow)</li>
                             <li>Run a WiFi speedtest near your car to check signal strength</li>
-                            <li>Ensure internet connection is strong and stable</li>
+                            <li>Make sure the internet connection is stable</li>
                             <li>Activate compatibility mode for 2.4GHz WiFi networks</li>
                             <li><strong>Do not plug in and remove the device multiple times</strong></li>
                         </ul>
@@ -545,7 +543,7 @@ function Product() {
                                 />
                             </div>
                             <div className="setup-notes">
-                                <h4>Important Notes</h4>
+                                <h4>Notes</h4>
                                 <ul>
                                     <li>Each device may have slightly different settings labels</li>
                                     <li>Connect device only after hotspot is ready and wait a few minutes after plugging in</li>
@@ -609,7 +607,7 @@ function Product() {
                                 />
                             </div>
                             <div className="setup-notes">
-                                <h4>Important Notes</h4>
+                                <h4>Notes</h4>
                                 <ul>
                                     <li>Each device may have slightly different settings labels</li>
                                     <li>Connect device only after hotspot is ready and wait a few minutes after plugging in</li>

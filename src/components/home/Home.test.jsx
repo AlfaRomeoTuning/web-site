@@ -13,7 +13,7 @@ function renderHome() {
 
 test('introduces Giulia and Stelvio services with a clear primary action', () => {
     renderHome();
-    expect(screen.getByRole('heading', { name: /Your Alfa Romeo\. Tuned with purpose\./, level: 1 })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Software tuning for Alfa Romeo Giulia and Stelvio', level: 1 })).toBeInTheDocument();
     const services = screen.getByRole('region', { name: 'Choose what you want to change.' });
     expect(screen.getByRole('link', { name: 'Explore Tuning Services' })).toHaveAttribute('href', `#${services.id}`);
     expect(within(services).getByText(/Feature availability depends on your vehicle/)).toBeInTheDocument();

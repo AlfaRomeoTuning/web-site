@@ -90,8 +90,8 @@ function Partners() {
     const structuredData = {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Partners Alfa Tuning | Our Trusted Partners",
-        "description": "Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide.",
+        "name": "Partners | Alfa Tuning",
+        "description": "Alfa Romeo workshops, tuners, parts suppliers, and engineering partners that work with Alfa Tuning.",
         "url": pageUrl,
         "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -111,22 +111,22 @@ function Partners() {
 
     return (<div id="partners-page">
         <Helmet>
-            <title>Partners Alfa Tuning | Our Trusted Partners</title>
-            <meta name="description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide." />
+            <title>Partners | Alfa Tuning</title>
+            <meta name="description" content="Alfa Romeo workshops, tuners, parts suppliers, and engineering partners that work with Alfa Tuning." />
 
             {/* Open Graph */}
-            <meta property="og:title" content="Partners Alfa Tuning | Our Trusted Partners" />
-            <meta property="og:description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles. Providing top-quality services and parts worldwide." />
+            <meta property="og:title" content="Partners | Alfa Tuning" />
+            <meta property="og:description" content="Alfa Romeo workshops, tuners, parts suppliers, and engineering partners that work with Alfa Tuning." />
             <meta property="og:type" content="website" />
             <meta property="og:url" content={pageUrl} />
             <meta property="og:image" content={partnersOgImage} />
-            <meta property="og:image:alt" content="Alfa Tuning trusted partners" />
+            <meta property="og:image:alt" content="Logos of Alfa Tuning partners" />
             <meta property="og:site_name" content="Alfa Tuning" />
 
             {/* Twitter Card */}
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Partners Alfa Tuning | Our Trusted Partners" />
-            <meta name="twitter:description" content="Meet our trusted partners and tuning specialists for Alfa Romeo vehicles." />
+            <meta name="twitter:title" content="Partners | Alfa Tuning" />
+            <meta name="twitter:description" content="Alfa Romeo workshops, tuners, parts suppliers, and engineering partners that work with Alfa Tuning." />
             <meta name="twitter:image" content={partnersOgImage} />
 
             <link rel="canonical" href={pageUrl} />
@@ -146,8 +146,8 @@ function Partners() {
         <div className="partners-container">
             <section className="partners-meta" aria-label="Partner network summary">
                 <p>
-                    Use this directory to find regional specialists and platform partners connected to the Alfa Tuning ecosystem.
-                    For technical coordination, start through Contact in the main navigation.
+                    Use this list to find regional specialists and platform partners who work with Alfa Tuning.
+                    For technical questions, use Contact in the main navigation.
                 </p>
                 <div className="partners-badges">
                     <span>{PARTNERS.length} listed partners</span>
