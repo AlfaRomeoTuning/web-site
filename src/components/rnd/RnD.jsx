@@ -12,6 +12,7 @@ import { Link } from 'react-router';
 import { BASE_URL } from '../../config';
 import { getRndImage } from './rndAssetLoader';
 import { createModelSlug, getModelFileName } from './rndModelUtils';
+import giuliaGTAmFrontBumperImage from '../../assets/rnd/GiuliaGTAmFrontBumper.png';
 
 const MODELS = rndModels.models;
 
@@ -80,9 +81,7 @@ function RnD() {
     const [searchTerm, setSearchTerm] = useState('');
     const [filterCar, setFilterCar] = useState('all');
 
-    const rndOgImageModule = require('../../assets/rnd/GiuliaGTAmFrontBumper.png');
-    const rndOgImagePath = typeof rndOgImageModule === 'string' ? rndOgImageModule : rndOgImageModule.default;
-    const rndOgImage = `${BASE_URL}${rndOgImagePath}`;
+    const rndOgImage = `${BASE_URL}${giuliaGTAmFrontBumperImage}`;
 
     const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 

@@ -26,25 +26,23 @@ https://alfatuning.app
 
 The current project uses:
 
-* React 18
-* React DOM 18
-* Create React App
-* `react-scripts`
-* React Router 6
+* React 19
+* React DOM 19
+* Vite (`@vitejs/plugin-react`, `vite-plugin-svgr`)
+* React Router 8
 * Bootstrap 5
 * React-Bootstrap
 * React Helmet
-* React Snap
+* Puppeteer prerendering (`scripts/prerender.js`)
 * DOMPurify
 * html-react-parser
-* Jest / React Testing Library
+* Vitest / React Testing Library
 
 Do not replace or migrate the existing stack unless explicitly requested.
 
 In particular:
 
 * do not introduce Next.js
-* do not introduce Vite
 * do not introduce another CSS framework
 * do not introduce another router
 * do not replace React-Bootstrap with another component library
@@ -207,7 +205,7 @@ Important existing dependencies include:
 
 ### Static rendering
 
-* `react-snap`
+* `scripts/prerender.js` (Puppeteer)
 
 ### Testing
 
@@ -221,21 +219,9 @@ Use these technologies where appropriate instead of introducing replacements.
 
 ## Static Rendering
 
-The project uses `react-snap`.
+`npm run build` runs `vite build`, then `scripts/generate-sitemap.js` (writes `build/sitemap.xml`), then `scripts/prerender.js`.
 
-The production build currently runs:
-
-```bash
-npm run build
-```
-
-followed by:
-
-```bash
-react-snap
-```
-
-and sitemap generation.
+The prerender step loads every route in `build/sitemap.xml` in headless Chrome and saves `build/<route>/index.html` once Helmet has set the page's own `<title>` and meta description. A route that never gets its own title and description fails the build.
 
 Do not introduce client-only behavior that breaks prerendering without considering its impact on the generated HTML.
 
@@ -264,10 +250,16 @@ Production build:
 npm run build
 ```
 
-Tests:
+Tests (Vitest, single run; `npm run test:watch` to watch):
 
 ```bash
 npm test
+```
+
+Preview the production build:
+
+```bash
+npm run preview
 ```
 
 Do not replace these commands with alternative tooling unless explicitly requested.

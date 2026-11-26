@@ -5,6 +5,18 @@ import Row from 'react-bootstrap/Row';
 import { Helmet } from 'react-helmet';
 import { BASE_URL, CONTACT_EMAIL } from '../../config';
 import { Link, useLocation } from 'react-router';
+import alfaFlasher00Image from '../../assets/AlfaFlasher00.png';
+import alfaFlasher01Image from '../../assets/AlfaFlasher01.png';
+import settingsImage from '../../assets/setup/android/settings.jpg';
+import connectionsImage from '../../assets/setup/android/connections.jpg';
+import mobileHotspotImage from '../../assets/setup/android/mobileHotspot.jpg';
+import configureMobileHotspotImage from '../../assets/setup/android/configureMobileHotspot.jpg';
+import curtainImage from '../../assets/setup/android/curtain.jpg';
+import settingsImage2 from '../../assets/setup/ios/settings.PNG';
+import personalHotspotImage from '../../assets/setup/ios/personalHotspot.PNG';
+import personalHotspotConfigure1Image from '../../assets/setup/ios/personalHotspotConfigure1.PNG';
+import rename1Image from '../../assets/setup/ios/rename1.PNG';
+import personalHotspotConfigure2Image from '../../assets/setup/ios/personalHotspotConfigure2.PNG';
 
 // Provides the "open image in lightbox" handler to nested instruction steps
 // without prop-drilling through every step.
@@ -78,9 +90,7 @@ function Product() {
         }
     ];
 
-    const flasherImageModule = require("../../assets/AlfaFlasher00.png");
-    const flasherImage = typeof flasherImageModule === 'string' ? flasherImageModule : flasherImageModule.default;
-    const absoluteImage = BASE_URL + flasherImage;
+    const absoluteImage = BASE_URL + alfaFlasher00Image;
     const pageUrl = `${BASE_URL}/device`;
     const pageDescription = "Explore Alfa Romeo Giulia and Stelvio engine tuning, transmission and ABS customisation, with software-only updates and remote flashing setup guidance.";
 
@@ -186,7 +196,7 @@ function Product() {
                                 <img
                                     alt="Alfa Romeo Flashing Device Interface"
                                     className='interface-image'
-                                    src={require(fullView ? "./../../assets/AlfaFlasher00.png" : "./../../assets/AlfaFlasher01.png")}
+                                    src={fullView ? alfaFlasher00Image : alfaFlasher01Image}
                                     width="1200"
                                     height="900"
                                 />
@@ -495,28 +505,28 @@ function Product() {
                                     number="1"
                                     title="Open Settings"
                                     description="Find and tap the 'Settings' app on your device."
-                                    imageSrc={require("./../../assets/setup/android/settings.jpg")}
+                                    imageSrc={settingsImage}
                                     imageAlt="Android Settings icon"
                                 />
                                 <InstructionStep
                                     number="2"
                                     title="Network & Internet"
                                     description="Tap on 'Network & Internet' (may be labeled as 'Connections' or 'Wireless & networks' depending on your device)."
-                                    imageSrc={require("./../../assets/setup/android/connections.jpg")}
+                                    imageSrc={connectionsImage}
                                     imageAlt="Network and Internet settings"
                                 />
                                 <InstructionStep
                                     number="3"
                                     title="Hotspot & Tethering"
                                     description="Tap on 'Hotspot & tethering' or 'Mobile Hotspot'."
-                                    imageSrc={require("./../../assets/setup/android/mobileHotspot.jpg")}
+                                    imageSrc={mobileHotspotImage}
                                     imageAlt="Mobile Hotspot option"
                                 />
                                 <InstructionStep
                                     number="4"
                                     title="Configure Wi-Fi Hotspot"
                                     description="Tap on 'Wi-Fi Hotspot' or 'Portable Wi-Fi hotspot', then 'Set up Wi-Fi hotspot' or 'Configure'."
-                                    imageSrc={require("./../../assets/setup/android/configureMobileHotspot.jpg")}
+                                    imageSrc={configureMobileHotspotImage}
                                     imageAlt="Configure hotspot settings"
                                 />
                                 <InstructionStep
@@ -533,7 +543,7 @@ function Product() {
                                     number="6"
                                     title="Enable Hotspot"
                                     description="Tap 'Save' or 'Apply', then toggle the switch to turn on the Wi-Fi hotspot."
-                                    imageSrc={require("./../../assets/setup/android/curtain.jpg")}
+                                    imageSrc={curtainImage}
                                     imageAlt="Hotspot toggle switch"
                                 />
                                 <InstructionStep
@@ -569,35 +579,35 @@ function Product() {
                                     number="1"
                                     title="Open Settings"
                                     description="Find and tap the 'Settings' app on your iPhone."
-                                    imageSrc={require("./../../assets/setup/ios/settings.PNG")}
+                                    imageSrc={settingsImage2}
                                     imageAlt="iOS Settings icon"
                                 />
                                 <InstructionStep
                                     number="2"
                                     title="Enable Personal Hotspot"
                                     description="Tap on 'Personal Hotspot'. If you don't see this option, tap on 'Cellular' first."
-                                    imageSrc={require("./../../assets/setup/ios/personalHotspot.PNG")}
+                                    imageSrc={personalHotspotImage}
                                     imageAlt="Personal Hotspot option"
                                 />
                                 <InstructionStep
                                     number="3"
                                     title="Allow Others to Join"
                                     description="Toggle the 'Allow Others to Join' switch to turn on the hotspot."
-                                    imageSrc={require("./../../assets/setup/ios/personalHotspotConfigure1.PNG")}
+                                    imageSrc={personalHotspotConfigure1Image}
                                     imageAlt="Allow Others to Join toggle"
                                 />
                                 <InstructionStep
                                     number="4"
                                     title="Change Device Name"
                                     description="Go to Settings → General → About → Name and change the device name to 'AlfaRomeoFlasher'."
-                                    imageSrc={require("./../../assets/setup/ios/rename1.PNG")}
+                                    imageSrc={rename1Image}
                                     imageAlt="Device name settings"
                                 />
                                 <InstructionStep
                                     number="5"
                                     title="Set Wi-Fi Password"
                                     description="Tap on 'Wi-Fi Password' and enter 'password' as the password, then tap 'Done'."
-                                    imageSrc={require("./../../assets/setup/ios/personalHotspotConfigure2.PNG")}
+                                    imageSrc={personalHotspotConfigure2Image}
                                     imageAlt="WiFi password configuration"
                                 />
                                 <InstructionStep

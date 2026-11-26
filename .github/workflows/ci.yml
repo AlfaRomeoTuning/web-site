@@ -31,12 +31,6 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
 
-      # react-snap's bundled Chromium needs libXss; the runner's Google Chrome install covers the rest.
-      - name: Install Chromium dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -yq --no-install-recommends libxss1
-
       - name: Install dependencies
         run: npm ci
 
@@ -45,7 +39,8 @@ jobs:
         env:
           CI: true
 
-      # postbuild runs react-snap and the sitemap generator.
+      # vite build, then the sitemap generator, then Puppeteer prerendering of every sitemap route.
+      # npm ci's puppeteer postinstall downloads the Chrome it uses; the runner already has Chrome's system libraries.
       - name: Build
         run: npm run build
 

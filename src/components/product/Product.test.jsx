@@ -6,7 +6,7 @@ import { CONTACT_EMAIL } from '../../config';
 
 function renderProduct() {
     return render(
-        <MemoryRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+        <MemoryRouter>
             <Product />
         </MemoryRouter>
     );

@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { CONTACT_EMAIL, INSTAGRAM_HANDLE, INSTAGRAM_URL } from '../../config';
 import { EmailIcon, InstagramIcon } from '../icons/SocialIcons';
 import './Footer.css';
+import logoImage from '../../assets/logo.png';
 
 function Footer() {
     const year = new Date().getFullYear();
@@ -19,7 +20,7 @@ function Footer() {
                             width="32"
                             height="32"
                             alt="Alfa Tuning logo"
-                            src={require('./../../assets/logo.png')}
+                            src={logoImage}
                         />
                         <span>Alfa Tuning</span>
                     </Link>

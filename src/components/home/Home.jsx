@@ -5,12 +5,12 @@ import { Link } from 'react-router';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import alfaFlasher00Image from '../../assets/AlfaFlasher00.png';
+import giuliaGTAmFrontBumperImage from '../../assets/rnd/GiuliaGTAmFrontBumper.png';
 
 function Home() {
     const pageUrl = `${BASE_URL}/`;
-    const homeOgImageModule = require('../../assets/AlfaFlasher00.png');
-    const homeOgImagePath = typeof homeOgImageModule === 'string' ? homeOgImageModule : homeOgImageModule.default;
-    const homeOgImage = `${BASE_URL}${homeOgImagePath}`;
+    const homeOgImage = `${BASE_URL}${alfaFlasher00Image}`;
     const pageTitle = 'Alfa Tuning | Giulia & Stelvio Tuning and Automotive Engineering';
     const pageDescription = 'Explore Alfa Romeo Giulia and Stelvio engine tuning, transmission updates, ABS customisation, and module services, plus remote flashing and GTA/GTAm R&D.';
     const services = [
@@ -147,7 +147,7 @@ function Home() {
             <Container>
                 <Row className="g-4 align-items-center">
                     <Col md={6}>
-                        <img src={homeOgImagePath} alt="Exploded view of the Alfa Tuning Remote Flashing Device" width="3840" height="2160" loading="lazy" className="img-fluid" />
+                        <img src={alfaFlasher00Image} alt="Exploded view of the Alfa Tuning Remote Flashing Device" width="3840" height="2160" loading="lazy" className="img-fluid" />
                     </Col>
                     <Col md={6}>
                         <p className="home-eyebrow">Remote flashing device</p>
@@ -175,7 +175,7 @@ function Home() {
                     </Col>
                     <Col md={7}>
                         <figure className="home-engineering-figure">
-                            <img src={require('../../assets/rnd/GiuliaGTAmFrontBumper.png')} alt="3D model of the Giulia GTAm front bumper" width="1920" height="805" loading="lazy" className="img-fluid" />
+                            <img src={giuliaGTAmFrontBumperImage} alt="3D model of the Giulia GTAm front bumper" width="1920" height="805" loading="lazy" className="img-fluid" />
                             <figcaption>From the catalog: Giulia GTAm front bumper</figcaption>
                         </figure>
                     </Col>
