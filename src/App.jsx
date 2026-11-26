@@ -15,7 +15,8 @@ import MobileCdaPrivacyPolicy from './components/privacy/MobileCdaPrivacyPolicy'
 
 let router = createBrowserRouter(
   createRoutesFromElements(<Route path="/" element={<Navigation />}>
-    <Route path="*" element={<Navigate to="/404" replace />} />
+    {/* Unknown URLs keep their address; Caddy answers them with 404 and build/404.html. */}
+    <Route path="*" element={<NoMatch />} />
     <Route path="/404" element={<NoMatch />} />
     <Route index element={<Home />} />
     <Route path="/product" element={<Navigate to="/device" replace />} />

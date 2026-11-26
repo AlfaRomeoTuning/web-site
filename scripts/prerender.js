@@ -1,4 +1,5 @@
-// Prerenders every route in build/sitemap.xml to build/<route>/index.html.
+// Prerenders every route in build/sitemap.xml to build/<route>/index.html, and
+// the not-found screen to build/404.html, which Caddy serves with status 404.
 //
 // Replaces react-snap, which sometimes saved /rnd/* pages before Helmet ran, so
 // they shipped with the template's <title> and no description. Here each route
@@ -16,11 +17,14 @@ const buildDir = path.join(rootDir, 'build');
 const ROUTE_TIMEOUT_MS = 30_000;
 
 const sitemap = fs.readFileSync(path.join(buildDir, 'sitemap.xml'), 'utf8');
-const routes = [...sitemap.matchAll(/<loc>https?:\/\/[^/<]+([^<]*)<\/loc>/g)].map((m) => m[1] || '/');
-if (routes.length === 0) {
+const sitemapRoutes = [...sitemap.matchAll(/<loc>https?:\/\/[^/<]+([^<]*)<\/loc>/g)].map((m) => m[1] || '/');
+if (sitemapRoutes.length === 0) {
     console.error('No routes found in build/sitemap.xml.');
     process.exit(1);
 }
+// /404 renders NoMatch. It isn't in the sitemap and is saved as build/404.html.
+const NOT_FOUND_ROUTE = '/404';
+const routes = [...sitemapRoutes, NOT_FOUND_ROUTE];
 
 const template = fs.readFileSync(path.join(buildDir, 'index.html'), 'utf8');
 const templateTitle = template.match(/<title>([^<]*)<\/title>/)?.[1] ?? '';
@@ -89,9 +93,9 @@ if (failures.length > 0) {
 }
 
 for (const [route, html] of snapshots) {
-    const file = route === '/'
-        ? path.join(buildDir, 'index.html')
-        : path.join(buildDir, route, 'index.html');
+    let file = path.join(buildDir, route, 'index.html');
+    if (route === '/') file = path.join(buildDir, 'index.html');
+    if (route === NOT_FOUND_ROUTE) file = path.join(buildDir, '404.html');
     fs.mkdirSync(path.dirname(file), { recursive: true });
     fs.writeFileSync(file, html);
 }

@@ -4,6 +4,7 @@ import { useParams, useNavigate, Link } from 'react-router';
 import { Container, Button, Carousel, Row, Col, Breadcrumb } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import rndModels from './rndModels';
+import NoMatch from '../nomatch/NoMatch';
 import './RnD.css';
 import parse from 'html-react-parser';
 import DOMPurify from 'dompurify';
@@ -17,13 +18,9 @@ function RnDDetail() {
 
     const model = rndModels.models.find(item => createModelSlug(item) === slug);
 
+    // Caddy answers unknown slugs with 404 and build/404.html; render the same screen here.
     if (!model) {
-        return (
-            <Container className="mt-5">
-                <h1>Model not found</h1>
-                <Button onClick={() => navigate('/rnd')}>Back to R&D</Button>
-            </Container>
-        );
+        return <NoMatch />;
     }
 
     const pageUrl = `${BASE_URL}/rnd/${slug}`;
