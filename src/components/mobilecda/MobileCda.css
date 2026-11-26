@@ -1,0 +1,224 @@
+#mobilecda {
+    color: var(--color-ink-700);
+    background: var(--color-paper);
+}
+
+#mobilecda h1,
+#mobilecda h2,
+#mobilecda h3 {
+    font-weight: 650;
+    letter-spacing: -0.025em;
+    color: var(--color-ink-900);
+}
+
+#mobilecda h2 {
+    font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+}
+
+#mobilecda h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+#mobilecda p,
+#mobilecda li {
+    line-height: 1.7;
+}
+
+#mobilecda .mcda-section {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    scroll-margin-top: 2rem;
+}
+
+#mobilecda .mcda-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    margin-bottom: 1rem;
+}
+
+#mobilecda .mcda-muted {
+    color: var(--color-ink-500);
+}
+
+/* Hero: dark, matching the app's own dark theme */
+#mobilecda .mcda-hero {
+    color: #fff;
+    background: radial-gradient(circle at 80% 20%, #1d2a3d 0%, #0b111b 55%, #070b12 100%);
+    padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+#mobilecda .mcda-hero h1 {
+    color: #fff;
+    font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+}
+
+#mobilecda .mcda-hero .mcda-eyebrow {
+    color: #ffb5b8;
+}
+
+#mobilecda .mcda-lead {
+    color: #d5dae1;
+    font-size: 1.125rem;
+    max-width: 48ch;
+}
+
+#mobilecda .mcda-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+}
+
+#mobilecda .mcda-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.8rem 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+}
+
+#mobilecda .mcda-cta-primary {
+    color: #fff;
+    background: var(--color-accent-dark);
+}
+
+#mobilecda .mcda-cta-primary:hover {
+    background: #861218;
+}
+
+#mobilecda .mcda-cta-secondary {
+    color: #fff;
+    border-color: #858b93;
+}
+
+#mobilecda .mcda-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#mobilecda .mcda-hero a:focus-visible,
+#mobilecda .mcda-hero button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}
+
+/* Screenshots */
+#mobilecda .mcda-shot {
+    margin: 0;
+}
+
+#mobilecda .mcda-shot-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 1px solid rgba(15, 17, 20, 0.12);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: #0b111b;
+    box-shadow: 0 18px 40px rgba(15, 17, 20, 0.18);
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#mobilecda .mcda-hero .mcda-shot-button {
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+#mobilecda .mcda-shot-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 48px rgba(15, 17, 20, 0.24);
+}
+
+#mobilecda .mcda-shot-button img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#mobilecda .mcda-shot figcaption {
+    font-size: 0.875rem;
+    color: var(--color-ink-500);
+    padding-top: 0.75rem;
+}
+
+/* Feature rows */
+#mobilecda .mcda-feature-alt,
+#mobilecda .mcda-flashing {
+    background: #f4f5f6;
+}
+
+#mobilecda .mcda-feature p {
+    max-width: 52ch;
+}
+
+#mobilecda .mcda-steps {
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+#mobilecda .mcda-steps li {
+    padding-left: 0.25rem;
+    margin-bottom: 0.9rem;
+}
+
+#mobilecda .mcda-more h3 {
+    border-top: 2px solid var(--color-accent);
+    padding-top: 1rem;
+}
+
+#mobilecda .mcda-more p {
+    margin-bottom: 0;
+}
+
+/* Gallery */
+#mobilecda .mcda-gallery {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 1.75rem 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+#mobilecda .mcda-gallery .mcda-shot-button {
+    box-shadow: var(--shadow-soft);
+}
+
+#mobilecda .mcda-needs {
+    border-top: 1px solid #d8dce1;
+}
+
+#mobilecda .mcda-needs ul {
+    padding-left: 1.25rem;
+}
+
+#mobilecda .mcda-link {
+    color: var(--color-accent-dark);
+    font-weight: 600;
+    text-underline-offset: 4px;
+}
+
+#mobilecda .mcda-link:hover {
+    color: var(--color-ink-900);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #mobilecda .mcda-shot-button {
+        transition: none;
+    }
+
+    #mobilecda .mcda-shot-button:hover {
+        transform: none;
+    }
+}
