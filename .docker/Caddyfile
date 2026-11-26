@@ -20,7 +20,20 @@
     @assets path *.js *.css *.png *.jpg *.jpeg *.gif *.ico *.svg *.woff *.woff2 *.ttf *.eot
     header @assets Cache-Control "public, no-transform, max-age=864000"
 
-    # Prerendered routes are saved as <route>/index.html; other paths get the app shell.
-    try_files {path} {path}/index.html /index.html
+    # /product was renamed to /device.
+    redir /product /device permanent
+    redir /product/ /device permanent
+
+    # Files are served as they are, prerendered routes from <route>/index.html.
+    # Any other path has no file, so file_server answers 404 and handle_errors
+    # below sends build/404.html (the prerendered not-found screen) with it.
+    # There is no fallback to /index.html: that answered unknown URLs with 200
+    # and the home page, which search engines index as a soft 404.
+    try_files {path} {path}/index.html
     file_server
+
+    handle_errors 404 {
+        rewrite * /404.html
+        file_server
+    }
 }

@@ -19,7 +19,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "generate-sitemap": "node scripts/generate-sitemap.js",
-    "prerender": "node scripts/prerender.js"
+    "prerender": "node scripts/prerender.js",
+    "check-routes": "node scripts/check-routes.js"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.2",

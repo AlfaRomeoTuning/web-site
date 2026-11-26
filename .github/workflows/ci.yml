@@ -44,6 +44,19 @@ jobs:
       - name: Build
         run: npm run build
 
+      # The image deploy.yml ships, with this build: sitemap routes must answer 200,
+      # unknown URLs 404 with build/404.html, /product and www.* 301.
+      - name: Check routes against the container
+        run: |
+          cp -R build .docker/build
+          docker build --tag site-check .docker
+          docker run --detach --name site-check --publish 8080:8080 site-check
+          for _ in $(seq 1 30); do
+            curl --silent --output /dev/null http://localhost:8080/ && break
+            sleep 1
+          done
+          npm run check-routes -- http://localhost:8080
+
       - name: Upload build
         if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v7
